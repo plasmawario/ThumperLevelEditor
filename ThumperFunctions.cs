@@ -38,8 +38,6 @@ namespace ThumperLevelEditor {
             stalactitesTL = new List<int>(leafLength);
             //List<uint> tunnelsTL = new List<uint>(leafLength);
 
-            Console.WriteLine(thumpsTL.Capacity);
-
             //set all lists to 0
             for (int i = 0; i < thumpsTL.Capacity; i++){
                 thumpsTL.Add(0);
@@ -55,6 +53,16 @@ namespace ThumperLevelEditor {
             }
             for (int i = 0; i < pitchTL.Capacity; i++){
                 pitchTL.Add(0);
+            }
+
+            for (int i = 0; i < gammaTL.Capacity; i++){
+                gammaTL.Add(0);
+            }
+            for (int i = 0; i < tentaclesTL.Capacity; i++){
+                tentaclesTL.Add(0);
+            }
+            for (int i = 0; i < stalactitesTL.Capacity; i++){
+                stalactitesTL.Add(0);
             }
         }
 
@@ -149,45 +157,61 @@ namespace ThumperLevelEditor {
                     File.Delete(fs.Name);
                 }
                 fs.Close();
+                /*fs = File.Create(fs.Name);
+                fs.Close();*/
 
-                using (fs = File.Create(fs.Name)){
-                    for (int i = 0; i < pitchTL.Capacity; i++){     //write all numbers from pitchTL's list
-                        byte[] info = new UTF8Encoding(true).GetBytes(pitchTL[i].ToString());
-                        fs.Write(info, 0, info.Length);
-                        if (i < 254){
-                            byte[] seperator = new UTF8Encoding(true).GetBytes(",");
-                            //info[i] += Encoding.UTF8.GetBytes(",");
-                            fs.Write(seperator, 0, seperator.Length);
-                        }else{
-                            byte[] seperator = new UTF8Encoding(true).GetBytes("|");
-                            //info[i] += byte.Parse("|");
-                            fs.Write(seperator, 0, seperator.Length);
-                        }
-                        //fs.Write(info, 0, info.Length);
-                    }
-                }
-
-                //DEBUG - read back the stream
-                Console.WriteLine("DEBUG - Reading back the stream:");
-                using (fs = File.OpenRead(fs.Name)){
-                    byte[] b = new byte[1024];
-                    UTF8Encoding temp = new UTF8Encoding(true);
-                    while (fs.Read(b, 0, b.Length) > 0){
-                        Console.WriteLine(temp.GetString(b));
-                    }
-                }
-                Console.WriteLine("DEBUG - Stream finished reading back");
+                //save all lists into a file with all the data
+                SaveWrite(fs, pitchTL);
+                SaveWrite(fs, turnTL);
+                SaveWrite(fs, gammaTL);
+                SaveWrite(fs, stalactitesTL);
+                SaveWrite(fs, tentaclesTL);
+                SaveWrite(fs, thumpsTL);
+                SaveWrite(fs, barsTL);
+                SaveWrite(fs, doubleBarsTL);
             }
-            
+        }
 
-            destinationFile = new StreamWriter("C:\\Program Files (x86)\\Steam\\steamapps\\common\\Thumper\\custom_level_script\\custom_level_leafTEMP.tle", true);
-            string linetoWrite = "";
-            //set destination file to new file
-            for (int i = 0; i < pitchTL.Capacity; i++){
-                linetoWrite += i + ":" + pitchTL[i];
-                destinationFile.Write(linetoWrite);
-                linetoWrite = ",";
+        //these two functions seem to overwrite existing data every time they are called. It needs to find the "|" character and print after from the previous entry
+        public void SaveWrite(FileStream fs, List<int> list){
+            using (fs = File.Open(fs.Name, FileMode.OpenOrCreate)){
+                for (int i = 0; i < list.Capacity; i++){     //write all numbers from pitchTL's list
+                    byte[] info = new UTF8Encoding(true).GetBytes(list[i].ToString());
+                    fs.Write(info, 0, info.Length);
+                    if (i < 254){
+                        byte[] seperator = new UTF8Encoding(true).GetBytes(",");
+                        //info[i] += Encoding.UTF8.GetBytes(",");
+                        fs.Write(seperator, 0, seperator.Length);
+                    }else{
+                        byte[] seperator = new UTF8Encoding(true).GetBytes("|");
+                        //info[i] += byte.Parse("|");
+                        fs.Write(seperator, 0, seperator.Length);
+                    }
+                    //fs.Write(info, 0, info.Length);
+                }
+                byte[] newline = new UTF8Encoding(true).GetBytes("\n");
+                fs.Write(newline, 0, newline.Length);
             }
+        }
+        public void SaveWrite(FileStream fs, List<float> list){
+            using (fs = File.Open(fs.Name, FileMode.OpenOrCreate)){
+                for (int i = 0; i < list.Capacity; i++){     //write all numbers from pitchTL's list
+                    byte[] info = new UTF8Encoding(true).GetBytes(list[i].ToString());
+                    fs.Write(info, 0, info.Length);
+                    if (i < 254){
+                        byte[] seperator = new UTF8Encoding(true).GetBytes(",");
+                        //info[i] += Encoding.UTF8.GetBytes(",");
+                        fs.Write(seperator, 0, seperator.Length);
+                    }else{
+                        byte[] seperator = new UTF8Encoding(true).GetBytes("|");
+                        //info[i] += byte.Parse("|");
+                        fs.Write(seperator, 0, seperator.Length);
+                    }
+                    //fs.Write(info, 0, info.Length);
+                }
+                byte[] newline = new UTF8Encoding(true).GetBytes("\n");
+                fs.Write(newline, 0, newline.Length);
+            }            
         }
 
         public void Export(){
