@@ -59,6 +59,11 @@
             this.dgvGeneral = new System.Windows.Forms.DataGridView();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changelogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.formatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.numLeafLength = new System.Windows.Forms.NumericUpDown();
             this.pnlTimeline.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObstacles)).BeginInit();
             this.panel3.SuspendLayout();
@@ -67,6 +72,7 @@
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGeneral)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLeafLength)).BeginInit();
             this.SuspendLayout();
             // 
             // lblThumps
@@ -263,7 +269,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
@@ -287,16 +294,19 @@
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
             resources.ApplyResources(this.loadToolStripMenuItem, "loadToolStripMenuItem");
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.numLeafLength);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.lblLeafLength);
             resources.ApplyResources(this.panel2, "panel2");
@@ -357,6 +367,51 @@
             this.label2.Name = "label2";
             this.label2.UseWaitCursor = true;
             // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contactToolStripMenuItem,
+            this.changelogToolStripMenuItem,
+            this.formatToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
+            // 
+            // contactToolStripMenuItem
+            // 
+            this.contactToolStripMenuItem.Name = "contactToolStripMenuItem";
+            resources.ApplyResources(this.contactToolStripMenuItem, "contactToolStripMenuItem");
+            this.contactToolStripMenuItem.Click += new System.EventHandler(this.contactToolStripMenuItem_Click);
+            // 
+            // changelogToolStripMenuItem
+            // 
+            this.changelogToolStripMenuItem.Name = "changelogToolStripMenuItem";
+            resources.ApplyResources(this.changelogToolStripMenuItem, "changelogToolStripMenuItem");
+            this.changelogToolStripMenuItem.Click += new System.EventHandler(this.changelogToolStripMenuItem_Click);
+            // 
+            // formatToolStripMenuItem
+            // 
+            this.formatToolStripMenuItem.Name = "formatToolStripMenuItem";
+            resources.ApplyResources(this.formatToolStripMenuItem, "formatToolStripMenuItem");
+            this.formatToolStripMenuItem.Click += new System.EventHandler(this.formatToolStripMenuItem_Click);
+            // 
+            // numLeafLength
+            // 
+            this.numLeafLength.BackColor = System.Drawing.Color.DimGray;
+            this.numLeafLength.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.numLeafLength, "numLeafLength");
+            this.numLeafLength.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numLeafLength.Name = "numLeafLength";
+            this.numLeafLength.Value = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numLeafLength.ValueChanged += new System.EventHandler(this.numLeafLength_ValueChanged);
+            // 
             // ThumperLevelEditor
             // 
             resources.ApplyResources(this, "$this");
@@ -382,6 +437,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGeneral)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLeafLength)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,6 +475,11 @@
         private System.Windows.Forms.DataGridView dgvGeneral;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contactToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changelogToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem formatToolStripMenuItem;
+        private System.Windows.Forms.NumericUpDown numLeafLength;
     }
 }
 

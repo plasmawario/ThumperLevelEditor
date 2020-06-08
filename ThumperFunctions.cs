@@ -66,11 +66,26 @@ namespace ThumperLevelEditor {
             }
         }
 
+        public void MissingFeatureDialogue(){
+            MessageBox.Show("Sorry, this feature is not working yet!", "Missing Feature", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void ResetListLengths(){
+            thumpsTL.Capacity = leafLength;
+            barsTL.Capacity = leafLength;
+            doubleBarsTL.Capacity = leafLength;
+            turnTL.Capacity = leafLength;
+            pitchTL.Capacity = leafLength;
+            gammaTL.Capacity = leafLength;
+            tentaclesTL.Capacity = leafLength;
+            stalactitesTL.Capacity = leafLength;
+        }
+
         //----------------//
         //-----REMOVE-----//
         //----------------//
         //creates a new button with preset properties
-        public RichTextBox CreateButton(int x, int y, string element, int r, int g, int b, TableLayoutPanel group) {
+        /*public RichTextBox CreateButton(int x, int y, string element, int r, int g, int b, TableLayoutPanel group) {
             RichTextBox thumperButton = new RichTextBox();
             thumperButton.Parent = group;
             thumperButton.Height = 60;
@@ -87,10 +102,10 @@ namespace ThumperLevelEditor {
             Console.WriteLine("New " + element + " created at: (" + x + ", " + y + ") relative to " + group.ToString());
 
             return thumperButton;
-        }
+        }*/
 
         //write data to list
-        public void updateList(List<int> dataList, RichTextBox button){
+        /*public void updateList(List<int> dataList, RichTextBox button){
             if (button == null){
                 //needs to update list when removing a button
                 return ;
@@ -104,10 +119,9 @@ namespace ThumperLevelEditor {
 
             dataList[num] = int.Parse(button.Text);
             Console.WriteLine(dataList.ToString() + " now contains a value of " + dataList.ElementAt(num) + " at beat/index " + dataList[num]);
-        }
-        public void updateList(List<float> dataList, RichTextBox button){
-            if (button == null)
-            {
+        }*/
+        /*public void updateList(List<float> dataList, RichTextBox button){
+            if (button == null){
                 //needs to update list when removing a button
                 return;
             }
@@ -120,7 +134,7 @@ namespace ThumperLevelEditor {
 
             dataList[num] = float.Parse(button.Text);
             Console.WriteLine(dataList.ToString() + " now contains a value of " + dataList.ElementAt(num) + " at beat/index " + dataList[num]);
-        }
+        }*/
 
         public void validatedata(List<int> dataList, RichTextBox button){
             if (dataList.ToString().Equals(thumpsTL.ToString()) || dataList.ToString().Equals(barsTL.ToString()) || dataList.ToString().Equals(doubleBarsTL.ToString())){
@@ -161,57 +175,58 @@ namespace ThumperLevelEditor {
                 fs.Close();*/
 
                 //save all lists into a file with all the data
-                SaveWrite(fs, pitchTL);
-                SaveWrite(fs, turnTL);
-                SaveWrite(fs, gammaTL);
-                SaveWrite(fs, stalactitesTL);
-                SaveWrite(fs, tentaclesTL);
-                SaveWrite(fs, thumpsTL);
-                SaveWrite(fs, barsTL);
-                SaveWrite(fs, doubleBarsTL);
+                try{
+                    SaveWrite(fs, pitchTL);
+                    SaveWrite(fs, turnTL);
+                    SaveWrite(fs, gammaTL);
+                    SaveWrite(fs, stalactitesTL);
+                    SaveWrite(fs, tentaclesTL);
+                    SaveWrite(fs, thumpsTL);
+                    SaveWrite(fs, barsTL);
+                    SaveWrite(fs, doubleBarsTL);
+                    Console.WriteLine("File saved!");
+                }catch (Exception ex){
+                    MessageBox.Show("Error", "An unexpected problem has occured when trying to save the file. Please try again. If the problem persists, contact the developer or submit a bug report\n" + ex, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
-        //these two functions seem to overwrite existing data every time they are called. It needs to find the "|" character and print after from the previous entry
+        //these two functions seem to overwrite existing data every time they are called. It needs to find the "|" character and print after from the previous entry (the data check doesn't work either ffs)
         public void SaveWrite(FileStream fs, List<int> list){
-            using (fs = File.Open(fs.Name, FileMode.OpenOrCreate)){
+            using (fs = File.Open(fs.Name, FileMode.Append)){
+                //print the next pieces of data
                 for (int i = 0; i < list.Capacity; i++){     //write all numbers from pitchTL's list
                     byte[] info = new UTF8Encoding(true).GetBytes(list[i].ToString());
                     fs.Write(info, 0, info.Length);
-                    if (i < 254){
+                    if (i < list.Capacity - 1){
                         byte[] seperator = new UTF8Encoding(true).GetBytes(",");
-                        //info[i] += Encoding.UTF8.GetBytes(",");
                         fs.Write(seperator, 0, seperator.Length);
                     }else{
                         byte[] seperator = new UTF8Encoding(true).GetBytes("|");
-                        //info[i] += byte.Parse("|");
+                        byte[] newline = new UTF8Encoding(true).GetBytes("\n");
                         fs.Write(seperator, 0, seperator.Length);
+                        fs.Write(newline, 0, newline.Length);
                     }
-                    //fs.Write(info, 0, info.Length);
                 }
-                byte[] newline = new UTF8Encoding(true).GetBytes("\n");
-                fs.Write(newline, 0, newline.Length);
             }
         }
         public void SaveWrite(FileStream fs, List<float> list){
-            using (fs = File.Open(fs.Name, FileMode.OpenOrCreate)){
+            using (fs = File.Open(fs.Name, FileMode.Append)){
+                //print the next pieces of data
                 for (int i = 0; i < list.Capacity; i++){     //write all numbers from pitchTL's list
                     byte[] info = new UTF8Encoding(true).GetBytes(list[i].ToString());
                     fs.Write(info, 0, info.Length);
-                    if (i < 254){
+                    if (i < list.Capacity - 1){
                         byte[] seperator = new UTF8Encoding(true).GetBytes(",");
-                        //info[i] += Encoding.UTF8.GetBytes(",");
                         fs.Write(seperator, 0, seperator.Length);
                     }else{
                         byte[] seperator = new UTF8Encoding(true).GetBytes("|");
-                        //info[i] += byte.Parse("|");
+                        byte[] newline = new UTF8Encoding(true).GetBytes("\n");
                         fs.Write(seperator, 0, seperator.Length);
+                        fs.Write(newline, 0, newline.Length);
                     }
-                    //fs.Write(info, 0, info.Length);
                 }
-                byte[] newline = new UTF8Encoding(true).GetBytes("\n");
-                fs.Write(newline, 0, newline.Length);
-            }            
+            }
         }
 
         public void Export(){

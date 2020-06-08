@@ -22,6 +22,29 @@ namespace ThumperLevelEditor {
             Application.Exit();
         }
 
+        private void exitToolStripMenuItem_Click_1(object sender, EventArgs e){
+            DialogResult result = MessageBox.Show("Are you sure you wish to exit?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes){
+                Application.Exit();
+            }
+        }
+
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e){
+            editor.MissingFeatureDialogue();
+        }
+
+        private void contactToolStripMenuItem_Click(object sender, EventArgs e){
+            MessageBox.Show("---Program Dev's info---\nTwitter: @Plasmawario\nDiscord: Plasmawario#7852\n---Thumper Dev's info---\nWebsite: https://thumpergame.com/ \n", "Contact Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void changelogToolStripMenuItem_Click(object sender, EventArgs e){
+            MessageBox.Show("- Pushed build to public", "Changelog betav0.1", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void formatToolStripMenuItem_Click(object sender, EventArgs e){
+            MessageBox.Show("Thumps - accepts 0 or 1\nBars - accepts 0 or 1\nDouble bars - accepts 0 or 1\nTurn - accepts any numberic value. Any value greater than 15 (left) or less than -15 (right) will spawn a turn that requires input. Consecutive beats requiring input connect into long turns\nPitch - accepts any numeric value. Beats with no value default to flat track\nGamma - accepts any numeric value. 0 has no effect\nStalactites - accepts 0 or 1\nTentacles - accepts 0 or 1", "Object values format list", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         private void ThumperLevelEditor_Load(object sender, EventArgs e){
             //call script to initialize thumper editor values
             editor.Initialize();
@@ -30,6 +53,13 @@ namespace ThumperLevelEditor {
 
             InitializeObstacleDGV();
             InitializeGeneralDGV();
+        }
+
+        private void numLeafLength_ValueChanged(object sender, EventArgs e){
+            NumericUpDown box = (NumericUpDown)sender;
+            editor.leafLength = (int)box.Value;
+
+            editor.ResetListLengths();
         }
 
         private void dgvObstacles_CellValuePushed(object sender, DataGridViewCellValueEventArgs e){
@@ -59,6 +89,9 @@ namespace ThumperLevelEditor {
                     editor.pitchTL[e.ColumnIndex] = int.Parse(e.Value.ToString());
                     Console.WriteLine("List pitchTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString());
                     break;
+                case 5:
+                    editor.MissingFeatureDialogue();
+                    break;
             }
             //cell.UpdateCellValue(e.ColumnIndex, e.RowIndex);
         }
@@ -81,6 +114,9 @@ namespace ThumperLevelEditor {
                 case 2:
                     editor.tentaclesTL[e.ColumnIndex] = int.Parse(e.Value.ToString());
                     Console.WriteLine("List tentaclesTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString());
+                    break;
+                case 3:
+                    editor.MissingFeatureDialogue();
                     break;
             }
             //cell.UpdateCellValue(e.ColumnIndex, e.RowIndex);
@@ -141,7 +177,8 @@ namespace ThumperLevelEditor {
         //--------------------------------------------------//
         //--------------------My--events--------------------//
         //--------------------------------------------------//
-        private void thumperButton_MouseClick(object sender, MouseEventArgs e){
+        //-----REMOVE-----//
+        /*private void thumperButton_MouseClick(object sender, MouseEventArgs e){
             switch (e.Button){
                 case MouseButtons.Left:
                     //
@@ -152,7 +189,7 @@ namespace ThumperLevelEditor {
                     editor.updateList(editor.thumpsTL, null);
                     break;
             }
-        }
+        }*/
         private void thumperButtonBool_TextChanged(object sender, EventArgs e){
             //data checking
             RichTextBox button = sender as RichTextBox;
@@ -245,6 +282,5 @@ namespace ThumperLevelEditor {
                 grid.Columns[i].MinimumWidth = 60;
             }
         }
-
     }
 }
