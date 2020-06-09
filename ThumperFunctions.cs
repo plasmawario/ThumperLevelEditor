@@ -18,8 +18,8 @@ namespace ThumperLevelEditor {
         public List<float> turnTL, pitchTL, gammaTL;
         public List<int> tentaclesTL, stalactitesTL;
 
-        public StreamReader sourceFile = new StreamReader("C:\\Program Files (x86)\\Steam\\steamapps\\common\\Thumper\\custom_level_script\\custom_level_leaf.py", true);
-        public StreamWriter destinationFile = new StreamWriter("C:\\Program Files (x86)\\Steam\\steamapps\\common\\Thumper\\custom_level_script\\custom_level_leafTEMP.py", true);
+        public StreamReader sourceFile = new StreamReader("ExportFileTemplate.txt", true);
+        public StreamWriter destinationFile;
 
         public void Initialize() {
 
@@ -71,14 +71,14 @@ namespace ThumperLevelEditor {
         }
 
         public void ResetListLengths(){
-            thumpsTL.Capacity = leafLength;
+            /*thumpsTL.Capacity = leafLength;
             barsTL.Capacity = leafLength;
             doubleBarsTL.Capacity = leafLength;
             turnTL.Capacity = leafLength;
             pitchTL.Capacity = leafLength;
             gammaTL.Capacity = leafLength;
             tentaclesTL.Capacity = leafLength;
-            stalactitesTL.Capacity = leafLength;
+            stalactitesTL.Capacity = leafLength;*/
         }
 
         //----------------//
@@ -171,8 +171,6 @@ namespace ThumperLevelEditor {
                     File.Delete(fs.Name);
                 }
                 fs.Close();
-                /*fs = File.Create(fs.Name);
-                fs.Close();*/
 
                 //save all lists into a file with all the data
                 try{
@@ -191,7 +189,6 @@ namespace ThumperLevelEditor {
             }
         }
 
-        //these two functions seem to overwrite existing data every time they are called. It needs to find the "|" character and print after from the previous entry (the data check doesn't work either ffs)
         public void SaveWrite(FileStream fs, List<int> list){
             using (fs = File.Open(fs.Name, FileMode.Append)){
                 //print the next pieces of data
@@ -230,109 +227,132 @@ namespace ThumperLevelEditor {
         }
 
         public void Export(){
-            if (sourceFile == null){
-                Console.WriteLine("The file in the custom level folder cannot be found!");
-                return;
+            SaveFileDialog exportFile = new SaveFileDialog();
+            exportFile.Filter = "Customized Python File|*.py";
+            exportFile.Title = "Export a Thumper Level Editor file";
+            exportFile.ShowDialog();
+
+            if (exportFile.FileName != ""){
+                FileStream fs = (FileStream)exportFile.OpenFile();
+
+                //remove file if it exists
+                if (exportFile.CheckFileExists){
+                    File.Delete(fs.Name);
+                }
+                fs.Close();
+                fs.Dispose();
+                exportFile.Dispose();
+
+                string srcfile = "ExportFileTemplate.txt";
+
+                //copy's file contents from the template file to a new file
+                destinationFile = new StreamWriter(fs.Name, true);
             }
 
-            string linetoWrite = null;
-            //bool writeLevelData = false;
-            while ((linetoWrite = sourceFile.ReadLine()) != null){
-                //if the file line contains "objData" the first time, prepare saving level data. Else, copy line to new file without altering anything
-                if (linetoWrite.Equals("objData = [")){
-                    destinationFile.WriteLine(linetoWrite);
-                    Console.WriteLine("Prepairing to write level data");
-                    //writeLevelData = true;
-                    //overwrite objData portion of code, and when finished, continue writing rest of file after the objData block
-                    linetoWrite = "\n{ #pitch of the track per beat\n";
-                    destinationFile.WriteLine(linetoWrite);
-                    linetoWrite = "";
-                    for (int i = 0; i < pitchTL.Capacity; i++){    //search through the pitch list's data
-                        if (pitchTL[i] != 0){     //only prepare the data if the list index contains a number not 0 in it
-                            linetoWrite += i + ":" + pitchTL[i];
+            //save all lists into a file with all the data
+            try{
+                Console.WriteLine("File exported!");
+                string linetoWrite = null;
+                //bool writeLevelData = false;
+                while ((linetoWrite = sourceFile.ReadLine()) != null){
+                    //if the file line contains "objData" the first time, prepare saving level data. Else, copy line to new file without altering anything
+                    if (linetoWrite.Equals("objData = [")){
+                        destinationFile.WriteLine(linetoWrite);
+                        Console.WriteLine("Prepairing to write level data");
+                        //writeLevelData = true;
+                        //overwrite objData portion of code, and when finished, continue writing rest of file after the objData block
+                        linetoWrite = "\n{ #pitch of the track per beat\n";
+                        destinationFile.WriteLine(linetoWrite);
+                        linetoWrite = "";
+                        for (int i = 0; i < pitchTL.Capacity; i++){    //search through the pitch list's data
+                            if (pitchTL[i] != 0){     //only prepare the data if the list index contains a number not 0 in it
+                                linetoWrite += i + ":" + pitchTL[i];
+                                destinationFile.Write(linetoWrite);
+                                linetoWrite = ",";
+                            }
+                        }
+                        linetoWrite = "\n},\n\n{ #turn of the track per beat\n";
+                        destinationFile.WriteLine(linetoWrite);
+                        linetoWrite = "";
+                        for (int i = 0; i < turnTL.Capacity; i++){    //search through the turn list's data
+                            if (turnTL[i] != 0){     //only prepare the data if the list index contains a number not 0 in it
+                                linetoWrite += i + ":" + turnTL[i];
+                                destinationFile.Write(linetoWrite);
+                                linetoWrite = ",";
+                            }
+                        }
+                        linetoWrite = "\n},\n\n{ #gamma (higher = more red)\n";
+                        destinationFile.WriteLine(linetoWrite);
+                        linetoWrite = "";
+                        for (int i = 0; i < gammaTL.Capacity; i++){    //search through the gamma list's data
+                            linetoWrite += i + ":" + gammaTL[i];
                             destinationFile.Write(linetoWrite);
                             linetoWrite = ",";
                         }
-                    }
-                    linetoWrite = "\n{ #turn of the track per beat\n";
-                    destinationFile.WriteLine(linetoWrite);
-                    linetoWrite = "";
-                    for (int i = 0; i < turnTL.Capacity; i++){    //search through the turn list's data
-                        if (turnTL[i] != 0){     //only prepare the data if the list index contains a number not 0 in it
-                            linetoWrite += i + ":" + turnTL[i];
-                            destinationFile.Write(linetoWrite);
-                            linetoWrite = ",";
+                        linetoWrite = "\n},\n\n{ #stalactites (appear under the track)\n";
+                        destinationFile.WriteLine(linetoWrite);
+                        linetoWrite = "";
+                        for (int i = 0; i < stalactitesTL.Capacity; i++){    //search through the stalactites list's data
+                            if (stalactitesTL[i] != 0){     //only prepare the data if the list index contains a number not 0 in it
+                                linetoWrite += i + ":" + stalactitesTL[i];
+                                destinationFile.Write(linetoWrite);
+                                linetoWrite = ",";
+                            }
                         }
-                    }
-                    linetoWrite = "\n{ #gamma (higher = more red)\n";
-                    destinationFile.WriteLine(linetoWrite);
-                    linetoWrite = "";
-                    for (int i = 0; i < gammaTL.Capacity; i++){    //search through the gamma list's data
-                        linetoWrite += i + ":" + gammaTL[i];
-                        destinationFile.Write(linetoWrite);
-                        linetoWrite = ",";
-                    }
-                    linetoWrite = "\n{ #stalactites (appear under the track)\n";
-                    destinationFile.WriteLine(linetoWrite);
-                    linetoWrite = "";
-                    for (int i = 0; i < stalactitesTL.Capacity; i++){    //search through the stalactites list's data
-                        if (stalactitesTL[i] != 0){     //only prepare the data if the list index contains a number not 0 in it
-                            linetoWrite += i + ":" + stalactitesTL[i];
-                            destinationFile.Write(linetoWrite);
-                            linetoWrite = ",";
+                        linetoWrite = "\n},\n\n{ #tentacles (1 instance lasts 16 beats)\n";
+                        destinationFile.WriteLine(linetoWrite);
+                        linetoWrite = "";
+                        for (int i = 0; i < tentaclesTL.Capacity; i++){    //search through the tentacles list's data
+                            if (tentaclesTL[i] != 0){     //only prepare the data if the list index contains a number not 0 in it
+                                linetoWrite += i + ":" + tentaclesTL[i];
+                                destinationFile.Write(linetoWrite);
+                                linetoWrite = ",";
+                            }
                         }
-                    }
-                    linetoWrite = "\n{ #tentacles (1 instance lasts 16 beats)\n";
-                    destinationFile.WriteLine(linetoWrite);
-                    linetoWrite = "";
-                    for (int i = 0; i < tentaclesTL.Capacity; i++){    //search through the tentacles list's data
-                        if (tentaclesTL[i] != 0){     //only prepare the data if the list index contains a number not 0 in it
-                            linetoWrite += i + ":" + tentaclesTL[i];
-                            destinationFile.Write(linetoWrite);
-                            linetoWrite = ",";
+                        linetoWrite = "\n},\n\n{ #thump\n";
+                        destinationFile.WriteLine(linetoWrite);
+                        linetoWrite = "";
+                        for (int i = 0; i < thumpsTL.Capacity; i++){    //search through the thumps list's data
+                            if (thumpsTL[i] == 1) {     //only prepare the data if the list index contains a 1 in it
+                                linetoWrite += i + ":" + thumpsTL[i];
+                                destinationFile.Write(linetoWrite);
+                                linetoWrite = ",";
+                            }
                         }
-                    }
-                    linetoWrite = "\n{ #thump\n";
-                    destinationFile.WriteLine(linetoWrite);
-                    linetoWrite = "";
-                    for (int i = 0; i < thumpsTL.Capacity; i++){    //search through the thumps list's data
-                        if (thumpsTL[i] == 1) {     //only prepare the data if the list index contains a 1 in it
-                            linetoWrite += i + ":" + thumpsTL[i];
-                            destinationFile.Write(linetoWrite);
-                            linetoWrite = ",";
+                        linetoWrite = "\n},\n\n{ #sing bar on beat\n";
+                        destinationFile.WriteLine(linetoWrite);
+                        linetoWrite = "";
+                        for (int i = 0; i < barsTL.Capacity; i++){    //search through the bars list's data
+                            if (barsTL[i] == 1){     //only prepare the data if the list index contains a 1 in it
+                                linetoWrite += i + ":" + barsTL[i];
+                                destinationFile.Write(linetoWrite);
+                                linetoWrite = ",";
+                            }
                         }
-                    }
-                    linetoWrite = "\n},\n\n{ #sing bar on beat\n";
-                    destinationFile.WriteLine(linetoWrite);
-                    linetoWrite = "";
-                    for (int i = 0; i < barsTL.Capacity; i++){    //search through the bars list's data
-                        if (barsTL[i] == 1){     //only prepare the data if the list index contains a 1 in it
-                            linetoWrite += i + ":" + barsTL[i];
-                            destinationFile.Write(linetoWrite);
-                            linetoWrite = ",";
+                        linetoWrite = "\n},\n\n{ #double bar on beat\n";
+                        destinationFile.WriteLine(linetoWrite);
+                        linetoWrite = "";
+                        for (int i = 0; i < doubleBarsTL.Capacity; i++){    //search through the double bars list's data
+                            if (doubleBarsTL[i] == 1){     //only prepare the data if the list index contains a 1 in it
+                                linetoWrite += i + ":" + doubleBarsTL[i];
+                                destinationFile.Write(linetoWrite);
+                                linetoWrite = ",";
+                            }
                         }
+                        linetoWrite = "\n}\n]";
+                        destinationFile.WriteLine(linetoWrite);
+                        while (!(linetoWrite = sourceFile.ReadLine()).Equals("###")) { } //keep reading the next line until it find the line containing ###
                     }
-                    linetoWrite = "\n},\n\n{ #double bar on beat\n";
-                    destinationFile.WriteLine(linetoWrite);
-                    linetoWrite = "";
-                    for (int i = 0; i < doubleBarsTL.Capacity; i++){    //search through the double bars list's data
-                        if (doubleBarsTL[i] == 1){     //only prepare the data if the list index contains a 1 in it
-                            linetoWrite += i + ":" + doubleBarsTL[i];
-                            destinationFile.Write(linetoWrite);
-                            linetoWrite = ",";
-                        }
+                    else{
+                        destinationFile.WriteLine(linetoWrite);
                     }
-                    linetoWrite = "\n}\n]";
-                    destinationFile.WriteLine(linetoWrite);
-                    while (!(linetoWrite = sourceFile.ReadLine()).Equals("###")) { } //keep reading the next line until it find the line containing ###
                 }
-                else{
-                    destinationFile.WriteLine(linetoWrite);
-                }
+            }catch (Exception ex){
+                MessageBox.Show("Error", "An unexpected problem has occured when trying to save the file. Please try again. If the problem persists, contact the developer or submit a bug report\n" + ex, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             Console.WriteLine("File Writing Finished!");
 
-            
         }
 
         //eventhandler for custom button

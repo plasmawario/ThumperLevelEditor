@@ -59,6 +59,9 @@ namespace ThumperLevelEditor {
             NumericUpDown box = (NumericUpDown)sender;
             editor.leafLength = (int)box.Value;
 
+            dgvObstacles.ColumnCount = editor.leafLength;
+            dgvGeneral.ColumnCount = editor.leafLength;
+
             editor.ResetListLengths();
         }
 
