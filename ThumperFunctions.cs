@@ -81,61 +81,6 @@ namespace ThumperLevelEditor {
             stalactitesTL.Capacity = leafLength;*/
         }
 
-        //----------------//
-        //-----REMOVE-----//
-        //----------------//
-        //creates a new button with preset properties
-        /*public RichTextBox CreateButton(int x, int y, string element, int r, int g, int b, TableLayoutPanel group) {
-            RichTextBox thumperButton = new RichTextBox();
-            thumperButton.Parent = group;
-            thumperButton.Height = 60;
-            thumperButton.Width = 60;
-            thumperButton.Multiline = false;
-            thumperButton.ScrollBars = 0;
-            thumperButton.Margin = Padding.Empty;
-            thumperButton.BackColor = Color.FromArgb(r, g, b);
-            thumperButton.BorderStyle = BorderStyle.None;
-            thumperButton.Text = "1";
-            thumperButton.Name = element + "TimelineButton";
-            thumperButton.Font = new Font("Arial", 12);
-            group.Controls.Add(thumperButton, x, y);
-            Console.WriteLine("New " + element + " created at: (" + x + ", " + y + ") relative to " + group.ToString());
-
-            return thumperButton;
-        }*/
-
-        //write data to list
-        /*public void updateList(List<int> dataList, RichTextBox button){
-            if (button == null){
-                //needs to update list when removing a button
-                return ;
-            }
-            int num = button.Location.X % 60;
-            Console.WriteLine("button location: " + button.Location.X);
-            Console.WriteLine("Created an object at beat: " + num);
-
-            //validate data
-            validatedata(dataList, button);
-
-            dataList[num] = int.Parse(button.Text);
-            Console.WriteLine(dataList.ToString() + " now contains a value of " + dataList.ElementAt(num) + " at beat/index " + dataList[num]);
-        }*/
-        /*public void updateList(List<float> dataList, RichTextBox button){
-            if (button == null){
-                //needs to update list when removing a button
-                return;
-            }
-            int num = button.Location.X % 60;
-            Console.WriteLine("button location: " + button.Location.X);
-            Console.WriteLine("Created an object at beat: " + num);
-
-            //validate data
-            validatedata(dataList, button);
-
-            dataList[num] = float.Parse(button.Text);
-            Console.WriteLine(dataList.ToString() + " now contains a value of " + dataList.ElementAt(num) + " at beat/index " + dataList[num]);
-        }*/
-
         public void validatedata(List<int> dataList, RichTextBox button){
             if (dataList.ToString().Equals(thumpsTL.ToString()) || dataList.ToString().Equals(barsTL.ToString()) || dataList.ToString().Equals(doubleBarsTL.ToString())){
                 if (int.Parse(button.Text) != 1){
@@ -256,7 +201,10 @@ namespace ThumperLevelEditor {
                 //bool writeLevelData = false;
                 while ((linetoWrite = sourceFile.ReadLine()) != null){
                     //if the file line contains "objData" the first time, prepare saving level data. Else, copy line to new file without altering anything
-                    if (linetoWrite.Equals("objData = [")){
+                    if (linetoWrite.Equals("beatCnt = 200")){
+                        linetoWrite = "beatCnt = " + leafLength.ToString();
+                        destinationFile.WriteLine(linetoWrite);
+                        linetoWrite = "objData = [";
                         destinationFile.WriteLine(linetoWrite);
                         Console.WriteLine("Prepairing to write level data");
                         //writeLevelData = true;
@@ -355,23 +303,6 @@ namespace ThumperLevelEditor {
 
         }
 
-        //eventhandler for custom button
-        private void thumperButtonBar_Click(object sender, EventArgs e){
-            Console.WriteLine("Bars!");
-        }
-        private void thumperButtonDoubleBar_Click(object sender, EventArgs e){
-            Console.WriteLine("Double Bars!");
-        }
-        private void thumperButtonTurn_Click(object sender, EventArgs e){
-            Console.WriteLine("Turn!");
-        }
-        private void thumperButtonPitch_Click(object sender, EventArgs e){
-            Console.WriteLine("Pitch!");
-        }
-
-        private void thumperButtonGamma_Click(object sender, EventArgs e){
-            Console.WriteLine("Gamma!");
-        }
     }
 
 }

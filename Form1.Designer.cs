@@ -27,13 +27,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThumperLevelEditor));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblThumps = new System.Windows.Forms.Label();
             this.lblBars = new System.Windows.Forms.Label();
             this.lblTurn = new System.Windows.Forms.Label();
             this.lblPitch = new System.Windows.Forms.Label();
             this.pnlTimeline = new System.Windows.Forms.Panel();
+            this.dgvGeneral = new System.Windows.Forms.DataGridView();
             this.dgvObstacles = new System.Windows.Forms.DataGridView();
             this.pnlWarnings = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -53,25 +54,24 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblLeafLength = new System.Windows.Forms.Label();
-            this.dgvGeneral = new System.Windows.Forms.DataGridView();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label2 = new System.Windows.Forms.Label();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changelogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.numLeafLength = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblLeafLength = new System.Windows.Forms.Label();
             this.pnlTimeline.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGeneral)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObstacles)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlLaneControlsTexts.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGeneral)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLeafLength)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,28 +80,24 @@
             resources.ApplyResources(this.lblThumps, "lblThumps");
             this.lblThumps.BackColor = System.Drawing.Color.Transparent;
             this.lblThumps.Name = "lblThumps";
-            this.lblThumps.UseWaitCursor = true;
             // 
             // lblBars
             // 
             resources.ApplyResources(this.lblBars, "lblBars");
             this.lblBars.BackColor = System.Drawing.Color.Transparent;
             this.lblBars.Name = "lblBars";
-            this.lblBars.UseWaitCursor = true;
             // 
             // lblTurn
             // 
             resources.ApplyResources(this.lblTurn, "lblTurn");
             this.lblTurn.BackColor = System.Drawing.Color.Transparent;
             this.lblTurn.Name = "lblTurn";
-            this.lblTurn.UseWaitCursor = true;
             // 
             // lblPitch
             // 
             resources.ApplyResources(this.lblPitch, "lblPitch");
             this.lblPitch.BackColor = System.Drawing.Color.Transparent;
             this.lblPitch.Name = "lblPitch";
-            this.lblPitch.UseWaitCursor = true;
             // 
             // pnlTimeline
             // 
@@ -116,6 +112,44 @@
             resources.ApplyResources(this.pnlTimeline, "pnlTimeline");
             this.pnlTimeline.Name = "pnlTimeline";
             // 
+            // dgvGeneral
+            // 
+            this.dgvGeneral.AllowUserToAddRows = false;
+            this.dgvGeneral.AllowUserToDeleteRows = false;
+            this.dgvGeneral.AllowUserToResizeColumns = false;
+            this.dgvGeneral.AllowUserToResizeRows = false;
+            this.dgvGeneral.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(12)))), ((int)(((byte)(29)))));
+            this.dgvGeneral.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvGeneral.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.dgvGeneral.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvGeneral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvGeneral.ColumnHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvGeneral.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvGeneral.EnableHeadersVisualStyles = false;
+            this.dgvGeneral.GridColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.dgvGeneral, "dgvGeneral");
+            this.dgvGeneral.MultiSelect = false;
+            this.dgvGeneral.Name = "dgvGeneral";
+            this.dgvGeneral.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvGeneral.RowHeadersVisible = false;
+            this.dgvGeneral.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvGeneral.RowTemplate.Height = 200;
+            this.dgvGeneral.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvGeneral.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvGeneral.VirtualMode = true;
+            this.dgvGeneral.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGeneral_CellMouseDoubleClick);
+            this.dgvGeneral.CellValuePushed += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgvGeneral_CellValuePushed);
+            this.dgvGeneral.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvGeneral_RowPrePaint);
+            // 
             // dgvObstacles
             // 
             this.dgvObstacles.AllowUserToAddRows = false;
@@ -128,14 +162,16 @@
             this.dgvObstacles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvObstacles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvObstacles.ColumnHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvObstacles.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvObstacles.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvObstacles.EnableHeadersVisualStyles = false;
             this.dgvObstacles.GridColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.dgvObstacles, "dgvObstacles");
@@ -148,6 +184,8 @@
             this.dgvObstacles.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvObstacles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvObstacles.VirtualMode = true;
+            this.dgvObstacles.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvObstacles_CellMouseDoubleClick);
+            this.dgvObstacles.CellParsing += new System.Windows.Forms.DataGridViewCellParsingEventHandler(this.dgvObstacles_CellParsing);
             this.dgvObstacles.CellValuePushed += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgvObstacles_CellValuePushed);
             this.dgvObstacles.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvObstacles_RowPrePaint);
             // 
@@ -171,7 +209,6 @@
             this.lblWarnings.BackColor = System.Drawing.Color.Transparent;
             this.lblWarnings.ForeColor = System.Drawing.Color.Red;
             this.lblWarnings.Name = "lblWarnings";
-            this.lblWarnings.UseWaitCursor = true;
             // 
             // panel1
             // 
@@ -191,7 +228,6 @@
             resources.ApplyResources(this.lblTentacles, "lblTentacles");
             this.lblTentacles.BackColor = System.Drawing.Color.Transparent;
             this.lblTentacles.Name = "lblTentacles";
-            this.lblTentacles.UseWaitCursor = true;
             // 
             // lblLaser
             // 
@@ -205,7 +241,6 @@
             resources.ApplyResources(this.lblGamma, "lblGamma");
             this.lblGamma.BackColor = System.Drawing.Color.Transparent;
             this.lblGamma.Name = "lblGamma";
-            this.lblGamma.UseWaitCursor = true;
             // 
             // lblTunnels
             // 
@@ -220,14 +255,12 @@
             this.lblTrackColor.BackColor = System.Drawing.Color.Transparent;
             this.lblTrackColor.ForeColor = System.Drawing.Color.Red;
             this.lblTrackColor.Name = "lblTrackColor";
-            this.lblTrackColor.UseWaitCursor = true;
             // 
             // lblStalactites
             // 
             resources.ApplyResources(this.lblStalactites, "lblStalactites");
             this.lblStalactites.BackColor = System.Drawing.Color.Transparent;
             this.lblStalactites.Name = "lblStalactites";
-            this.lblStalactites.UseWaitCursor = true;
             // 
             // pnlLaneControlsTexts
             // 
@@ -248,7 +281,6 @@
             resources.ApplyResources(this.lblDBars, "lblDBars");
             this.lblDBars.BackColor = System.Drawing.Color.Transparent;
             this.lblDBars.Name = "lblDBars";
-            this.lblDBars.UseWaitCursor = true;
             // 
             // label1
             // 
@@ -256,7 +288,6 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Name = "label1";
-            this.label1.UseWaitCursor = true;
             // 
             // lblSnakes
             // 
@@ -264,7 +295,6 @@
             this.lblSnakes.BackColor = System.Drawing.Color.Transparent;
             this.lblSnakes.ForeColor = System.Drawing.Color.Red;
             this.lblSnakes.Name = "lblSnakes";
-            this.lblSnakes.UseWaitCursor = true;
             // 
             // menuStrip1
             // 
@@ -296,76 +326,17 @@
             resources.ApplyResources(this.loadToolStripMenuItem, "loadToolStripMenuItem");
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.numLeafLength);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.lblLeafLength);
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
-            // 
-            // lblLeafLength
-            // 
-            resources.ApplyResources(this.lblLeafLength, "lblLeafLength");
-            this.lblLeafLength.BackColor = System.Drawing.Color.Transparent;
-            this.lblLeafLength.Name = "lblLeafLength";
-            this.lblLeafLength.UseWaitCursor = true;
-            // 
-            // dgvGeneral
-            // 
-            this.dgvGeneral.AllowUserToAddRows = false;
-            this.dgvGeneral.AllowUserToDeleteRows = false;
-            this.dgvGeneral.AllowUserToResizeColumns = false;
-            this.dgvGeneral.AllowUserToResizeRows = false;
-            this.dgvGeneral.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(12)))), ((int)(((byte)(29)))));
-            this.dgvGeneral.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvGeneral.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.dgvGeneral.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvGeneral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvGeneral.ColumnHeadersVisible = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvGeneral.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvGeneral.EnableHeadersVisualStyles = false;
-            this.dgvGeneral.GridColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.dgvGeneral, "dgvGeneral");
-            this.dgvGeneral.MultiSelect = false;
-            this.dgvGeneral.Name = "dgvGeneral";
-            this.dgvGeneral.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvGeneral.RowHeadersVisible = false;
-            this.dgvGeneral.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvGeneral.RowTemplate.Height = 200;
-            this.dgvGeneral.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvGeneral.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvGeneral.VirtualMode = true;
-            this.dgvGeneral.CellValuePushed += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgvGeneral_CellValuePushed);
-            this.dgvGeneral.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvGeneral_RowPrePaint);
-            // 
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
             resources.ApplyResources(this.exportToolStripMenuItem, "exportToolStripMenuItem");
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
-            // label2
+            // exitToolStripMenuItem
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Name = "label2";
-            this.label2.UseWaitCursor = true;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
             // 
             // helpToolStripMenuItem
             // 
@@ -394,6 +365,16 @@
             resources.ApplyResources(this.formatToolStripMenuItem, "formatToolStripMenuItem");
             this.formatToolStripMenuItem.Click += new System.EventHandler(this.formatToolStripMenuItem_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.numLeafLength);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.lblLeafLength);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
+            // 
             // numLeafLength
             // 
             this.numLeafLength.BackColor = System.Drawing.Color.DimGray;
@@ -404,6 +385,11 @@
             0,
             0,
             0});
+            this.numLeafLength.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numLeafLength.Name = "numLeafLength";
             this.numLeafLength.Value = new decimal(new int[] {
             255,
@@ -411,6 +397,18 @@
             0,
             0});
             this.numLeafLength.ValueChanged += new System.EventHandler(this.numLeafLength_ValueChanged);
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Name = "label2";
+            // 
+            // lblLeafLength
+            // 
+            resources.ApplyResources(this.lblLeafLength, "lblLeafLength");
+            this.lblLeafLength.BackColor = System.Drawing.Color.Transparent;
+            this.lblLeafLength.Name = "lblLeafLength";
             // 
             // ThumperLevelEditor
             // 
@@ -425,6 +423,7 @@
             this.Name = "ThumperLevelEditor";
             this.Load += new System.EventHandler(this.ThumperLevelEditor_Load);
             this.pnlTimeline.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGeneral)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObstacles)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -436,7 +435,6 @@
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGeneral)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLeafLength)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

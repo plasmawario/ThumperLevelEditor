@@ -63,6 +63,8 @@ namespace ThumperLevelEditor {
             dgvGeneral.ColumnCount = editor.leafLength;
 
             editor.ResetListLengths();
+            GenerateColumnStyle(dgvObstacles);
+            GenerateColumnStyle(dgvGeneral);
         }
 
         private void dgvObstacles_CellValuePushed(object sender, DataGridViewCellValueEventArgs e){
@@ -97,6 +99,9 @@ namespace ThumperLevelEditor {
                     break;
             }
             //cell.UpdateCellValue(e.ColumnIndex, e.RowIndex);
+            //cell.EditingControl.Text = cell.CurrentCell.EditedFormattedValue.ToString();
+            //cell.ClearSelection();
+            cell.RefreshEdit();
         }
 
         private void dgvGeneral_CellValuePushed(object sender, DataGridViewCellValueEventArgs e){
@@ -122,7 +127,7 @@ namespace ThumperLevelEditor {
                     editor.MissingFeatureDialogue();
                     break;
             }
-            //cell.UpdateCellValue(e.ColumnIndex, e.RowIndex);
+            
         }
 
         private void dgvObstacles_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e){
@@ -175,6 +180,61 @@ namespace ThumperLevelEditor {
                 }
                 generPaintInitial++;
             }
+        }
+
+        private void dgvObstacles_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e){
+            DataGridView grid = sender as DataGridView;
+
+            //checks if the cell's value contains a 0. If so, change the value to write to 1. If not, assume the cell value is already 0 and keep the value to write to 0
+            int val = 0;
+            if (int.Parse(grid.CurrentCell.Value.ToString()) == 0){
+                val = 1;
+            }
+
+            //this switch statement only allows 0/1 rows to have the toggle function. All other cells require manual user input
+            switch (e.RowIndex){
+                case 0:
+                    editor.thumpsTL[e.ColumnIndex] = val;
+                    Console.WriteLine("List thumpsTL" + " at index " + e.ColumnIndex + " now has value of " + val);
+                    break;
+                case 1:
+                    editor.barsTL[e.ColumnIndex] = val;
+                    Console.WriteLine("List barsTL" + " at index " + e.ColumnIndex + " now has value of " + val);
+                    break;
+                case 2:
+                    editor.doubleBarsTL[e.ColumnIndex] = val;
+                    Console.WriteLine("List doubleBarsTL" + " at index " + e.ColumnIndex + " now has value of " + val);
+                    break;
+            }
+        }
+
+        private void dgvGeneral_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e){
+            DataGridView grid = sender as DataGridView;
+
+            //checks if the cell's value contains a 0. If so, change the value to write to 1. If not, assume the cell value is already 0 and keep the value to write to 0
+            int val = 0;
+            if (int.Parse(grid.CurrentCell.Value.ToString()) == 0){
+                val = 1;
+            }
+
+            //this switch statement only allows 0/1 rows to have the toggle function. All other cells require manual user input
+            switch (e.RowIndex){
+                case 1:
+                    editor.stalactitesTL[e.ColumnIndex] = val;
+                    Console.WriteLine("List stalactitesTL" + " at index " + e.ColumnIndex + " now has value of " + val);
+                    break;
+                case 2:
+                    editor.tentaclesTL[e.ColumnIndex] = val;
+                    Console.WriteLine("List tentaclesTL" + " at index " + e.ColumnIndex + " now has value of " + val);
+                    break;
+            }
+        }
+
+        private void dgvObstacles_CellParsing(object sender, DataGridViewCellParsingEventArgs e){
+            DataGridView cell = (DataGridView)sender;
+            cell.CurrentCell.Value = e.Value;
+            
+            e.ParsingApplied = true;
         }
 
         //--------------------------------------------------//
