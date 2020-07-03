@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Collections;
 using System.IO;
 
 namespace ThumperLevelEditor {
@@ -12,6 +13,9 @@ namespace ThumperLevelEditor {
         //Thumper general properties
         public int bpm = 160;
         public int leafLength = 255;
+
+        //lists for lists to bind to datagridviews
+        //public List<List>[] obstaclesTL = new List<IList>[5];
 
         //lists for timelines of buttons the player can interact with
         public List<int> thumpsTL, barsTL, doubleBarsTL;
@@ -22,6 +26,9 @@ namespace ThumperLevelEditor {
         public StreamWriter destinationFile;
 
         public void Initialize() {
+
+            //holds editor timeline lists
+            //obstaclesTL[0] = thumpsTL;
 
             //Thumper editor timeline lists
             thumpsTL = new List<int>(leafLength);
@@ -188,7 +195,7 @@ namespace ThumperLevelEditor {
                 fs.Dispose();
                 exportFile.Dispose();
 
-                string srcfile = "ExportFileTemplate.txt";
+                //string srcfile = "ExportFileTemplate.txt";
 
                 //copy's file contents from the template file to a new file
                 destinationFile = new StreamWriter(fs.Name, true);

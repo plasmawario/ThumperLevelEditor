@@ -26,30 +26,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThumperLevelEditor));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.lblThumps = new System.Windows.Forms.Label();
-            this.lblBars = new System.Windows.Forms.Label();
-            this.lblTurn = new System.Windows.Forms.Label();
-            this.lblPitch = new System.Windows.Forms.Label();
-            this.pnlTimeline = new System.Windows.Forms.Panel();
-            this.dgvGeneral = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThumperLevelEditor));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.pnlLeafEditor = new System.Windows.Forms.Panel();
+            this.combType = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.combLane = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnResetPlayback = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.dgvObstacles = new System.Windows.Forms.DataGridView();
-            this.pnlWarnings = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblWarnings = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTentacles = new System.Windows.Forms.Label();
-            this.lblLaser = new System.Windows.Forms.Label();
-            this.lblGamma = new System.Windows.Forms.Label();
-            this.lblTunnels = new System.Windows.Forms.Label();
-            this.lblTrackColor = new System.Windows.Forms.Label();
-            this.lblStalactites = new System.Windows.Forms.Label();
-            this.pnlLaneControlsTexts = new System.Windows.Forms.Panel();
-            this.lblDBars = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblSnakes = new System.Windows.Forms.Label();
+            this.numLeafLength = new System.Windows.Forms.NumericUpDown();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.leafFileEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblLeafLength = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,95 +57,97 @@
             this.contactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changelogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.numLeafLength = new System.Windows.Forms.NumericUpDown();
+            this.pnl = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblLeafLength = new System.Windows.Forms.Label();
-            this.pnlTimeline.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGeneral)).BeginInit();
+            this.pnlLevelEditor = new System.Windows.Forms.Panel();
+            this.numLeafDelay = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.menuStrip3 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.label8 = new System.Windows.Forms.Label();
+            this.numDefaultValue = new System.Windows.Forms.NumericUpDown();
+            this.lblLog = new System.Windows.Forms.Label();
+            this.pnlLeafEditor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObstacles)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.pnlLaneControlsTexts.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numLeafLength)).BeginInit();
+            this.menuStrip2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.pnl.SuspendLayout();
+            this.pnlLevelEditor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numLeafDelay)).BeginInit();
+            this.menuStrip3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDefaultValue)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblThumps
+            // pnlLeafEditor
             // 
-            resources.ApplyResources(this.lblThumps, "lblThumps");
-            this.lblThumps.BackColor = System.Drawing.Color.Transparent;
-            this.lblThumps.Name = "lblThumps";
+            this.pnlLeafEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.pnlLeafEditor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlLeafEditor.Controls.Add(this.numDefaultValue);
+            this.pnlLeafEditor.Controls.Add(this.label8);
+            this.pnlLeafEditor.Controls.Add(this.combType);
+            this.pnlLeafEditor.Controls.Add(this.label7);
+            this.pnlLeafEditor.Controls.Add(this.combLane);
+            this.pnlLeafEditor.Controls.Add(this.label6);
+            this.pnlLeafEditor.Controls.Add(this.button1);
+            this.pnlLeafEditor.Controls.Add(this.btnResetPlayback);
+            this.pnlLeafEditor.Controls.Add(this.label5);
+            this.pnlLeafEditor.Controls.Add(this.dgvObstacles);
+            this.pnlLeafEditor.Controls.Add(this.numLeafLength);
+            this.pnlLeafEditor.Controls.Add(this.menuStrip2);
+            this.pnlLeafEditor.Controls.Add(this.lblLeafLength);
+            resources.ApplyResources(this.pnlLeafEditor, "pnlLeafEditor");
+            this.pnlLeafEditor.Name = "pnlLeafEditor";
             // 
-            // lblBars
+            // combType
             // 
-            resources.ApplyResources(this.lblBars, "lblBars");
-            this.lblBars.BackColor = System.Drawing.Color.Transparent;
-            this.lblBars.Name = "lblBars";
+            this.combType.BackColor = System.Drawing.Color.DimGray;
+            resources.ApplyResources(this.combType, "combType");
+            this.combType.FormattingEnabled = true;
+            this.combType.Name = "combType";
+            this.combType.SelectionChangeCommitted += new System.EventHandler(this.combType_SelectionChangeCommitted);
             // 
-            // lblTurn
+            // label7
             // 
-            resources.ApplyResources(this.lblTurn, "lblTurn");
-            this.lblTurn.BackColor = System.Drawing.Color.Transparent;
-            this.lblTurn.Name = "lblTurn";
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Name = "label7";
             // 
-            // lblPitch
+            // combLane
             // 
-            resources.ApplyResources(this.lblPitch, "lblPitch");
-            this.lblPitch.BackColor = System.Drawing.Color.Transparent;
-            this.lblPitch.Name = "lblPitch";
+            this.combLane.BackColor = System.Drawing.Color.DimGray;
+            resources.ApplyResources(this.combLane, "combLane");
+            this.combLane.FormattingEnabled = true;
+            this.combLane.Name = "combLane";
+            this.combLane.SelectionChangeCommitted += new System.EventHandler(this.combLane_SelectionChangeCommitted);
             // 
-            // pnlTimeline
+            // label6
             // 
-            this.pnlTimeline.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.pnlTimeline.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlTimeline.Controls.Add(this.dgvGeneral);
-            this.pnlTimeline.Controls.Add(this.dgvObstacles);
-            this.pnlTimeline.Controls.Add(this.pnlWarnings);
-            this.pnlTimeline.Controls.Add(this.panel3);
-            this.pnlTimeline.Controls.Add(this.panel1);
-            this.pnlTimeline.Controls.Add(this.pnlLaneControlsTexts);
-            resources.ApplyResources(this.pnlTimeline, "pnlTimeline");
-            this.pnlTimeline.Name = "pnlTimeline";
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Name = "label6";
             // 
-            // dgvGeneral
+            // button1
             // 
-            this.dgvGeneral.AllowUserToAddRows = false;
-            this.dgvGeneral.AllowUserToDeleteRows = false;
-            this.dgvGeneral.AllowUserToResizeColumns = false;
-            this.dgvGeneral.AllowUserToResizeRows = false;
-            this.dgvGeneral.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(12)))), ((int)(((byte)(29)))));
-            this.dgvGeneral.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvGeneral.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.dgvGeneral.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvGeneral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvGeneral.ColumnHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvGeneral.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvGeneral.EnableHeadersVisualStyles = false;
-            this.dgvGeneral.GridColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.dgvGeneral, "dgvGeneral");
-            this.dgvGeneral.MultiSelect = false;
-            this.dgvGeneral.Name = "dgvGeneral";
-            this.dgvGeneral.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvGeneral.RowHeadersVisible = false;
-            this.dgvGeneral.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvGeneral.RowTemplate.Height = 200;
-            this.dgvGeneral.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvGeneral.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvGeneral.VirtualMode = true;
-            this.dgvGeneral.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGeneral_CellMouseDoubleClick);
-            this.dgvGeneral.CellValuePushed += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgvGeneral_CellValuePushed);
-            this.dgvGeneral.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvGeneral_RowPrePaint);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(80)))));
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnResetPlayback
+            // 
+            this.btnResetPlayback.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(160)))));
+            resources.ApplyResources(this.btnResetPlayback, "btnResetPlayback");
+            this.btnResetPlayback.Name = "btnResetPlayback";
+            this.btnResetPlayback.UseVisualStyleBackColor = false;
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Name = "label5";
             // 
             // dgvObstacles
             // 
@@ -156,145 +155,127 @@
             this.dgvObstacles.AllowUserToDeleteRows = false;
             this.dgvObstacles.AllowUserToResizeColumns = false;
             this.dgvObstacles.AllowUserToResizeRows = false;
-            this.dgvObstacles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(12)))), ((int)(((byte)(29)))));
+            this.dgvObstacles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.dgvObstacles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvObstacles.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.dgvObstacles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvObstacles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvObstacles.ColumnHeadersVisible = false;
+            this.dgvObstacles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle4.Format = "N0";
             dataGridViewCellStyle4.NullValue = null;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvObstacles.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvObstacles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            resources.ApplyResources(this.dgvObstacles, "dgvObstacles");
+            this.dgvObstacles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle5.Format = "N1";
+            dataGridViewCellStyle5.NullValue = null;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvObstacles.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvObstacles.EnableHeadersVisualStyles = false;
             this.dgvObstacles.GridColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.dgvObstacles, "dgvObstacles");
             this.dgvObstacles.MultiSelect = false;
             this.dgvObstacles.Name = "dgvObstacles";
             this.dgvObstacles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvObstacles.RowHeadersVisible = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.NullValue = null;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvObstacles.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvObstacles.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvObstacles.RowTemplate.Height = 200;
             this.dgvObstacles.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvObstacles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvObstacles.VirtualMode = true;
             this.dgvObstacles.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvObstacles_CellMouseDoubleClick);
-            this.dgvObstacles.CellParsing += new System.Windows.Forms.DataGridViewCellParsingEventHandler(this.dgvObstacles_CellParsing);
+            this.dgvObstacles.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgvObstacles_CellValueNeeded);
             this.dgvObstacles.CellValuePushed += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgvObstacles_CellValuePushed);
-            this.dgvObstacles.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvObstacles_RowPrePaint);
+            this.dgvObstacles.CurrentCellChanged += new System.EventHandler(this.dgvObstacles_CurrentCellChanged);
             // 
-            // pnlWarnings
+            // numLeafLength
             // 
-            this.pnlWarnings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            resources.ApplyResources(this.pnlWarnings, "pnlWarnings");
-            this.pnlWarnings.Name = "pnlWarnings";
+            this.numLeafLength.BackColor = System.Drawing.Color.DimGray;
+            this.numLeafLength.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.numLeafLength, "numLeafLength");
+            this.numLeafLength.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numLeafLength.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numLeafLength.Name = "numLeafLength";
+            this.numLeafLength.Value = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numLeafLength.ValueChanged += new System.EventHandler(this.numLeafLength_ValueChanged);
             // 
-            // panel3
+            // menuStrip2
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.lblWarnings);
-            resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.Name = "panel3";
+            this.menuStrip2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
+            resources.ApplyResources(this.menuStrip2, "menuStrip2");
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.leafFileEditorToolStripMenuItem,
+            this.fileToolStripMenuItem1});
+            this.menuStrip2.Name = "menuStrip2";
             // 
-            // lblWarnings
+            // leafFileEditorToolStripMenuItem
             // 
-            resources.ApplyResources(this.lblWarnings, "lblWarnings");
-            this.lblWarnings.BackColor = System.Drawing.Color.Transparent;
-            this.lblWarnings.ForeColor = System.Drawing.Color.Red;
-            this.lblWarnings.Name = "lblWarnings";
+            this.leafFileEditorToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.leafFileEditorToolStripMenuItem, "leafFileEditorToolStripMenuItem");
+            this.leafFileEditorToolStripMenuItem.Name = "leafFileEditorToolStripMenuItem";
             // 
-            // panel1
+            // fileToolStripMenuItem1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.lblTentacles);
-            this.panel1.Controls.Add(this.lblLaser);
-            this.panel1.Controls.Add(this.lblGamma);
-            this.panel1.Controls.Add(this.lblTunnels);
-            this.panel1.Controls.Add(this.lblTrackColor);
-            this.panel1.Controls.Add(this.lblStalactites);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
+            this.fileToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem1,
+            this.loadToolStripMenuItem1,
+            this.exportToolStripMenuItem1});
+            this.fileToolStripMenuItem1.ForeColor = System.Drawing.Color.Silver;
+            this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
+            resources.ApplyResources(this.fileToolStripMenuItem1, "fileToolStripMenuItem1");
             // 
-            // lblTentacles
+            // saveToolStripMenuItem1
             // 
-            resources.ApplyResources(this.lblTentacles, "lblTentacles");
-            this.lblTentacles.BackColor = System.Drawing.Color.Transparent;
-            this.lblTentacles.Name = "lblTentacles";
+            this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
+            resources.ApplyResources(this.saveToolStripMenuItem1, "saveToolStripMenuItem1");
+            this.saveToolStripMenuItem1.Click += new System.EventHandler(this.saveToolStripMenuItem1_Click);
             // 
-            // lblLaser
+            // loadToolStripMenuItem1
             // 
-            resources.ApplyResources(this.lblLaser, "lblLaser");
-            this.lblLaser.BackColor = System.Drawing.Color.Transparent;
-            this.lblLaser.Name = "lblLaser";
-            this.lblLaser.UseWaitCursor = true;
+            this.loadToolStripMenuItem1.Name = "loadToolStripMenuItem1";
+            resources.ApplyResources(this.loadToolStripMenuItem1, "loadToolStripMenuItem1");
+            this.loadToolStripMenuItem1.Click += new System.EventHandler(this.loadToolStripMenuItem1_Click);
             // 
-            // lblGamma
+            // exportToolStripMenuItem1
             // 
-            resources.ApplyResources(this.lblGamma, "lblGamma");
-            this.lblGamma.BackColor = System.Drawing.Color.Transparent;
-            this.lblGamma.Name = "lblGamma";
+            this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
+            resources.ApplyResources(this.exportToolStripMenuItem1, "exportToolStripMenuItem1");
+            this.exportToolStripMenuItem1.Click += new System.EventHandler(this.exportToolStripMenuItem1_Click);
             // 
-            // lblTunnels
+            // lblLeafLength
             // 
-            resources.ApplyResources(this.lblTunnels, "lblTunnels");
-            this.lblTunnels.BackColor = System.Drawing.Color.Transparent;
-            this.lblTunnels.Name = "lblTunnels";
-            this.lblTunnels.UseWaitCursor = true;
-            // 
-            // lblTrackColor
-            // 
-            resources.ApplyResources(this.lblTrackColor, "lblTrackColor");
-            this.lblTrackColor.BackColor = System.Drawing.Color.Transparent;
-            this.lblTrackColor.ForeColor = System.Drawing.Color.Red;
-            this.lblTrackColor.Name = "lblTrackColor";
-            // 
-            // lblStalactites
-            // 
-            resources.ApplyResources(this.lblStalactites, "lblStalactites");
-            this.lblStalactites.BackColor = System.Drawing.Color.Transparent;
-            this.lblStalactites.Name = "lblStalactites";
-            // 
-            // pnlLaneControlsTexts
-            // 
-            this.pnlLaneControlsTexts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.pnlLaneControlsTexts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlLaneControlsTexts.Controls.Add(this.lblDBars);
-            this.pnlLaneControlsTexts.Controls.Add(this.label1);
-            this.pnlLaneControlsTexts.Controls.Add(this.lblThumps);
-            this.pnlLaneControlsTexts.Controls.Add(this.lblBars);
-            this.pnlLaneControlsTexts.Controls.Add(this.lblSnakes);
-            this.pnlLaneControlsTexts.Controls.Add(this.lblTurn);
-            this.pnlLaneControlsTexts.Controls.Add(this.lblPitch);
-            resources.ApplyResources(this.pnlLaneControlsTexts, "pnlLaneControlsTexts");
-            this.pnlLaneControlsTexts.Name = "pnlLaneControlsTexts";
-            // 
-            // lblDBars
-            // 
-            resources.ApplyResources(this.lblDBars, "lblDBars");
-            this.lblDBars.BackColor = System.Drawing.Color.Transparent;
-            this.lblDBars.Name = "lblDBars";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Name = "label1";
-            // 
-            // lblSnakes
-            // 
-            resources.ApplyResources(this.lblSnakes, "lblSnakes");
-            this.lblSnakes.BackColor = System.Drawing.Color.Transparent;
-            this.lblSnakes.ForeColor = System.Drawing.Color.Red;
-            this.lblSnakes.Name = "lblSnakes";
+            resources.ApplyResources(this.lblLeafLength, "lblLeafLength");
+            this.lblLeafLength.BackColor = System.Drawing.Color.Transparent;
+            this.lblLeafLength.Name = "lblLeafLength";
             // 
             // menuStrip1
             // 
@@ -365,38 +346,21 @@
             resources.ApplyResources(this.formatToolStripMenuItem, "formatToolStripMenuItem");
             this.formatToolStripMenuItem.Click += new System.EventHandler(this.formatToolStripMenuItem_Click);
             // 
-            // panel2
+            // pnl
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.numLeafLength);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.lblLeafLength);
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
+            this.pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl.Controls.Add(this.lblLog);
+            this.pnl.Controls.Add(this.label1);
+            this.pnl.Controls.Add(this.label2);
+            resources.ApplyResources(this.pnl, "pnl");
+            this.pnl.Name = "pnl";
             // 
-            // numLeafLength
+            // label1
             // 
-            this.numLeafLength.BackColor = System.Drawing.Color.DimGray;
-            this.numLeafLength.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.numLeafLength, "numLeafLength");
-            this.numLeafLength.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numLeafLength.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numLeafLength.Name = "numLeafLength";
-            this.numLeafLength.Value = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numLeafLength.ValueChanged += new System.EventHandler(this.numLeafLength_ValueChanged);
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Name = "label1";
             // 
             // label2
             // 
@@ -404,73 +368,136 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Name = "label2";
             // 
-            // lblLeafLength
+            // pnlLevelEditor
             // 
-            resources.ApplyResources(this.lblLeafLength, "lblLeafLength");
-            this.lblLeafLength.BackColor = System.Drawing.Color.Transparent;
-            this.lblLeafLength.Name = "lblLeafLength";
+            this.pnlLevelEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.pnlLevelEditor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlLevelEditor.Controls.Add(this.numLeafDelay);
+            this.pnlLevelEditor.Controls.Add(this.label4);
+            this.pnlLevelEditor.Controls.Add(this.label3);
+            this.pnlLevelEditor.Controls.Add(this.menuStrip3);
+            resources.ApplyResources(this.pnlLevelEditor, "pnlLevelEditor");
+            this.pnlLevelEditor.Name = "pnlLevelEditor";
+            // 
+            // numLeafDelay
+            // 
+            this.numLeafDelay.BackColor = System.Drawing.Color.DimGray;
+            this.numLeafDelay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.numLeafDelay, "numLeafDelay");
+            this.numLeafDelay.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numLeafDelay.Name = "numLeafDelay";
+            this.numLeafDelay.Value = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Name = "label4";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Name = "label3";
+            // 
+            // menuStrip3
+            // 
+            this.menuStrip3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
+            resources.ApplyResources(this.menuStrip3, "menuStrip3");
+            this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.menuStrip3.Name = "menuStrip3";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Name = "label8";
+            // 
+            // numDefaultValue
+            // 
+            this.numDefaultValue.BackColor = System.Drawing.Color.DimGray;
+            this.numDefaultValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numDefaultValue.DecimalPlaces = 2;
+            resources.ApplyResources(this.numDefaultValue, "numDefaultValue");
+            this.numDefaultValue.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numDefaultValue.Minimum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            -2147483648});
+            this.numDefaultValue.Name = "numDefaultValue";
+            this.numDefaultValue.ValueChanged += new System.EventHandler(this.numDefaultValue_ValueChanged);
+            // 
+            // lblLog
+            // 
+            this.lblLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lblLog.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.lblLog, "lblLog");
+            this.lblLog.Name = "lblLog";
             // 
             // ThumperLevelEditor
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pnlTimeline);
+            this.Controls.Add(this.pnlLevelEditor);
+            this.Controls.Add(this.pnl);
+            this.Controls.Add(this.pnlLeafEditor);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ThumperLevelEditor";
             this.Load += new System.EventHandler(this.ThumperLevelEditor_Load);
-            this.pnlTimeline.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGeneral)).EndInit();
+            this.pnlLeafEditor.ResumeLayout(false);
+            this.pnlLeafEditor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObstacles)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.pnlLaneControlsTexts.ResumeLayout(false);
-            this.pnlLaneControlsTexts.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numLeafLength)).EndInit();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numLeafLength)).EndInit();
+            this.pnl.ResumeLayout(false);
+            this.pnl.PerformLayout();
+            this.pnlLevelEditor.ResumeLayout(false);
+            this.pnlLevelEditor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numLeafDelay)).EndInit();
+            this.menuStrip3.ResumeLayout(false);
+            this.menuStrip3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDefaultValue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblThumps;
-        private System.Windows.Forms.Label lblBars;
-        private System.Windows.Forms.Label lblTurn;
-        private System.Windows.Forms.Label lblPitch;
-        private System.Windows.Forms.Panel pnlTimeline;
-        private System.Windows.Forms.Panel pnlLaneControlsTexts;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblGamma;
-        private System.Windows.Forms.Label lblTunnels;
-        private System.Windows.Forms.Label lblStalactites;
+        private System.Windows.Forms.Panel pnlLeafEditor;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.Label lblTentacles;
-        private System.Windows.Forms.Panel pnlWarnings;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label lblWarnings;
-        private System.Windows.Forms.Label lblLaser;
-        private System.Windows.Forms.Label lblTrackColor;
-        private System.Windows.Forms.Label lblSnakes;
-        private System.Windows.Forms.Label lblDBars;
         private System.Windows.Forms.DataGridView dgvObstacles;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnl;
         private System.Windows.Forms.Label lblLeafLength;
-        private System.Windows.Forms.DataGridView dgvGeneral;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
@@ -478,6 +505,29 @@
         private System.Windows.Forms.ToolStripMenuItem changelogToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem formatToolStripMenuItem;
         private System.Windows.Forms.NumericUpDown numLeafLength;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem leafFileEditorToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnResetPlayback;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel pnlLevelEditor;
+        private System.Windows.Forms.NumericUpDown numLeafDelay;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MenuStrip menuStrip3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem1;
+        private System.Windows.Forms.ComboBox combLane;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox combType;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown numDefaultValue;
+        private System.Windows.Forms.Label lblLog;
     }
 }
 
