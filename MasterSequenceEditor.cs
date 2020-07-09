@@ -5,7 +5,15 @@ using System.Text;
 
 namespace ThumperLevelEditor {
     class MasterSequenceEditor {
-        public int bpm;
-        public string skyboxName = "skybox_cube", introLevelName = "intro.lvl", checkpointLevelName = "checkpoint.lvl";
+        public float bpm;
+        public string skyboxName, introLevelName, checkpointLevelName;
+
+        public MasterSequenceEditor(){
+            this.bpm = 400;
+            this.skyboxName = "skybox_cube";
+            this.introLevelName = "intro.lvl";
+            this.checkpointLevelName = "checkpoint.lvl";
+        }
+
     }
 }

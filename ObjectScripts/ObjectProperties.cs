@@ -6,7 +6,7 @@ using System.Text;
 namespace ThumperLevelEditor {
     class ObjectProperties {
 
-
+        public string name;
         public string[] type;
         public string[] lane = {".a01", ".a02", ".ent", ".z01", ".z02"};
         public int id; //used as an index for accessing the type array. A 0 indicates no object, and so should reference an empty string in the array to indicate no type
@@ -15,7 +15,7 @@ namespace ThumperLevelEditor {
         public decimal step_val;
         public bool step;
 
-        public ObjectProperties(int id, int laneID, string objName, string paramType, string paramLane, string dataType, string footer, bool step, decimal step_val){
+        public ObjectProperties(int id, int laneID, string objName, string paramType, string paramLane, string dataType, string footer, bool step, decimal step_val, string name){
             this.id = id;
             this.laneID = laneID;
             this.obj_name = objName;
@@ -25,6 +25,7 @@ namespace ThumperLevelEditor {
             this.footer = footer;
             this.step = step;
             this.step_val = step_val;
+            this.name = name;
         }
 
         public ObjectProperties(){

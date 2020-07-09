@@ -26,17 +26,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThumperLevelEditor));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlLeafEditor = new System.Windows.Forms.Panel();
+            this.numDefaultValue = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
             this.combType = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.combLane = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnResetPlayback = new System.Windows.Forms.Button();
+            this.btnPlay = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvObstacles = new System.Windows.Forms.DataGridView();
             this.numLeafLength = new System.Windows.Forms.NumericUpDown();
@@ -58,6 +61,7 @@
             this.changelogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl = new System.Windows.Forms.Panel();
+            this.lblLog = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlLevelEditor = new System.Windows.Forms.Panel();
@@ -66,10 +70,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.label8 = new System.Windows.Forms.Label();
-            this.numDefaultValue = new System.Windows.Forms.NumericUpDown();
-            this.lblLog = new System.Windows.Forms.Label();
+            this.tmrPlayback = new System.Windows.Forms.Timer(this.components);
+            this.btnPause = new System.Windows.Forms.Button();
+            this.numBPM = new System.Windows.Forms.NumericUpDown();
             this.pnlLeafEditor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDefaultValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObstacles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLeafLength)).BeginInit();
             this.menuStrip2.SuspendLayout();
@@ -78,21 +83,22 @@
             this.pnlLevelEditor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numLeafDelay)).BeginInit();
             this.menuStrip3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDefaultValue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBPM)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLeafEditor
             // 
             this.pnlLeafEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.pnlLeafEditor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlLeafEditor.Controls.Add(this.btnPause);
             this.pnlLeafEditor.Controls.Add(this.numDefaultValue);
             this.pnlLeafEditor.Controls.Add(this.label8);
             this.pnlLeafEditor.Controls.Add(this.combType);
             this.pnlLeafEditor.Controls.Add(this.label7);
             this.pnlLeafEditor.Controls.Add(this.combLane);
             this.pnlLeafEditor.Controls.Add(this.label6);
-            this.pnlLeafEditor.Controls.Add(this.button1);
-            this.pnlLeafEditor.Controls.Add(this.btnResetPlayback);
+            this.pnlLeafEditor.Controls.Add(this.btnPlay);
+            this.pnlLeafEditor.Controls.Add(this.btnStop);
             this.pnlLeafEditor.Controls.Add(this.label5);
             this.pnlLeafEditor.Controls.Add(this.dgvObstacles);
             this.pnlLeafEditor.Controls.Add(this.numLeafLength);
@@ -100,6 +106,31 @@
             this.pnlLeafEditor.Controls.Add(this.lblLeafLength);
             resources.ApplyResources(this.pnlLeafEditor, "pnlLeafEditor");
             this.pnlLeafEditor.Name = "pnlLeafEditor";
+            // 
+            // numDefaultValue
+            // 
+            this.numDefaultValue.BackColor = System.Drawing.Color.DimGray;
+            this.numDefaultValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numDefaultValue.DecimalPlaces = 2;
+            resources.ApplyResources(this.numDefaultValue, "numDefaultValue");
+            this.numDefaultValue.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numDefaultValue.Minimum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            -2147483648});
+            this.numDefaultValue.Name = "numDefaultValue";
+            this.numDefaultValue.ValueChanged += new System.EventHandler(this.numDefaultValue_ValueChanged);
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Name = "label8";
             // 
             // combType
             // 
@@ -129,19 +160,21 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Name = "label6";
             // 
-            // button1
+            // btnPlay
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(80)))));
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnPlay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(80)))));
+            resources.ApplyResources(this.btnPlay, "btnPlay");
+            this.btnPlay.Name = "btnPlay";
+            this.btnPlay.UseVisualStyleBackColor = false;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
-            // btnResetPlayback
+            // btnStop
             // 
-            this.btnResetPlayback.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(160)))));
-            resources.ApplyResources(this.btnResetPlayback, "btnResetPlayback");
-            this.btnResetPlayback.Name = "btnResetPlayback";
-            this.btnResetPlayback.UseVisualStyleBackColor = false;
+            this.btnStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            resources.ApplyResources(this.btnStop, "btnStop");
+            this.btnStop.Name = "btnStop";
+            this.btnStop.UseVisualStyleBackColor = false;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // label5
             // 
@@ -350,11 +383,19 @@
             // 
             this.pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl.Controls.Add(this.numBPM);
             this.pnl.Controls.Add(this.lblLog);
             this.pnl.Controls.Add(this.label1);
             this.pnl.Controls.Add(this.label2);
             resources.ApplyResources(this.pnl, "pnl");
             this.pnl.Name = "pnl";
+            // 
+            // lblLog
+            // 
+            this.lblLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lblLog.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.lblLog, "lblLog");
+            this.lblLog.Name = "lblLog";
             // 
             // label1
             // 
@@ -422,37 +463,41 @@
             resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             // 
-            // label8
+            // tmrPlayback
             // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Name = "label8";
+            this.tmrPlayback.Interval = 1000;
+            this.tmrPlayback.Tick += new System.EventHandler(this.tmrPlayback_Tick);
             // 
-            // numDefaultValue
+            // btnPause
             // 
-            this.numDefaultValue.BackColor = System.Drawing.Color.DimGray;
-            this.numDefaultValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numDefaultValue.DecimalPlaces = 2;
-            resources.ApplyResources(this.numDefaultValue, "numDefaultValue");
-            this.numDefaultValue.Maximum = new decimal(new int[] {
-            255,
+            this.btnPause.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(160)))));
+            resources.ApplyResources(this.btnPause, "btnPause");
+            this.btnPause.Name = "btnPause";
+            this.btnPause.UseVisualStyleBackColor = false;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
+            // 
+            // numBPM
+            // 
+            this.numBPM.BackColor = System.Drawing.Color.DimGray;
+            this.numBPM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.numBPM, "numBPM");
+            this.numBPM.Maximum = new decimal(new int[] {
+            999999,
             0,
             0,
             0});
-            this.numDefaultValue.Minimum = new decimal(new int[] {
-            255,
+            this.numBPM.Minimum = new decimal(new int[] {
+            999999,
             0,
             0,
             -2147483648});
-            this.numDefaultValue.Name = "numDefaultValue";
-            this.numDefaultValue.ValueChanged += new System.EventHandler(this.numDefaultValue_ValueChanged);
-            // 
-            // lblLog
-            // 
-            this.lblLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.lblLog.Cursor = System.Windows.Forms.Cursors.Default;
-            resources.ApplyResources(this.lblLog, "lblLog");
-            this.lblLog.Name = "lblLog";
+            this.numBPM.Name = "numBPM";
+            this.numBPM.Value = new decimal(new int[] {
+            400,
+            0,
+            0,
+            0});
+            this.numBPM.ValueChanged += new System.EventHandler(this.numBPM_ValueChanged);
             // 
             // ThumperLevelEditor
             // 
@@ -469,6 +514,7 @@
             this.Load += new System.EventHandler(this.ThumperLevelEditor_Load);
             this.pnlLeafEditor.ResumeLayout(false);
             this.pnlLeafEditor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDefaultValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObstacles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLeafLength)).EndInit();
             this.menuStrip2.ResumeLayout(false);
@@ -482,7 +528,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numLeafDelay)).EndInit();
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDefaultValue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBPM)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -508,8 +554,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem leafFileEditorToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnResetPlayback;
+        private System.Windows.Forms.Button btnPlay;
+        private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel pnlLevelEditor;
         private System.Windows.Forms.NumericUpDown numLeafDelay;
@@ -528,6 +574,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown numDefaultValue;
         private System.Windows.Forms.Label lblLog;
+        private System.Windows.Forms.Timer tmrPlayback;
+        private System.Windows.Forms.Button btnPause;
+        private System.Windows.Forms.NumericUpDown numBPM;
     }
 }
 

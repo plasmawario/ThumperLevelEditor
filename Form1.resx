@@ -120,6 +120,18 @@
   <metadata name="menuStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>
   </metadata>
+  <data name="&gt;&gt;btnPause.Name" xml:space="preserve">
+    <value>btnPause</value>
+  </data>
+  <data name="&gt;&gt;btnPause.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPause.Parent" xml:space="preserve">
+    <value>pnlLeafEditor</value>
+  </data>
+  <data name="&gt;&gt;btnPause.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;numDefaultValue.Name" xml:space="preserve">
     <value>numDefaultValue</value>
   </data>
@@ -130,7 +142,7 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;numDefaultValue.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;label8.Name" xml:space="preserve">
     <value>label8</value>
@@ -142,7 +154,7 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;combType.Name" xml:space="preserve">
     <value>combType</value>
@@ -154,7 +166,7 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;combType.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;label7.Name" xml:space="preserve">
     <value>label7</value>
@@ -166,7 +178,7 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;combLane.Name" xml:space="preserve">
     <value>combLane</value>
@@ -178,7 +190,7 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;combLane.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
@@ -190,31 +202,31 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>pnlLeafEditor</value>
-  </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;btnResetPlayback.Name" xml:space="preserve">
-    <value>btnResetPlayback</value>
+  <data name="&gt;&gt;btnPlay.Name" xml:space="preserve">
+    <value>btnPlay</value>
   </data>
-  <data name="&gt;&gt;btnResetPlayback.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnPlay.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnResetPlayback.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnPlay.Parent" xml:space="preserve">
     <value>pnlLeafEditor</value>
   </data>
-  <data name="&gt;&gt;btnResetPlayback.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnPlay.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="&gt;&gt;btnStop.Name" xml:space="preserve">
+    <value>btnStop</value>
+  </data>
+  <data name="&gt;&gt;btnStop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStop.Parent" xml:space="preserve">
+    <value>pnlLeafEditor</value>
+  </data>
+  <data name="&gt;&gt;btnStop.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -226,7 +238,7 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;dgvObstacles.Name" xml:space="preserve">
     <value>dgvObstacles</value>
@@ -238,7 +250,7 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;dgvObstacles.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;numLeafLength.Name" xml:space="preserve">
     <value>numLeafLength</value>
@@ -250,7 +262,7 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;numLeafLength.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;menuStrip2.Name" xml:space="preserve">
     <value>menuStrip2</value>
@@ -262,7 +274,7 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;menuStrip2.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;lblLeafLength.Name" xml:space="preserve">
     <value>lblLeafLength</value>
@@ -274,7 +286,7 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;lblLeafLength.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pnlLeafEditor.Location" type="System.Drawing.Point, System.Drawing">
@@ -299,7 +311,64 @@
   <data name="&gt;&gt;pnlLeafEditor.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="numDefaultValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 192</value>
+  </data>
+  <data name="numDefaultValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 20</value>
+  </data>
+  <data name="numDefaultValue.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;numDefaultValue.Name" xml:space="preserve">
+    <value>numDefaultValue</value>
+  </data>
+  <data name="&gt;&gt;numDefaultValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numDefaultValue.Parent" xml:space="preserve">
+    <value>pnlLeafEditor</value>
+  </data>
+  <data name="&gt;&gt;numDefaultValue.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8pt, style=Bold</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 175</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 14</value>
+  </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>DefaultValue</value>
+  </data>
+  <data name="label8.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>pnlLeafEditor</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="combType.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -331,7 +400,7 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;combType.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -367,7 +436,7 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="combLane.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -400,7 +469,7 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;combLane.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -436,64 +505,64 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 101</value>
-  </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 25</value>
-  </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>►</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>pnlLeafEditor</value>
-  </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="btnResetPlayback.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="btnPlay.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="btnResetPlayback.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 101</value>
+  <data name="btnPlay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="btnResetPlayback.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnPlay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 101</value>
+  </data>
+  <data name="btnPlay.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="btnResetPlayback.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+  <data name="btnPlay.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
   </data>
-  <data name="btnResetPlayback.Text" xml:space="preserve">
-    <value>◄</value>
+  <data name="btnPlay.Text" xml:space="preserve">
+    <value>►</value>
   </data>
-  <data name="&gt;&gt;btnResetPlayback.Name" xml:space="preserve">
-    <value>btnResetPlayback</value>
+  <data name="&gt;&gt;btnPlay.Name" xml:space="preserve">
+    <value>btnPlay</value>
   </data>
-  <data name="&gt;&gt;btnResetPlayback.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnPlay.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnResetPlayback.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnPlay.Parent" xml:space="preserve">
     <value>pnlLeafEditor</value>
   </data>
-  <data name="&gt;&gt;btnResetPlayback.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnPlay.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="btnStop.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnStop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 101</value>
+  </data>
+  <data name="btnStop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="btnStop.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="btnStop.Text" xml:space="preserve">
+    <value>█</value>
+  </data>
+  <data name="&gt;&gt;btnStop.Name" xml:space="preserve">
+    <value>btnStop</value>
+  </data>
+  <data name="&gt;&gt;btnStop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStop.Parent" xml:space="preserve">
+    <value>pnlLeafEditor</value>
+  </data>
+  <data name="&gt;&gt;btnStop.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -529,7 +598,7 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="dgvObstacles.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>20</value>
@@ -559,7 +628,7 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;dgvObstacles.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="numLeafLength.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 44</value>
@@ -580,7 +649,7 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;numLeafLength.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <metadata name="menuStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>
@@ -610,7 +679,7 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;menuStrip2.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="leafFileEditorToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -628,19 +697,19 @@
     <value>File</value>
   </data>
   <data name="saveToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>109, 22</value>
   </data>
   <data name="saveToolStripMenuItem1.Text" xml:space="preserve">
     <value>Save</value>
   </data>
   <data name="loadToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>109, 22</value>
   </data>
   <data name="loadToolStripMenuItem1.Text" xml:space="preserve">
     <value>Load</value>
   </data>
   <data name="exportToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>109, 22</value>
   </data>
   <data name="exportToolStripMenuItem1.Text" xml:space="preserve">
     <value>Export</value>
@@ -679,7 +748,7 @@
     <value>pnlLeafEditor</value>
   </data>
   <data name="&gt;&gt;lblLeafLength.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -718,25 +787,25 @@
     <value>File</value>
   </data>
   <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>108, 22</value>
   </data>
   <data name="saveToolStripMenuItem.Text" xml:space="preserve">
     <value>Save</value>
   </data>
   <data name="loadToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>108, 22</value>
   </data>
   <data name="loadToolStripMenuItem.Text" xml:space="preserve">
     <value>Load</value>
   </data>
   <data name="exportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>108, 22</value>
   </data>
   <data name="exportToolStripMenuItem.Text" xml:space="preserve">
     <value>Export</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>108, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
@@ -748,22 +817,43 @@
     <value>Help</value>
   </data>
   <data name="contactToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>132, 22</value>
   </data>
   <data name="contactToolStripMenuItem.Text" xml:space="preserve">
     <value>Contact</value>
   </data>
   <data name="changelogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>132, 22</value>
   </data>
   <data name="changelogToolStripMenuItem.Text" xml:space="preserve">
     <value>Changelog</value>
   </data>
   <data name="formatToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>132, 22</value>
   </data>
   <data name="formatToolStripMenuItem.Text" xml:space="preserve">
     <value>Format</value>
+  </data>
+  <data name="numBPM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 21</value>
+  </data>
+  <data name="numBPM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 20</value>
+  </data>
+  <data name="numBPM.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;numBPM.Name" xml:space="preserve">
+    <value>numBPM</value>
+  </data>
+  <data name="&gt;&gt;numBPM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numBPM.Parent" xml:space="preserve">
+    <value>pnl</value>
+  </data>
+  <data name="&gt;&gt;numBPM.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="lblLog.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 10pt, style=Bold</value>
@@ -796,7 +886,7 @@
     <value>pnl</value>
   </data>
   <data name="&gt;&gt;lblLog.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -832,7 +922,7 @@
     <value>pnl</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -847,13 +937,13 @@
     <value>23, 664</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 19</value>
+    <value>92, 19</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Beta v0.2</value>
+    <value>Beta v0.2.1</value>
   </data>
   <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -868,7 +958,7 @@
     <value>pnl</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="pnl.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 29</value>
@@ -1095,61 +1185,37 @@
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
     <value>Level File Editor</value>
   </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <metadata name="tmrPlayback.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>362, 17</value>
+  </metadata>
+  <data name="btnPause.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 8pt, style=Bold</value>
-  </data>
-  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnPause.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 175</value>
+  <data name="btnPause.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 101</value>
   </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 14</value>
+  <data name="btnPause.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
   </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+  <data name="btnPause.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
   </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>DefaultValue</value>
+  <data name="btnPause.Text" xml:space="preserve">
+    <value>||</value>
   </data>
-  <data name="label8.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="&gt;&gt;btnPause.Name" xml:space="preserve">
+    <value>btnPause</value>
   </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
+  <data name="&gt;&gt;btnPause.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnPause.Parent" xml:space="preserve">
     <value>pnlLeafEditor</value>
   </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="numDefaultValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 192</value>
-  </data>
-  <data name="numDefaultValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 20</value>
-  </data>
-  <data name="numDefaultValue.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;numDefaultValue.Name" xml:space="preserve">
-    <value>numDefaultValue</value>
-  </data>
-  <data name="&gt;&gt;numDefaultValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numDefaultValue.Parent" xml:space="preserve">
-    <value>pnlLeafEditor</value>
-  </data>
-  <data name="&gt;&gt;numDefaultValue.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnPause.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -1262,6 +1328,12 @@
   </data>
   <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tmrPlayback.Name" xml:space="preserve">
+    <value>tmrPlayback</value>
+  </data>
+  <data name="&gt;&gt;tmrPlayback.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ThumperLevelEditor</value>

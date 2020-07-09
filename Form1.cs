@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
@@ -15,6 +17,10 @@ namespace ThumperLevelEditor {
         LevelFileEditor lvlEditor = new LevelFileEditor();
         MasterSequenceEditor masterEditor = new MasterSequenceEditor();
         VirtualMode virtualmode = new VirtualMode();
+
+        public int pbCounter = 0;
+
+        //public SoundPlayer player = new SoundPlayer();
 
         public int obstPaintInitial = 0;
         public int generPaintInitial = 0;
@@ -36,6 +42,7 @@ namespace ThumperLevelEditor {
 
         private void exportToolStripMenuItem1_Click(object sender, EventArgs e){
             editor.Export();
+            //editor.Save();
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e){
@@ -54,9 +61,36 @@ namespace ThumperLevelEditor {
             MessageBox.Show("Thumps - accepts 0 or 1\nBars - accepts 0 or 1\nDouble bars - accepts 0 or 1\nTurn - accepts any numberic value. Any value greater than 15 (left) or less than -15 (right) will spawn a turn that requires input. Consecutive beats requiring input connect into long turns\nPitch - accepts any numeric value. Beats with no value default to flat track\nGamma - accepts any numeric value. 0 has no effect\nStalactites - accepts 0 or 1\nTentacles - accepts 0 or 1", "Object values format list", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        //playback shit
+        private void btnPlay_Click(object sender, EventArgs e){
+            tmrPlayback.Interval = (int)((60f / masterEditor.bpm) * 1000f);
+
+            pbCounter = -1;
+            tmrPlayback.Enabled = true;
+            tmrPlayback.Start();
+            lblLog.Text = "Playback started";
+        }
+        private void btnStop_Click(object sender, EventArgs e){
+            tmrPlayback.Stop();
+            dgvObstacles.Columns[pbCounter].DefaultCellStyle.BackColor = Color.FromArgb(40, 40, 40);
+            tmrPlayback.Enabled = false;
+
+
+            pbCounter = 0;
+            lblLog.Text = "Playback stopped";
+        }
+        private void btnPause_Click(object sender, EventArgs e){
+            if (tmrPlayback.Enabled){
+                tmrPlayback.Enabled = false;
+            }else{
+                tmrPlayback.Enabled = true;
+            }
+            lblLog.Text = "Playback pause toggled";
+        }
+
         //leaf file menu strips
         private void saveToolStripMenuItem1_Click(object sender, EventArgs e){
-            editor.MissingFeatureDialogue();
+            editor.Save();
         }
         private void loadToolStripMenuItem1_Click(object sender, EventArgs e){
             editor.MissingFeatureDialogue();
@@ -71,7 +105,43 @@ namespace ThumperLevelEditor {
             InitializeObstacleDGV();
             InitializeComboLane();
             UpdateComboType();
+        }
 
+        private void tmrPlayback_Tick(object sender, EventArgs e){
+            DataGridViewCellStyle newStyle = new DataGridViewCellStyle();
+            DataGridViewCellStyle oldStyle = new DataGridViewCellStyle();
+            newStyle.BackColor = oldStyle.BackColor = dgvObstacles.ColumnHeadersDefaultCellStyle.BackColor;
+            newStyle.BackColor = Color.FromArgb(40, 170, 40);
+
+            try{
+                dgvObstacles.Columns[pbCounter + 1].DefaultCellStyle.BackColor = newStyle.BackColor;
+                dgvObstacles.Columns[pbCounter].DefaultCellStyle.BackColor = oldStyle.BackColor;
+            }catch (Exception ex){
+                //any errors that happen here i don't care about lmao
+            }
+            pbCounter++;
+
+            try{
+                if (editor.thumpsTL[pbCounter].id != 0 && editor.sentryTL[pbCounter].id == 0) { playback.audioThump.Play(); } else if (editor.thumpsTL[pbCounter].id != 0 && editor.sentryTL[pbCounter].id != 0) { playback.audioSentryThump.Play(); };
+                if (editor.barsTL[pbCounter].id != 0) playback.audioBars.Play();
+                if (editor.jumpSpikesTL[pbCounter].id != 0) playback.audioSpikes.Play();
+                if (editor.jumpFungiTL[pbCounter].id != 0) playback.audioFungi.Play();
+                if (editor.turnTL[pbCounter].id >= 15) { playback.audioLeft.Play(); } else if (editor.turnTL[pbCounter].id <= -15) { playback.audioRight.Play(); }
+                if (editor.snakesHalfTL[pbCounter].id != 0 || editor.snakesQuarterTL[pbCounter].id != 0) playback.audioSnake.Play();
+                if (editor.sentryTL[pbCounter].id != 0 && editor.sentryTL[pbCounter - 1].id == 0) playback.audioSentryS.Play();
+                if (editor.sentryTL[pbCounter].id != 0 && editor.sentryTL[pbCounter + 1].id == 0) playback.audioSentryE.Play();
+            }
+            catch (Exception ex){
+                //MessageBox.Show("Cannot play audio", "Missing Audio File", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine("missing audio file");
+            }
+        }
+
+        private void numBPM_ValueChanged(object sender, EventArgs e){
+            NumericUpDown num = (NumericUpDown)sender;
+
+            masterEditor.bpm = float.Parse(num.Value.ToString());
+            lblLog.Text = "level BPM set to: " + masterEditor.bpm;
         }
 
         private void numDefaultValue_ValueChanged(object sender, EventArgs e){
@@ -80,78 +150,103 @@ namespace ThumperLevelEditor {
             switch (dgvObstacles.CurrentCellAddress.Y){
                 case 0:
                     editor.pitchTL[0].step_val = num.Value;
+                    lblLog.Text = "List pitchTL now has default value of: " + num.Value;
                     break;
                 case 1:
                     editor.rollTL[0].step_val = num.Value;
+                    lblLog.Text = "List rollTL now has default value of: " + num.Value;
                     break;
                 case 2:
                     editor.turnTL[0].step_val = num.Value;
+                    lblLog.Text = "List turnTL now has default value of: " + num.Value;
                     break;
                 case 3:
                     editor.turnAutoTL[0].step_val = num.Value;
+                    lblLog.Text = "List turnAutoTL now has default value of: " + num.Value;
                     break;
                 case 4:
                     editor.gameSpeedTL[0].step_val = num.Value;
+                    lblLog.Text = "List gameSpeedTL now has default value of: " + num.Value;
                     break;
                 case 5:
                     editor.thumpsTL[0].step_val = num.Value;
+                    lblLog.Text = "List thumpsTL now has default value of: " + num.Value;
                     break;
                 case 6:
                     editor.barsTL[0].step_val = num.Value;
+                    lblLog.Text = "List barsTL now has default value of: " + num.Value;
                     break;
                 case 7:
                     editor.multiBarsTL[0].step_val = num.Value;
+                    lblLog.Text = "List multiBarsTL now has default value of: " + num.Value;
                     break;
                 case 8:
                     editor.duckerTL[0].step_val = num.Value;
+                    lblLog.Text = "List duckerTL now has default value of: " + num.Value;
                     break;
                 case 9:
                     editor.jumpFungiTL[0].step_val = num.Value;
+                    lblLog.Text = "List jumpFungiTL now has default value of: " + num.Value;
                     break;
                 case 10:
                     editor.jumpSpikesTL[0].step_val = num.Value;
+                    lblLog.Text = "List jumpSpikesTL now has default value of: " + num.Value;
                     break;
                 case 11:
                     editor.snakesHalfTL[0].step_val = num.Value;
+                    lblLog.Text = "List snakesHalfTL now has default value of: " + num.Value;
                     break;
                 case 12:
                     editor.snakesQuarterTL[0].step_val = num.Value;
+                    lblLog.Text = "List snakesQuarterTL now has default value of: " + num.Value;
                     break;
                 case 13:
                     editor.sentryTL[0].step_val = num.Value;
+                    lblLog.Text = "List sentryTL now has default value of: " + num.Value;
                     break;
                 case 14:
                     editor.lfLaneTL[0].step_val = num.Value;
+                    lblLog.Text = "List lfLaneTL now has default value of: " + num.Value;
                     break;
                 case 15:
                     editor.lnLaneTL[0].step_val = num.Value;
+                    lblLog.Text = "List lnLaneTL now has default value of: " + num.Value;
                     break;
                 case 16:
                     editor.cenLaneTL[0].step_val = num.Value;
+                    lblLog.Text = "List cenLaneTL now has default value of: " + num.Value;
                     break;
                 case 17:
                     editor.rnLaneTL[0].step_val = num.Value;
+                    lblLog.Text = "List rnLaneTL now has default value of: " + num.Value;
                     break;
                 case 18:
                     editor.rfLaneTL[0].step_val = num.Value;
+                    lblLog.Text = "List rfLaneTL now has default value of: " + num.Value;
                     break;
                 case 19:
                     editor.scaleXTL[0].step_val = num.Value;
+                    lblLog.Text = "List scaleXTL now has default value of: " + num.Value;
                     break;
                 case 20:
                     editor.scaleYTL[0].step_val = num.Value;
+                    lblLog.Text = "List scaleYTL now has default value of: " + num.Value;
                     break;
                 case 21:
                     editor.scaleZTL[0].step_val = num.Value;
+                    lblLog.Text = "List scaleZTL now has default value of: " + num.Value;
                     break;
                 case 22:
                     editor.offsetXTL[0].step_val = num.Value;
+                    lblLog.Text = "List offsetXTL now has default value of: " + num.Value;
                     break;
                 case 23:
                     editor.offsetYTL[0].step_val = num.Value;
+                    lblLog.Text = "List offsetYTL now has default value of: " + num.Value;
                     break;
                 case 24:
                     editor.offsetZTL[0].step_val = num.Value;
+                    lblLog.Text = "List offsetZTL now has default value of: " + num.Value;
                     break;
             }
         }
@@ -162,41 +257,49 @@ namespace ThumperLevelEditor {
                 case 5:
                     if (editor.thumpsTL[dgvObstacles.CurrentCellAddress.X].id != 0){
                         editor.thumpsTL[dgvObstacles.CurrentCellAddress.X].setLane(combLane.SelectedIndex);
+                        lblLog.Text = "List thumpsTL" + " at index " + dgvObstacles.CurrentCellAddress.X + " now has lane of " + (combType.SelectedIndex + 1);
                     }
                     break;
                 case 6:
                     if (editor.barsTL[dgvObstacles.CurrentCellAddress.X].id != 0){
                         editor.barsTL[dgvObstacles.CurrentCellAddress.X].setLane(combLane.SelectedIndex);
+                        lblLog.Text = "List barsTL" + " at index " + dgvObstacles.CurrentCellAddress.X + " now has lane of " + (combType.SelectedIndex + 1);
                     }
                     break;
                 case 7:
                     if (editor.multiBarsTL[dgvObstacles.CurrentCellAddress.X].id != 0){
                         editor.multiBarsTL[dgvObstacles.CurrentCellAddress.X].setLane(combLane.SelectedIndex);
+                        lblLog.Text = "List multiBarsTL" + " at index " + dgvObstacles.CurrentCellAddress.X + " now has lane of " + (combType.SelectedIndex + 1);
                     }
                     break;
                 case 9:
                     if (editor.jumpFungiTL[dgvObstacles.CurrentCellAddress.X].id != 0){
                         editor.jumpFungiTL[dgvObstacles.CurrentCellAddress.X].setLane(combLane.SelectedIndex);
+                        lblLog.Text = "List jumpFungiTL" + " at index " + dgvObstacles.CurrentCellAddress.X + " now has lane of " + (combType.SelectedIndex + 1);
                     }
                     break;
                 case 10:
                     if (editor.jumpSpikesTL[dgvObstacles.CurrentCellAddress.X].id != 0){
                         editor.jumpSpikesTL[dgvObstacles.CurrentCellAddress.X].setLane(combLane.SelectedIndex);
+                        lblLog.Text = "List jumpSpikesTL" + " at index " + dgvObstacles.CurrentCellAddress.X + " now has lane of " + (combType.SelectedIndex + 1);
                     }
                     break;
                 case 11:
                     if (editor.snakesHalfTL[dgvObstacles.CurrentCellAddress.X].id != 0){
                         editor.snakesHalfTL[dgvObstacles.CurrentCellAddress.X].setLane(combLane.SelectedIndex);
+                        lblLog.Text = "List snakesHalfTL" + " at index " + dgvObstacles.CurrentCellAddress.X + " now has lane of " + (combType.SelectedIndex + 1);
                     }
                     break;
                 case 12:
                     if (editor.snakesQuarterTL[dgvObstacles.CurrentCellAddress.X].id != 0){
                         editor.snakesQuarterTL[dgvObstacles.CurrentCellAddress.X].setLane(combLane.SelectedIndex);
+                        lblLog.Text = "List snakesQuarterTL" + " at index " + dgvObstacles.CurrentCellAddress.X + " now has lane of " + (combType.SelectedIndex + 1);
                     }
                     break;
                 case 13:
                     if (editor.sentryTL[dgvObstacles.CurrentCellAddress.X].id != 0){
                         editor.sentryTL[dgvObstacles.CurrentCellAddress.X].setLane(combLane.SelectedIndex);
+                        lblLog.Text = "List sentryTL" + " at index " + dgvObstacles.CurrentCellAddress.X + " now has lane of " + (combType.SelectedIndex + 1);
                     }
                     break;
             }
@@ -208,41 +311,49 @@ namespace ThumperLevelEditor {
                 case 5:
                     if (editor.thumpsTL[dgvObstacles.CurrentCellAddress.X].id != 0){
                         editor.thumpsTL[dgvObstacles.CurrentCellAddress.X].setType(combType.SelectedIndex + 1);
+                        lblLog.Text = "List thumpsTL" + " at index " + dgvObstacles.CurrentCellAddress.X + " now has type of " + (combType.SelectedIndex + 1);
                     }
                     break;
                 case 6:
                     if (editor.barsTL[dgvObstacles.CurrentCellAddress.X].id != 0){
                         editor.barsTL[dgvObstacles.CurrentCellAddress.X].setType(combType.SelectedIndex + 1);
+                        lblLog.Text = "List barsTL" + " at index " + dgvObstacles.CurrentCellAddress.X + " now has type of " + (combType.SelectedIndex + 1);
                     }
                     break;
                 case 7:
                     if (editor.multiBarsTL[dgvObstacles.CurrentCellAddress.X].id != 0){
                         editor.multiBarsTL[dgvObstacles.CurrentCellAddress.X].setType(combType.SelectedIndex + 1);
+                        lblLog.Text = "List multiBarsTL" + " at index " + dgvObstacles.CurrentCellAddress.X + " now has type of " + (combType.SelectedIndex + 1);
                     }
                     break;
                 case 9:
                     if (editor.jumpFungiTL[dgvObstacles.CurrentCellAddress.X].id != 0){
                         editor.jumpFungiTL[dgvObstacles.CurrentCellAddress.X].setType(combType.SelectedIndex + 1);
+                        lblLog.Text = "List jumpFungiTL" + " at index " + dgvObstacles.CurrentCellAddress.X + " now has type of " + (combType.SelectedIndex + 1);
                     }
                     break;
                 case 10:
                     if (editor.jumpSpikesTL[dgvObstacles.CurrentCellAddress.X].id != 0){
                         editor.jumpSpikesTL[dgvObstacles.CurrentCellAddress.X].setType(combType.SelectedIndex + 1);
+                        lblLog.Text = "List jumpSpikesTL" + " at index " + dgvObstacles.CurrentCellAddress.X + " now has type of " + (combType.SelectedIndex + 1);
                     }
                     break;
                 case 11:
                     if (editor.snakesHalfTL[dgvObstacles.CurrentCellAddress.X].id != 0){
                         editor.snakesHalfTL[dgvObstacles.CurrentCellAddress.X].setType(combType.SelectedIndex + 1);
+                        lblLog.Text = "snakesHalfTL barsTL" + " at index " + dgvObstacles.CurrentCellAddress.X + " now has type of " + (combType.SelectedIndex + 1);
                     }
                     break;
                 case 12:
                     if (editor.snakesQuarterTL[dgvObstacles.CurrentCellAddress.X].id != 0){
                         editor.snakesQuarterTL[dgvObstacles.CurrentCellAddress.X].setType(combType.SelectedIndex + 1);
+                        lblLog.Text = "List snakesQuarterTL" + " at index " + dgvObstacles.CurrentCellAddress.X + " now has type of " + (combType.SelectedIndex + 1);
                     }
                     break;
                 case 13:
                     if (editor.sentryTL[dgvObstacles.CurrentCellAddress.X].id != 0){
                         editor.sentryTL[dgvObstacles.CurrentCellAddress.X].setType(combType.SelectedIndex + 1);
+                        lblLog.Text = "List sentryTL" + " at index " + dgvObstacles.CurrentCellAddress.X + " now has type of " + (combType.SelectedIndex + 1);
                     }
                     break;
             }
@@ -457,7 +568,7 @@ namespace ThumperLevelEditor {
                     }
                     break;
                 case 8: //---FLYING BARS
-                    editor.duckerTL[e.ColumnIndex].id = num;
+                    editor.duckerTL[e.ColumnIndex].id = (int)num;
                     if (cell.CurrentCell.Value != null) { 
                         if (int.Parse(cell.CurrentCell.Value.ToString()) == 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(36, 220, 227);
                         lblLog.Text = "List duckerTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
@@ -777,6 +888,14 @@ namespace ThumperLevelEditor {
         public void InitializeObstacleDGV(){
             //Generate cells and shit
             DataGridView grid = dgvObstacles;
+
+            //double buffering for DGV, found here: https://10tec.com/articles/why-datagridview-slow.aspx
+            //used to significantly improve rendering performance
+            if (!SystemInformation.TerminalServerSession){
+                Type dgvType = dgvObstacles.GetType();
+                PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+                pi.SetValue(dgvObstacles, true, null);
+            }
 
             int rowNum = 25;
 

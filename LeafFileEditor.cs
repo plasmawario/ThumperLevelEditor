@@ -15,8 +15,8 @@ namespace ThumperLevelEditor {
         public int ObjectsToWrite = 0;
 
         //lists for timelines of buttons the player can interact with
-        public List<ObjectProperties> thumpsTL, barsTL, multiBarsTL, jumpFungiTL, jumpSpikesTL, snakesHalfTL, snakesQuarterTL, sentryTL;
-        public List<ObjectSimpleProperties> pitchTL, rollTL, turnTL, turnAutoTL, gameSpeedTL, scaleXTL, scaleYTL, scaleZTL, offsetXTL, offsetYTL, offsetZTL, lfLaneTL, lnLaneTL, cenLaneTL, rnLaneTL, rfLaneTL, duckerTL;
+        public List<ObjectProperties> thumpsTL, barsTL, multiBarsTL, jumpFungiTL, jumpSpikesTL, snakesHalfTL, snakesQuarterTL, sentryTL, duckerTL;
+        public List<ObjectSimpleProperties> pitchTL, rollTL, turnTL, turnAutoTL, gameSpeedTL, scaleXTL, scaleYTL, scaleZTL, offsetXTL, offsetYTL, offsetZTL, lfLaneTL, lnLaneTL, cenLaneTL, rnLaneTL, rfLaneTL;
 
         //public StreamReader sourceFile = new StreamReader("ExportFileTemplate.txt", true);
         public StreamWriter destinationFile;
@@ -50,90 +50,91 @@ namespace ThumperLevelEditor {
             rnLaneTL = new List<ObjectSimpleProperties>(leafLength);
             rfLaneTL = new List<ObjectSimpleProperties>(leafLength);
             gameSpeedTL = new List<ObjectSimpleProperties>(leafLength);
-            duckerTL = new List<ObjectSimpleProperties>(leafLength);
+            duckerTL = new List<ObjectProperties>(leafLength);
 
             for (int i = 0; i < thumpsTL.Capacity; i++){
-                thumpsTL.Add(new ObjectProperties(0, 2, "thump.spn","thump_rails", ".ent", "kTraitBool", "(2,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", false, 0));
+                thumpsTL.Add(new ObjectProperties(0, 2, "thump.spn","thump_rails", ".ent", "kTraitBool", "(2,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "thumpsTL"));
                 thumpsTL[i].type = new string[] {"", "thump_rails", "thump_checkpoint", "thump_boss_bonus", "thump_rails_fast_activat"};
             }
             for (int i = 0; i < barsTL.Capacity; i++){
-                barsTL.Add(new ObjectProperties(0, 2, "grindable.spn", "grindable_still", ".ent", "kTraitBool", "(2, 1, 2, 1, 2, 'kIntensityScale', 'kIntensityScale', 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0)", false, 0));
+                barsTL.Add(new ObjectProperties(0, 2, "grindable.spn", "grindable_still", ".ent", "kTraitBool", "(2, 1, 2, 1, 2, 'kIntensityScale', 'kIntensityScale', 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0)", true, 0, "barsTL"));
                 barsTL[i].type = new string[] { "", "grindable_still", "left_multi", "center_multi", "right_multi" };
             }
             for (int i = 0; i < multiBarsTL.Capacity; i++){
-                multiBarsTL.Add(new ObjectProperties(0, 2, "grindable_multi.spn", "grindable_with_thump", ".ent", "kTraitBool", "(2,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", false, 0));
+                multiBarsTL.Add(new ObjectProperties(0, 2, "grindable_multi.spn", "grindable_with_thump", ".ent", "kTraitBool", "(2,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "multiBarsTL"));
                 multiBarsTL[i].type = new string[] { "", "grindable_with_thump", "grindable_double", "grindable_triple", "grindable_quarter" };
             }
             for (int i = 0; i < jumpFungiTL.Capacity; i++){
-                jumpFungiTL.Add(new ObjectProperties(0, 2, "jump.spn", "jumper_1_step", ".ent", "kTraitBool", "(2,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", false, 0));
+                jumpFungiTL.Add(new ObjectProperties(0, 2, "jump.spn", "jumper_1_step", ".ent", "kTraitBool", "(2,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "jumpFungiTL"));
                 jumpFungiTL[i].type = new string[] { "", "jumper_1_step", "jumper_boss", "jumper_6_step" };
             }
             for (int i = 0; i < jumpSpikesTL.Capacity; i++){
-                jumpSpikesTL.Add(new ObjectProperties(0, 2, "jump_high.spn", "jump_high", ".ent", "kTraitBool", "(2,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", false, 0));
+                jumpSpikesTL.Add(new ObjectProperties(0, 2, "jump_high.spn", "jump_high", ".ent", "kTraitBool", "(2,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "jumpSpikesTL"));
                 jumpSpikesTL[i].type = new string[] { "", "jump_high", "jump_high_2", "jump_high_4", "jump_high_6", "jump_boss" };
             }
             for (int i = 0; i < snakesHalfTL.Capacity; i++){
-                snakesHalfTL.Add(new ObjectProperties(0, 2, "millipede_half.spn", "millipede_half", ".ent", "ktraitBool", "(2,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", false, 0));
+                snakesHalfTL.Add(new ObjectProperties(0, 2, "millipede_half.spn", "millipede_half", ".ent", "ktraitBool", "(2,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "snakesHalfTL"));
                 snakesHalfTL[i].type = new string[] { "", "millipede_half", "millipede_half_phrase", "swerve_off" };
             }
             for (int i = 0; i < snakesQuarterTL.Capacity; i++){
-                snakesQuarterTL.Add(new ObjectProperties(0, 2, "millipede_quarter.spn", "millipede_quarter", ".ent", "kTraitBool", "(2,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", false, 0));
+                snakesQuarterTL.Add(new ObjectProperties(0, 2, "millipede_quarter.spn", "millipede_quarter", ".ent", "kTraitBool", "(2,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "snakesQuarterTL"));
                 snakesQuarterTL[i].type = new string[] { "", "millipede_quarter", "millipede_quarter_phrase" };
             }
             for (int i = 0; i < sentryTL.Capacity; i++){
-                sentryTL.Add(new ObjectProperties(0, 2, "sentry.spn", "sentry", ".ent", "kTraitBool", "(2,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", false, 0));
+                sentryTL.Add(new ObjectProperties(0, 2, "sentry.spn", "sentry", ".ent", "kTraitBool", "(2,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "sentryTL"));
                 sentryTL[i].type = new string[] { "", "sentry", "sentry_boss", "sentry_boss_multilane", "level_5", "level_6", "level_7", "level_8", "level_8_muilti", "level_9", "level_9_multi" };
             }
             for (int i = 0; i < turnTL.Capacity; i++){
-                turnTL.Add(new ObjectSimpleProperties(0, "turn", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0));
+                turnTL.Add(new ObjectSimpleProperties(0, "turn", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "turnTL"));
             }
             for (int i = 0; i < turnAutoTL.Capacity; i++){
-                turnAutoTL.Add(new ObjectSimpleProperties(0, "turnauto", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0));
+                turnAutoTL.Add(new ObjectSimpleProperties(0, "turnauto", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "turnAutoTL"));
             }
             for (int i = 0; i < pitchTL.Capacity; i++){
-                pitchTL.Add(new ObjectSimpleProperties(0, "pitch", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0));
+                pitchTL.Add(new ObjectSimpleProperties(0, "pitch", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "pitchTL"));
             }
             for (int i = 0; i < rollTL.Capacity; i++){
-                rollTL.Add(new ObjectSimpleProperties(0, "roll", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0));
+                rollTL.Add(new ObjectSimpleProperties(0, "roll", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "rollTL"));
             }
             for (int i = 0; i < scaleXTL.Capacity; i++){
-                scaleXTL.Add(new ObjectSimpleProperties(0, "scale_x", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 1));
+                scaleXTL.Add(new ObjectSimpleProperties(0, "scale_x", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 1, "scaleXTL"));
             }
             for (int i = 0; i < scaleYTL.Capacity; i++){
-                scaleYTL.Add(new ObjectSimpleProperties(0, "scale_y", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 1));
+                scaleYTL.Add(new ObjectSimpleProperties(0, "scale_y", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 1, "scaleYTL"));
             }
             for (int i = 0; i < scaleZTL.Capacity; i++){
-                scaleZTL.Add(new ObjectSimpleProperties(0, "scale_z", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 1));
+                scaleZTL.Add(new ObjectSimpleProperties(0, "scale_z", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 1, "scaleZTL"));
             }
             for (int i = 0; i < offsetXTL.Capacity; i++){
-                offsetXTL.Add(new ObjectSimpleProperties(0, "offset_x", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0));
+                offsetXTL.Add(new ObjectSimpleProperties(0, "offset_x", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "offsetXTL"));
             }
             for (int i = 0; i < offsetYTL.Capacity; i++){
-                offsetYTL.Add(new ObjectSimpleProperties(0, "offset_y", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0));
+                offsetYTL.Add(new ObjectSimpleProperties(0, "offset_y", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "offsetYTL"));
             }
             for (int i = 0; i < offsetZTL.Capacity; i++){
-                offsetZTL.Add(new ObjectSimpleProperties(0, "offset_z", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0));
+                offsetZTL.Add(new ObjectSimpleProperties(0, "offset_z", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "offsetZTL"));
             }
             for (int i = 0; i < lfLaneTL.Capacity; i++){
-                lfLaneTL.Add(new ObjectSimpleProperties(0, "visibla01", "kTraitBool", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0));
+                lfLaneTL.Add(new ObjectSimpleProperties(0, "visibla01", "kTraitBool", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "lfLaneTL"));
             }
             for (int i = 0; i < lnLaneTL.Capacity; i++){
-                lnLaneTL.Add(new ObjectSimpleProperties(0, "visibla02", "kTraitBool", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0));
+                lnLaneTL.Add(new ObjectSimpleProperties(0, "visibla02", "kTraitBool", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "lnLaneTL"));
             }
             for (int i = 0; i < cenLaneTL.Capacity; i++){
-                cenLaneTL.Add(new ObjectSimpleProperties(0, "visible", "kTraitBool", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 1));
+                cenLaneTL.Add(new ObjectSimpleProperties(0, "visible", "kTraitBool", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 1, "cenLaneTL"));
             }
             for (int i = 0; i < rnLaneTL.Capacity; i++){
-                rnLaneTL.Add(new ObjectSimpleProperties(0, "visiblz01", "kTraitBool", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0));
+                rnLaneTL.Add(new ObjectSimpleProperties(0, "visiblz01", "kTraitBool", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "cenLaneTL"));
             }
             for (int i = 0; i < rfLaneTL.Capacity; i++){
-                rfLaneTL.Add(new ObjectSimpleProperties(0, "visiblz01", "kTraitBool", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0));
+                rfLaneTL.Add(new ObjectSimpleProperties(0, "visiblz01", "kTraitBool", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "rfLaneTL"));
             }
             for (int i = 0; i < gameSpeedTL.Capacity; i++){
-                gameSpeedTL.Add(new ObjectSimpleProperties(0, "sequin_speed", "kTraitFloat", "(2,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 1));
+                gameSpeedTL.Add(new ObjectSimpleProperties(0, "sequin_speed", "kTraitFloat", "(2,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 1, "gameSpeedTL"));
             }
             for (int i = 0; i < duckerTL.Capacity; i++){
-                duckerTL.Add(new ObjectSimpleProperties(0, "ducker_crak", "kTraitBool", "(2,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0));
+                duckerTL.Add(new ObjectProperties(0, 2, "ducker.spn", "ducker_crak", ".ent", "kTraitBool", "(2,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "duckerTL"));
+                duckerTL[i].type = new string[] { "", "ducker_crak" };
             }
         }
 
@@ -179,54 +180,141 @@ namespace ThumperLevelEditor {
 
                 //save all lists into a file with all the data
                 try{
-                    /*SaveWrite(fs, pitchTL);
+                    SaveWrite(fs, pitchTL);
+                    SaveWrite(fs, rollTL);
                     SaveWrite(fs, turnTL);
-                    SaveWrite(fs, gammaTL);
-                    SaveWrite(fs, stalactitesTL);
-                    SaveWrite(fs, tentaclesTL);
+                    SaveWrite(fs, turnAutoTL);
+                    SaveWrite(fs, gameSpeedTL);
                     SaveWrite(fs, thumpsTL);
                     SaveWrite(fs, barsTL);
-                    SaveWrite(fs, doubleBarsTL);*/
+                    SaveWrite(fs, multiBarsTL);
+                    SaveWrite(fs, duckerTL);
+                    SaveWrite(fs, jumpFungiTL);
+                    SaveWrite(fs, jumpSpikesTL);
+                    SaveWrite(fs, snakesHalfTL);
+                    SaveWrite(fs, snakesQuarterTL);
+                    SaveWrite(fs, sentryTL);
+                    SaveWrite(fs, lfLaneTL);
+                    SaveWrite(fs, lnLaneTL);
+                    SaveWrite(fs, cenLaneTL);
+                    SaveWrite(fs, rnLaneTL);
+                    SaveWrite(fs, rfLaneTL);
+                    SaveWrite(fs, scaleXTL);
+                    SaveWrite(fs, scaleYTL);
+                    SaveWrite(fs, scaleZTL);
+                    SaveWrite(fs, offsetXTL);
+                    SaveWrite(fs, offsetYTL);
+                    SaveWrite(fs, offsetZTL);
                     Console.WriteLine("File saved!");
                 }catch (Exception ex){
-                    MessageBox.Show("Error", "An unexpected problem has occured when trying to save the file. Please try again. If the problem persists, contact the developer or submit a bug report\n" + ex, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("An unexpected problem has occured when trying to save the file. Please try again. If the problem persists, contact the developer or submit a bug report\n\n" + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        public void SaveWrite(FileStream fs, List<int> list){
+        public void SaveWrite(FileStream fs, List<ObjectSimpleProperties> list){
             using (fs = File.Open(fs.Name, FileMode.Append)){
                 //print the next pieces of data
-                for (int i = 0; i < list.Capacity; i++){     //write all numbers from pitchTL's list
-                    byte[] info = new UTF8Encoding(true).GetBytes(list[i].ToString());
+
+                byte[] info = new UTF8Encoding(true).GetBytes(list[0].name);     //character to define new object when reading and writing
+                byte[] seperator = new UTF8Encoding(true).GetBytes(",");
+                byte[] newline = new UTF8Encoding(true).GetBytes(" \n");
+                fs.Write(info, 0, info.Length);
+                //fs.Write(newline, 0, info.Length);
+                info = new UTF8Encoding(true).GetBytes("\ndefault_value:" + list[0].step_val + "\n");
+                fs.Write(info, 0, info.Length);
+                //fs.Write(newline, 0, info.Length);
+                info = new UTF8Encoding(true).GetBytes("\ndata_points:\n");
+                for (int i = 0; i < list.Capacity; i++){
+                    info = new UTF8Encoding(true).GetBytes(list[i].id.ToString());
                     fs.Write(info, 0, info.Length);
                     if (i < list.Capacity - 1){
-                        byte[] seperator = new UTF8Encoding(true).GetBytes(",");
-                        fs.Write(seperator, 0, seperator.Length);
+                        fs.Write(seperator, 0, seperator.Length);   //will write a comma after each datapoint except the last one
                     }else{
-                        byte[] seperator = new UTF8Encoding(true).GetBytes("|");
-                        byte[] newline = new UTF8Encoding(true).GetBytes("\n");
+                        seperator = new UTF8Encoding(true).GetBytes("|");
                         fs.Write(seperator, 0, seperator.Length);
                         fs.Write(newline, 0, newline.Length);
                     }
                 }
             }
         }
-        public void SaveWrite(FileStream fs, List<float> list){
+        public void SaveWrite(FileStream fs, List<ObjectProperties> list){
             using (fs = File.Open(fs.Name, FileMode.Append)){
                 //print the next pieces of data
-                for (int i = 0; i < list.Capacity; i++){     //write all numbers from pitchTL's list
-                    byte[] info = new UTF8Encoding(true).GetBytes(list[i].ToString());
+
+                byte[] info = new UTF8Encoding(true).GetBytes(list[0].name);     //character to define new object when reading and writing
+                byte[] seperator = new UTF8Encoding(true).GetBytes(",");
+                byte[] newline = new UTF8Encoding(true).GetBytes(" \n");
+                fs.Write(info, 0, info.Length);
+                //fs.Write(newline, 0, info.Length);
+                info = new UTF8Encoding(true).GetBytes("\ndefault_value:" + list[0].step_val + "\n");
+                fs.Write(info, 0, info.Length);
+                //fs.Write(newline, 0, info.Length);
+                info = new UTF8Encoding(true).GetBytes("\ndata_points:\n");
+                for (int i = 0; i < list.Capacity; i++){
+                    info = new UTF8Encoding(true).GetBytes("{" + list[i].id.ToString());
+                    fs.Write(info, 0, info.Length);
+                    fs.Write(seperator, 0, seperator.Length);
+                    info = new UTF8Encoding(true).GetBytes(list[i].param_objType);
+                    fs.Write(info, 0, info.Length);
+                    fs.Write(seperator, 0, seperator.Length);
+                    info = new UTF8Encoding(true).GetBytes(list[i].param_objLane + "}");
                     fs.Write(info, 0, info.Length);
                     if (i < list.Capacity - 1){
-                        byte[] seperator = new UTF8Encoding(true).GetBytes(",");
-                        fs.Write(seperator, 0, seperator.Length);
+                        fs.Write(seperator, 0, seperator.Length);   //will write a comma after each datapoint except the last one
                     }else{
-                        byte[] seperator = new UTF8Encoding(true).GetBytes("|");
-                        byte[] newline = new UTF8Encoding(true).GetBytes("\n");
+                        seperator = new UTF8Encoding(true).GetBytes("|");
                         fs.Write(seperator, 0, seperator.Length);
                         fs.Write(newline, 0, newline.Length);
                     }
+                }
+            }
+        }
+
+        public void load(){
+            OpenFileDialog loadFile = new OpenFileDialog();
+            loadFile.Filter = "Thumper Level Editor File|*.tle";
+            loadFile.Title = "Load a Thumper Level Editor file";
+            loadFile.ShowDialog();
+
+            StreamReader reader = new StreamReader(loadFile.OpenFile());
+            //StringBuilder sb;
+            string linetoWrite = null;
+            List<ObjectProperties> list = new List<ObjectProperties>();
+            char[] datapoints;
+            int counter = 0;
+            decimal datapoint_value;
+
+            //read each character until 
+            while ((linetoWrite = reader.ReadLine()) != null) {
+                switch (counter){
+                    case 0:
+                        //list = linetoWrite; //reads list name
+                        break;
+                    case 1:
+                        linetoWrite = linetoWrite.Substring(13);    //reads default value
+                        break;
+                    case 2:
+                        datapoints = linetoWrite.ToCharArray();
+                        //sb = new StringBuilder(linetoWrite);
+                        linetoWrite = "";
+                        for (int i = 0; i < linetoWrite.Length; i++){
+                            if (datapoints[i].Equals(",")){
+                                datapoint_value = decimal.Parse(linetoWrite);
+                                //list[i].id =
+                                
+                                //linetoWrite = "";
+                            }
+                            else{
+                                linetoWrite += datapoints[i].ToString();
+                            }
+                        }
+                        break;
+                }
+
+                counter++;
+                if (counter % 2 == 0){
+                    counter = 0;
                 }
             }
         }
@@ -300,7 +388,7 @@ namespace ThumperLevelEditor {
                         ExportLeaf_ObjectData(fs, thumpsTL);
                         ExportLeaf_ObjectData(fs, barsTL);
                         ExportLeaf_ObjectData(fs, multiBarsTL);
-                        ExportLeaf_ObjectData(fs, duckerTL, leafName);
+                        ExportLeaf_ObjectData(fs, duckerTL);
                         ExportLeaf_ObjectData(fs, jumpFungiTL);
                         ExportLeaf_ObjectData(fs, jumpSpikesTL);
                         ExportLeaf_ObjectData(fs, snakesHalfTL);
@@ -326,7 +414,7 @@ namespace ThumperLevelEditor {
                     }
 
                 }catch (IOException ex){
-                    MessageBox.Show("An unexpected problem has occured when trying to save the file. Please try again. If the problem persists, contact the developer or submit a bug report\n" + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("An unexpected problem has occured when trying to save the file. Please try again. If the problem persists, contact the developer or submit a bug report\n\n" + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     fs.Close();
                     fs.Dispose();
                     return;
