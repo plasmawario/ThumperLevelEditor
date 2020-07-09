@@ -88,7 +88,7 @@ namespace ThumperLevelEditor {
                 turnTL.Add(new ObjectSimpleProperties(0, "turn", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "turnTL"));
             }
             for (int i = 0; i < turnAutoTL.Capacity; i++){
-                turnAutoTL.Add(new ObjectSimpleProperties(0, "turnauto", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "turnAutoTL"));
+                turnAutoTL.Add(new ObjectSimpleProperties(0, "turn_auto", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "turnAutoTL"));
             }
             for (int i = 0; i < pitchTL.Capacity; i++){
                 pitchTL.Add(new ObjectSimpleProperties(0, "pitch", "kTraitFloat", "(4,1,2,1,2,'kIntensityScale','kIntensityScale',1,0,1,1,1,1,1,1,0,0,0)", true, 0, "pitchTL"));
