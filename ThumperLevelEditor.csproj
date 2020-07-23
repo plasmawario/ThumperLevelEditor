@@ -65,14 +65,17 @@
     <Compile Include="ObjectScripts\GrindableProperties.cs" />
     <Compile Include="ObjectScripts\JumperProperties.cs" />
     <Compile Include="ObjectScripts\JumpHighProperties.cs" />
+    <Compile Include="ObjectScripts\LeafFile.cs" />
     <Compile Include="ObjectScripts\MillipedeHalfProperties.cs" />
     <Compile Include="ObjectScripts\MillipedeQuarterProperties.cs" />
     <Compile Include="ObjectScripts\ObjectForFileWriting.cs" />
     <Compile Include="ObjectScripts\ObjectProperties.cs" />
     <Compile Include="ObjectScripts\ObjectSimpleProperties.cs" />
+    <Compile Include="ObjectScripts\SampleFile.cs" />
     <Compile Include="Playback.cs" />
     <Compile Include="ObjectScripts\SentryProperties.cs" />
     <Compile Include="ObjectScripts\ThumpProperties.cs" />
+    <Compile Include="SamplesLists.cs" />
     <Compile Include="ThumperFunctions.cs" />
     <Compile Include="VirtualMode.cs">
       <SubType>Form</SubType>

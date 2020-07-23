@@ -12,7 +12,7 @@ namespace ThumperLevelEditor {
 
         //Thumper general properties
         public int leafLength = 255;
-        public int ObjectsToWrite = 0;
+        public int ObjectsToWrite = 0;  //i don't have time to come up with a proper fix for this, but this is supposed to hit zero and stop printing commas after each object chunk is written. But for some reason it doesn't do that so now i'll stop printing commas once it hits 1. I just don't care anymore
 
         //lists for timelines of buttons the player can interact with
         public List<ObjectProperties> thumpsTL, barsTL, multiBarsTL, jumpFungiTL, jumpSpikesTL, snakesHalfTL, snakesQuarterTL, sentryTL, duckerTL;
@@ -468,7 +468,7 @@ namespace ThumperLevelEditor {
                     return;
                 }
 
-                linetoWrite = "    {\n    " + "'obj_name': '" + leafName + "',";
+                linetoWrite = "    {\n    " + "'obj_name': '" + leafName + ".leaf',";
                 destinationFile.WriteLine(linetoWrite);
                 linetoWrite = "    " + "'param_path': '" + obj[0].param_objType + "',";    //something in this line makes the array out of bounds
                 destinationFile.WriteLine(linetoWrite);
@@ -495,7 +495,7 @@ namespace ThumperLevelEditor {
                 linetoWrite = "    }";
                 destinationFile.WriteLine(linetoWrite);
 
-                if (ObjectsToWrite > 0){
+                if (ObjectsToWrite > 1){
                     linetoWrite = ",";
                     destinationFile.WriteLine(linetoWrite);
                     ObjectsToWrite--;
@@ -573,7 +573,7 @@ namespace ThumperLevelEditor {
                     linetoWrite = "    }";
                     destinationFile.WriteLine(linetoWrite);
 
-                    if (ObjectsToWrite > 0){
+                    if (ObjectsToWrite > 1){
                         linetoWrite = ",";
                         destinationFile.WriteLine(linetoWrite);
                         ObjectsToWrite--;
