@@ -40,10 +40,11 @@ namespace ThumperLevelEditor {
         }
 
         private void Generic_KeyPress(object sender, KeyPressEventArgs e){
-            e.Handled = true;
+            //e.Handled = true;
         }
         private void Generic_KeyDown(object sender, KeyEventArgs e){
-            e.SuppressKeyPress = true;
+            //e.SuppressKeyPress = true;
+            //bruh
         }
 
         private void toolStripMenuItem4_Click(object sender, EventArgs e){
