@@ -27,17 +27,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThumperLevelEditor));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlLeafEditor = new System.Windows.Forms.Panel();
+            this.numTimeSigRight = new System.Windows.Forms.NumericUpDown();
+            this.numTimeSigLeft = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
             this.btnPause = new System.Windows.Forms.Button();
             this.numDefaultValue = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
@@ -59,20 +65,26 @@
             this.lblLeafLength = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changelogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.formatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.discordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl = new System.Windows.Forms.Panel();
             this.numBPM = new System.Windows.Forms.NumericUpDown();
             this.lblLog = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlLevelEditor = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.numBeatCount = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnClearSampleGrid = new System.Windows.Forms.Button();
+            this.btnAddSampleToList = new System.Windows.Forms.Button();
+            this.combSampleName = new System.Windows.Forms.ComboBox();
+            this.numLoop = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.combBpmSamples = new System.Windows.Forms.ComboBox();
+            this.dgvSamplesList = new System.Windows.Forms.DataGridView();
             this.chkAllowInput = new System.Windows.Forms.CheckBox();
             this.combTutorial = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -82,6 +94,7 @@
             this.btnClearList = new System.Windows.Forms.Button();
             this.btnAddLeafToList = new System.Windows.Forms.Button();
             this.combLeafFiles = new System.Windows.Forms.ComboBox();
+            this.dgvLeafFiles = new System.Windows.Forms.DataGridView();
             this.numLeafDelay = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
@@ -90,20 +103,35 @@
             this.exportToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrPlayback = new System.Windows.Forms.Timer(this.components);
-            this.dgvSamplesList = new System.Windows.Forms.DataGridView();
-            this.combBpmSamples = new System.Windows.Forms.ComboBox();
-            this.numLoop = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
-            this.combSampleName = new System.Windows.Forms.ComboBox();
-            this.btnAddSampleToList = new System.Windows.Forms.Button();
-            this.btnClearSampleGrid = new System.Windows.Forms.Button();
-            this.numTimeSigLeft = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
-            this.numTimeSigRight = new System.Windows.Forms.NumericUpDown();
-            this.dgvLeafFiles = new System.Windows.Forms.DataGridView();
-            this.numBeatCount = new System.Windows.Forms.NumericUpDown();
-            this.label12 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chkHasCheckpoint = new System.Windows.Forms.CheckBox();
+            this.chkEnabledInPlayPlus = new System.Windows.Forms.CheckBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnClearRestLvlsList = new System.Windows.Forms.Button();
+            this.btnSetCheckpointLevel = new System.Windows.Forms.Button();
+            this.lblCheckpointLevel = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.combLevelFilesRest = new System.Windows.Forms.ComboBox();
+            this.lblIntroLevel = new System.Windows.Forms.Label();
+            this.btnSetIntroLevel = new System.Windows.Forms.Button();
+            this.combLevelFiles = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnClearLvlGrid = new System.Windows.Forms.Button();
+            this.btnClearLvlList = new System.Windows.Forms.Button();
+            this.btnAddLvlToList = new System.Windows.Forms.Button();
+            this.combSkybox = new System.Windows.Forms.ComboBox();
+            this.dgvLevelFiles = new System.Windows.Forms.DataGridView();
+            this.menuStrip4 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadRestLevelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLeafEditor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTimeSigRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTimeSigLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDefaultValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObstacles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLeafLength)).BeginInit();
@@ -112,15 +140,16 @@
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numBPM)).BeginInit();
             this.pnlLevelEditor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numBeatCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLoop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSamplesList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numVolume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLeafFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLeafDelay)).BeginInit();
             this.menuStrip3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSamplesList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numLoop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTimeSigLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTimeSigRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLeafFiles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numBeatCount)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLevelFiles)).BeginInit();
+            this.menuStrip4.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlLeafEditor
@@ -146,6 +175,58 @@
             this.pnlLeafEditor.Controls.Add(this.lblLeafLength);
             resources.ApplyResources(this.pnlLeafEditor, "pnlLeafEditor");
             this.pnlLeafEditor.Name = "pnlLeafEditor";
+            // 
+            // numTimeSigRight
+            // 
+            this.numTimeSigRight.BackColor = System.Drawing.Color.DimGray;
+            this.numTimeSigRight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.numTimeSigRight, "numTimeSigRight");
+            this.numTimeSigRight.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numTimeSigRight.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numTimeSigRight.Name = "numTimeSigRight";
+            this.numTimeSigRight.ReadOnly = true;
+            this.numTimeSigRight.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // numTimeSigLeft
+            // 
+            this.numTimeSigLeft.BackColor = System.Drawing.Color.DimGray;
+            this.numTimeSigLeft.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.numTimeSigLeft, "numTimeSigLeft");
+            this.numTimeSigLeft.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numTimeSigLeft.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numTimeSigLeft.Name = "numTimeSigLeft";
+            this.numTimeSigLeft.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.numTimeSigLeft.ValueChanged += new System.EventHandler(this.numTimeSigLeft_ValueChanged);
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Name = "label11";
             // 
             // btnPause
             // 
@@ -241,42 +322,42 @@
             this.dgvObstacles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvObstacles.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgvObstacles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle19.Format = "N0";
-            dataGridViewCellStyle19.NullValue = null;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvObstacles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle25.Format = "N0";
+            dataGridViewCellStyle25.NullValue = null;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvObstacles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             resources.ApplyResources(this.dgvObstacles, "dgvObstacles");
             this.dgvObstacles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle20.Format = "N1";
-            dataGridViewCellStyle20.NullValue = null;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvObstacles.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle26.Format = "N1";
+            dataGridViewCellStyle26.NullValue = null;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvObstacles.DefaultCellStyle = dataGridViewCellStyle26;
             this.dgvObstacles.EnableHeadersVisualStyles = false;
             this.dgvObstacles.GridColor = System.Drawing.Color.Black;
             this.dgvObstacles.MultiSelect = false;
             this.dgvObstacles.Name = "dgvObstacles";
             this.dgvObstacles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.NullValue = null;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvObstacles.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.NullValue = null;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvObstacles.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.dgvObstacles.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvObstacles.RowTemplate.Height = 200;
             this.dgvObstacles.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -370,30 +451,9 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem,
-            this.loadToolStripMenuItem,
-            this.exportToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // loadToolStripMenuItem
-            // 
-            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            resources.ApplyResources(this.loadToolStripMenuItem, "loadToolStripMenuItem");
-            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
-            // 
-            // exportToolStripMenuItem
-            // 
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            resources.ApplyResources(this.exportToolStripMenuItem, "exportToolStripMenuItem");
-            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -405,8 +465,7 @@
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.contactToolStripMenuItem,
-            this.changelogToolStripMenuItem,
-            this.formatToolStripMenuItem});
+            this.discordToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             // 
@@ -416,17 +475,11 @@
             resources.ApplyResources(this.contactToolStripMenuItem, "contactToolStripMenuItem");
             this.contactToolStripMenuItem.Click += new System.EventHandler(this.contactToolStripMenuItem_Click);
             // 
-            // changelogToolStripMenuItem
+            // discordToolStripMenuItem
             // 
-            this.changelogToolStripMenuItem.Name = "changelogToolStripMenuItem";
-            resources.ApplyResources(this.changelogToolStripMenuItem, "changelogToolStripMenuItem");
-            this.changelogToolStripMenuItem.Click += new System.EventHandler(this.changelogToolStripMenuItem_Click);
-            // 
-            // formatToolStripMenuItem
-            // 
-            this.formatToolStripMenuItem.Name = "formatToolStripMenuItem";
-            resources.ApplyResources(this.formatToolStripMenuItem, "formatToolStripMenuItem");
-            this.formatToolStripMenuItem.Click += new System.EventHandler(this.formatToolStripMenuItem_Click);
+            this.discordToolStripMenuItem.Name = "discordToolStripMenuItem";
+            resources.ApplyResources(this.discordToolStripMenuItem, "discordToolStripMenuItem");
+            this.discordToolStripMenuItem.Click += new System.EventHandler(this.discordToolStripMenuItem_Click);
             // 
             // pnl
             // 
@@ -485,6 +538,7 @@
             // 
             this.pnlLevelEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.pnlLevelEditor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlLevelEditor.Controls.Add(this.label18);
             this.pnlLevelEditor.Controls.Add(this.numBeatCount);
             this.pnlLevelEditor.Controls.Add(this.label12);
             this.pnlLevelEditor.Controls.Add(this.btnClearSampleGrid);
@@ -509,6 +563,147 @@
             this.pnlLevelEditor.Controls.Add(this.menuStrip3);
             resources.ApplyResources(this.pnlLevelEditor, "pnlLevelEditor");
             this.pnlLevelEditor.Name = "pnlLevelEditor";
+            // 
+            // label18
+            // 
+            resources.ApplyResources(this.label18, "label18");
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Name = "label18";
+            // 
+            // numBeatCount
+            // 
+            this.numBeatCount.BackColor = System.Drawing.Color.DimGray;
+            this.numBeatCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.numBeatCount, "numBeatCount");
+            this.numBeatCount.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numBeatCount.Name = "numBeatCount";
+            this.numBeatCount.Value = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
+            // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Name = "label12";
+            // 
+            // btnClearSampleGrid
+            // 
+            this.btnClearSampleGrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            resources.ApplyResources(this.btnClearSampleGrid, "btnClearSampleGrid");
+            this.btnClearSampleGrid.Name = "btnClearSampleGrid";
+            this.btnClearSampleGrid.UseVisualStyleBackColor = false;
+            this.btnClearSampleGrid.Click += new System.EventHandler(this.btnClearSampleGrid_Click);
+            // 
+            // btnAddSampleToList
+            // 
+            this.btnAddSampleToList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            resources.ApplyResources(this.btnAddSampleToList, "btnAddSampleToList");
+            this.btnAddSampleToList.Name = "btnAddSampleToList";
+            this.btnAddSampleToList.UseVisualStyleBackColor = false;
+            this.btnAddSampleToList.Click += new System.EventHandler(this.btnAddSampleToList_Click);
+            // 
+            // combSampleName
+            // 
+            this.combSampleName.BackColor = System.Drawing.Color.DimGray;
+            this.combSampleName.DropDownWidth = 194;
+            resources.ApplyResources(this.combSampleName, "combSampleName");
+            this.combSampleName.FormattingEnabled = true;
+            this.combSampleName.Name = "combSampleName";
+            // 
+            // numLoop
+            // 
+            this.numLoop.BackColor = System.Drawing.Color.DimGray;
+            this.numLoop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.numLoop, "numLoop");
+            this.numLoop.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numLoop.Name = "numLoop";
+            this.numLoop.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Name = "label10";
+            // 
+            // combBpmSamples
+            // 
+            this.combBpmSamples.BackColor = System.Drawing.Color.DimGray;
+            this.combBpmSamples.DropDownWidth = 194;
+            resources.ApplyResources(this.combBpmSamples, "combBpmSamples");
+            this.combBpmSamples.FormattingEnabled = true;
+            this.combBpmSamples.Name = "combBpmSamples";
+            this.combBpmSamples.SelectedIndexChanged += new System.EventHandler(this.combBpmSamples_SelectedIndexChanged);
+            // 
+            // dgvSamplesList
+            // 
+            this.dgvSamplesList.AllowUserToAddRows = false;
+            this.dgvSamplesList.AllowUserToDeleteRows = false;
+            this.dgvSamplesList.AllowUserToResizeColumns = false;
+            this.dgvSamplesList.AllowUserToResizeRows = false;
+            this.dgvSamplesList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.dgvSamplesList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvSamplesList.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.dgvSamplesList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle28.Format = "N0";
+            dataGridViewCellStyle28.NullValue = null;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSamplesList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            resources.ApplyResources(this.dgvSamplesList, "dgvSamplesList");
+            this.dgvSamplesList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle29.Format = "N1";
+            dataGridViewCellStyle29.NullValue = null;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSamplesList.DefaultCellStyle = dataGridViewCellStyle29;
+            this.dgvSamplesList.EnableHeadersVisualStyles = false;
+            this.dgvSamplesList.GridColor = System.Drawing.Color.Black;
+            this.dgvSamplesList.MultiSelect = false;
+            this.dgvSamplesList.Name = "dgvSamplesList";
+            this.dgvSamplesList.ReadOnly = true;
+            this.dgvSamplesList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle30.NullValue = null;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSamplesList.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            this.dgvSamplesList.RowHeadersVisible = false;
+            this.dgvSamplesList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvSamplesList.RowTemplate.Height = 200;
+            this.dgvSamplesList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSamplesList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSamplesList.VirtualMode = true;
+            this.dgvSamplesList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSamplesList_CellDoubleClick);
+            this.dgvSamplesList.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgvSamplesList_CellValueNeeded);
             // 
             // chkAllowInput
             // 
@@ -593,6 +788,62 @@
             this.combLeafFiles.FormattingEnabled = true;
             this.combLeafFiles.Name = "combLeafFiles";
             // 
+            // dgvLeafFiles
+            // 
+            this.dgvLeafFiles.AllowUserToAddRows = false;
+            this.dgvLeafFiles.AllowUserToDeleteRows = false;
+            this.dgvLeafFiles.AllowUserToResizeColumns = false;
+            this.dgvLeafFiles.AllowUserToResizeRows = false;
+            this.dgvLeafFiles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.dgvLeafFiles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvLeafFiles.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.dgvLeafFiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle31.Format = "N0";
+            dataGridViewCellStyle31.NullValue = null;
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLeafFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            resources.ApplyResources(this.dgvLeafFiles, "dgvLeafFiles");
+            this.dgvLeafFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle32.Format = "N1";
+            dataGridViewCellStyle32.NullValue = null;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLeafFiles.DefaultCellStyle = dataGridViewCellStyle32;
+            this.dgvLeafFiles.EnableHeadersVisualStyles = false;
+            this.dgvLeafFiles.GridColor = System.Drawing.Color.Black;
+            this.dgvLeafFiles.MultiSelect = false;
+            this.dgvLeafFiles.Name = "dgvLeafFiles";
+            this.dgvLeafFiles.ReadOnly = true;
+            this.dgvLeafFiles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle33.NullValue = null;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLeafFiles.RowHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            this.dgvLeafFiles.RowHeadersVisible = false;
+            this.dgvLeafFiles.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvLeafFiles.RowTemplate.Height = 200;
+            this.dgvLeafFiles.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLeafFiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvLeafFiles.VirtualMode = true;
+            this.dgvLeafFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLeafFiles_CellDoubleClick);
+            this.dgvLeafFiles.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgvLeafFiles_CellValueNeeded);
+            // 
             // numLeafDelay
             // 
             this.numLeafDelay.BackColor = System.Drawing.Color.DimGray;
@@ -658,254 +909,265 @@
             this.tmrPlayback.Interval = 1000;
             this.tmrPlayback.Tick += new System.EventHandler(this.tmrPlayback_Tick);
             // 
-            // dgvSamplesList
+            // panel1
             // 
-            this.dgvSamplesList.AllowUserToAddRows = false;
-            this.dgvSamplesList.AllowUserToDeleteRows = false;
-            this.dgvSamplesList.AllowUserToResizeColumns = false;
-            this.dgvSamplesList.AllowUserToResizeRows = false;
-            this.dgvSamplesList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.dgvSamplesList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvSamplesList.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.dgvSamplesList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle22.Format = "N0";
-            dataGridViewCellStyle22.NullValue = null;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSamplesList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
-            resources.ApplyResources(this.dgvSamplesList, "dgvSamplesList");
-            this.dgvSamplesList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle23.Format = "N1";
-            dataGridViewCellStyle23.NullValue = null;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSamplesList.DefaultCellStyle = dataGridViewCellStyle23;
-            this.dgvSamplesList.EnableHeadersVisualStyles = false;
-            this.dgvSamplesList.GridColor = System.Drawing.Color.Black;
-            this.dgvSamplesList.MultiSelect = false;
-            this.dgvSamplesList.Name = "dgvSamplesList";
-            this.dgvSamplesList.ReadOnly = true;
-            this.dgvSamplesList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.NullValue = null;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSamplesList.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
-            this.dgvSamplesList.RowHeadersVisible = false;
-            this.dgvSamplesList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvSamplesList.RowTemplate.Height = 200;
-            this.dgvSamplesList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSamplesList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSamplesList.VirtualMode = true;
-            this.dgvSamplesList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSamplesList_CellDoubleClick);
-            this.dgvSamplesList.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgvSamplesList_CellValueNeeded);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.chkHasCheckpoint);
+            this.panel1.Controls.Add(this.chkEnabledInPlayPlus);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.btnClearRestLvlsList);
+            this.panel1.Controls.Add(this.btnSetCheckpointLevel);
+            this.panel1.Controls.Add(this.lblCheckpointLevel);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.combLevelFilesRest);
+            this.panel1.Controls.Add(this.lblIntroLevel);
+            this.panel1.Controls.Add(this.btnSetIntroLevel);
+            this.panel1.Controls.Add(this.combLevelFiles);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.btnClearLvlGrid);
+            this.panel1.Controls.Add(this.btnClearLvlList);
+            this.panel1.Controls.Add(this.btnAddLvlToList);
+            this.panel1.Controls.Add(this.combSkybox);
+            this.panel1.Controls.Add(this.dgvLevelFiles);
+            this.panel1.Controls.Add(this.menuStrip4);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
             // 
-            // combBpmSamples
+            // chkHasCheckpoint
             // 
-            this.combBpmSamples.BackColor = System.Drawing.Color.DimGray;
-            this.combBpmSamples.DropDownWidth = 194;
-            resources.ApplyResources(this.combBpmSamples, "combBpmSamples");
-            this.combBpmSamples.FormattingEnabled = true;
-            this.combBpmSamples.Name = "combBpmSamples";
-            this.combBpmSamples.SelectedIndexChanged += new System.EventHandler(this.combBpmSamples_SelectedIndexChanged);
+            resources.ApplyResources(this.chkHasCheckpoint, "chkHasCheckpoint");
+            this.chkHasCheckpoint.Name = "chkHasCheckpoint";
+            this.chkHasCheckpoint.UseVisualStyleBackColor = true;
+            this.chkHasCheckpoint.CheckedChanged += new System.EventHandler(this.chkHasCheckpoint_CheckedChanged);
             // 
-            // numLoop
+            // chkEnabledInPlayPlus
             // 
-            this.numLoop.BackColor = System.Drawing.Color.DimGray;
-            this.numLoop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.numLoop, "numLoop");
-            this.numLoop.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numLoop.Name = "numLoop";
-            this.numLoop.Value = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
+            resources.ApplyResources(this.chkEnabledInPlayPlus, "chkEnabledInPlayPlus");
+            this.chkEnabledInPlayPlus.Name = "chkEnabledInPlayPlus";
+            this.chkEnabledInPlayPlus.UseVisualStyleBackColor = true;
+            this.chkEnabledInPlayPlus.CheckedChanged += new System.EventHandler(this.chkEnabledInPlayPlus_CheckedChanged);
             // 
-            // label10
+            // label17
             // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Name = "label10";
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Name = "label17";
             // 
-            // combSampleName
+            // label14
             // 
-            this.combSampleName.BackColor = System.Drawing.Color.DimGray;
-            this.combSampleName.DropDownWidth = 194;
-            resources.ApplyResources(this.combSampleName, "combSampleName");
-            this.combSampleName.FormattingEnabled = true;
-            this.combSampleName.Name = "combSampleName";
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Name = "label14";
             // 
-            // btnAddSampleToList
+            // btnClearRestLvlsList
             // 
-            this.btnAddSampleToList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            resources.ApplyResources(this.btnAddSampleToList, "btnAddSampleToList");
-            this.btnAddSampleToList.Name = "btnAddSampleToList";
-            this.btnAddSampleToList.UseVisualStyleBackColor = false;
-            this.btnAddSampleToList.Click += new System.EventHandler(this.btnAddSampleToList_Click);
+            this.btnClearRestLvlsList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            resources.ApplyResources(this.btnClearRestLvlsList, "btnClearRestLvlsList");
+            this.btnClearRestLvlsList.Name = "btnClearRestLvlsList";
+            this.btnClearRestLvlsList.UseVisualStyleBackColor = false;
+            this.btnClearRestLvlsList.Click += new System.EventHandler(this.btnClearRestLvlsList_Click);
             // 
-            // btnClearSampleGrid
+            // btnSetCheckpointLevel
             // 
-            this.btnClearSampleGrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            resources.ApplyResources(this.btnClearSampleGrid, "btnClearSampleGrid");
-            this.btnClearSampleGrid.Name = "btnClearSampleGrid";
-            this.btnClearSampleGrid.UseVisualStyleBackColor = false;
-            this.btnClearSampleGrid.Click += new System.EventHandler(this.btnClearSampleGrid_Click);
+            this.btnSetCheckpointLevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            resources.ApplyResources(this.btnSetCheckpointLevel, "btnSetCheckpointLevel");
+            this.btnSetCheckpointLevel.Name = "btnSetCheckpointLevel";
+            this.btnSetCheckpointLevel.UseVisualStyleBackColor = false;
+            this.btnSetCheckpointLevel.Click += new System.EventHandler(this.btnSetCheckpointLevel_Click);
             // 
-            // numTimeSigLeft
+            // lblCheckpointLevel
             // 
-            this.numTimeSigLeft.BackColor = System.Drawing.Color.DimGray;
-            this.numTimeSigLeft.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.numTimeSigLeft, "numTimeSigLeft");
-            this.numTimeSigLeft.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numTimeSigLeft.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numTimeSigLeft.Name = "numTimeSigLeft";
-            this.numTimeSigLeft.Value = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.numTimeSigLeft.ValueChanged += new System.EventHandler(this.numTimeSigLeft_ValueChanged);
+            this.lblCheckpointLevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.lblCheckpointLevel.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.lblCheckpointLevel, "lblCheckpointLevel");
+            this.lblCheckpointLevel.Name = "lblCheckpointLevel";
             // 
-            // label11
+            // label16
             // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Name = "label11";
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Name = "label16";
             // 
-            // numTimeSigRight
+            // combLevelFilesRest
             // 
-            this.numTimeSigRight.BackColor = System.Drawing.Color.DimGray;
-            this.numTimeSigRight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.numTimeSigRight, "numTimeSigRight");
-            this.numTimeSigRight.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numTimeSigRight.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numTimeSigRight.Name = "numTimeSigRight";
-            this.numTimeSigRight.ReadOnly = true;
-            this.numTimeSigRight.Value = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
+            this.combLevelFilesRest.BackColor = System.Drawing.Color.DimGray;
+            resources.ApplyResources(this.combLevelFilesRest, "combLevelFilesRest");
+            this.combLevelFilesRest.FormattingEnabled = true;
+            this.combLevelFilesRest.Name = "combLevelFilesRest";
             // 
-            // dgvLeafFiles
+            // lblIntroLevel
             // 
-            this.dgvLeafFiles.AllowUserToAddRows = false;
-            this.dgvLeafFiles.AllowUserToDeleteRows = false;
-            this.dgvLeafFiles.AllowUserToResizeColumns = false;
-            this.dgvLeafFiles.AllowUserToResizeRows = false;
-            this.dgvLeafFiles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.dgvLeafFiles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvLeafFiles.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.dgvLeafFiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle25.Format = "N0";
-            dataGridViewCellStyle25.NullValue = null;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLeafFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
-            resources.ApplyResources(this.dgvLeafFiles, "dgvLeafFiles");
-            this.dgvLeafFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle26.Format = "N1";
-            dataGridViewCellStyle26.NullValue = null;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLeafFiles.DefaultCellStyle = dataGridViewCellStyle26;
-            this.dgvLeafFiles.EnableHeadersVisualStyles = false;
-            this.dgvLeafFiles.GridColor = System.Drawing.Color.Black;
-            this.dgvLeafFiles.MultiSelect = false;
-            this.dgvLeafFiles.Name = "dgvLeafFiles";
-            this.dgvLeafFiles.ReadOnly = true;
-            this.dgvLeafFiles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.NullValue = null;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLeafFiles.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
-            this.dgvLeafFiles.RowHeadersVisible = false;
-            this.dgvLeafFiles.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvLeafFiles.RowTemplate.Height = 200;
-            this.dgvLeafFiles.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLeafFiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLeafFiles.VirtualMode = true;
-            this.dgvLeafFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLeafFiles_CellDoubleClick);
-            this.dgvLeafFiles.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgvLeafFiles_CellValueNeeded);
+            this.lblIntroLevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.lblIntroLevel.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.lblIntroLevel, "lblIntroLevel");
+            this.lblIntroLevel.Name = "lblIntroLevel";
             // 
-            // numBeatCount
+            // btnSetIntroLevel
             // 
-            this.numBeatCount.BackColor = System.Drawing.Color.DimGray;
-            this.numBeatCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.numBeatCount, "numBeatCount");
-            this.numBeatCount.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numBeatCount.Name = "numBeatCount";
-            this.numBeatCount.Value = new decimal(new int[] {
-            16,
-            0,
-            0,
-            0});
+            this.btnSetIntroLevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            resources.ApplyResources(this.btnSetIntroLevel, "btnSetIntroLevel");
+            this.btnSetIntroLevel.Name = "btnSetIntroLevel";
+            this.btnSetIntroLevel.UseVisualStyleBackColor = false;
+            this.btnSetIntroLevel.Click += new System.EventHandler(this.btnSetIntroLevel_Click);
             // 
-            // label12
+            // combLevelFiles
             // 
-            resources.ApplyResources(this.label12, "label12");
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Name = "label12";
+            this.combLevelFiles.BackColor = System.Drawing.Color.DimGray;
+            resources.ApplyResources(this.combLevelFiles, "combLevelFiles");
+            this.combLevelFiles.FormattingEnabled = true;
+            this.combLevelFiles.Name = "combLevelFiles";
+            // 
+            // label13
+            // 
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Name = "label13";
+            // 
+            // label15
+            // 
+            resources.ApplyResources(this.label15, "label15");
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Name = "label15";
+            // 
+            // btnClearLvlGrid
+            // 
+            this.btnClearLvlGrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            resources.ApplyResources(this.btnClearLvlGrid, "btnClearLvlGrid");
+            this.btnClearLvlGrid.Name = "btnClearLvlGrid";
+            this.btnClearLvlGrid.UseVisualStyleBackColor = false;
+            this.btnClearLvlGrid.Click += new System.EventHandler(this.btnClearLvlGrid_Click);
+            // 
+            // btnClearLvlList
+            // 
+            this.btnClearLvlList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            resources.ApplyResources(this.btnClearLvlList, "btnClearLvlList");
+            this.btnClearLvlList.Name = "btnClearLvlList";
+            this.btnClearLvlList.UseVisualStyleBackColor = false;
+            this.btnClearLvlList.Click += new System.EventHandler(this.btnClearLvlList_Click);
+            // 
+            // btnAddLvlToList
+            // 
+            this.btnAddLvlToList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            resources.ApplyResources(this.btnAddLvlToList, "btnAddLvlToList");
+            this.btnAddLvlToList.Name = "btnAddLvlToList";
+            this.btnAddLvlToList.UseVisualStyleBackColor = false;
+            this.btnAddLvlToList.Click += new System.EventHandler(this.btnAddLvlToList_Click);
+            // 
+            // combSkybox
+            // 
+            this.combSkybox.BackColor = System.Drawing.Color.DimGray;
+            resources.ApplyResources(this.combSkybox, "combSkybox");
+            this.combSkybox.FormattingEnabled = true;
+            this.combSkybox.Name = "combSkybox";
+            // 
+            // dgvLevelFiles
+            // 
+            this.dgvLevelFiles.AllowUserToAddRows = false;
+            this.dgvLevelFiles.AllowUserToDeleteRows = false;
+            this.dgvLevelFiles.AllowUserToResizeColumns = false;
+            this.dgvLevelFiles.AllowUserToResizeRows = false;
+            this.dgvLevelFiles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.dgvLevelFiles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvLevelFiles.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.dgvLevelFiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle34.Format = "N0";
+            dataGridViewCellStyle34.NullValue = null;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLevelFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            resources.ApplyResources(this.dgvLevelFiles, "dgvLevelFiles");
+            this.dgvLevelFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle35.Format = "N1";
+            dataGridViewCellStyle35.NullValue = null;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLevelFiles.DefaultCellStyle = dataGridViewCellStyle35;
+            this.dgvLevelFiles.EnableHeadersVisualStyles = false;
+            this.dgvLevelFiles.GridColor = System.Drawing.Color.Black;
+            this.dgvLevelFiles.MultiSelect = false;
+            this.dgvLevelFiles.Name = "dgvLevelFiles";
+            this.dgvLevelFiles.ReadOnly = true;
+            this.dgvLevelFiles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle36.NullValue = null;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLevelFiles.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
+            this.dgvLevelFiles.RowHeadersVisible = false;
+            this.dgvLevelFiles.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvLevelFiles.RowTemplate.Height = 200;
+            this.dgvLevelFiles.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLevelFiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvLevelFiles.VirtualMode = true;
+            this.dgvLevelFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLevelFiles_CellDoubleClick);
+            this.dgvLevelFiles.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgvLevelFiles_CellValueNeeded);
+            // 
+            // menuStrip4
+            // 
+            this.menuStrip4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
+            resources.ApplyResources(this.menuStrip4, "menuStrip4");
+            this.menuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
+            this.menuStrip4.Name = "menuStrip4";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem5,
+            this.loadRestLevelToolStripMenuItem});
+            this.toolStripMenuItem3.ForeColor = System.Drawing.Color.Silver;
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
+            // 
+            // loadRestLevelToolStripMenuItem
+            // 
+            this.loadRestLevelToolStripMenuItem.Name = "loadRestLevelToolStripMenuItem";
+            resources.ApplyResources(this.loadRestLevelToolStripMenuItem, "loadRestLevelToolStripMenuItem");
+            this.loadRestLevelToolStripMenuItem.Click += new System.EventHandler(this.loadRestLevelToolStripMenuItem_Click);
             // 
             // ThumperLevelEditor
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlLevelEditor);
             this.Controls.Add(this.pnl);
             this.Controls.Add(this.pnlLeafEditor);
@@ -916,6 +1178,8 @@
             this.Load += new System.EventHandler(this.ThumperLevelEditor_Load);
             this.pnlLeafEditor.ResumeLayout(false);
             this.pnlLeafEditor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTimeSigRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTimeSigLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDefaultValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObstacles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLeafLength)).EndInit();
@@ -928,16 +1192,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.numBPM)).EndInit();
             this.pnlLevelEditor.ResumeLayout(false);
             this.pnlLevelEditor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numBeatCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLoop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSamplesList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numVolume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLeafFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLeafDelay)).EndInit();
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSamplesList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numLoop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTimeSigLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTimeSigRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLeafFiles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numBeatCount)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLevelFiles)).EndInit();
+            this.menuStrip4.ResumeLayout(false);
+            this.menuStrip4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -947,18 +1214,13 @@
         private System.Windows.Forms.Panel pnlLeafEditor;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvObstacles;
         private System.Windows.Forms.Panel pnl;
         private System.Windows.Forms.Label lblLeafLength;
-        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contactToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changelogToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem formatToolStripMenuItem;
         private System.Windows.Forms.NumericUpDown numLeafLength;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip2;
@@ -1010,6 +1272,34 @@
         private System.Windows.Forms.DataGridView dgvLeafFiles;
         private System.Windows.Forms.NumericUpDown numBeatCount;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox combLevelFiles;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnClearLvlGrid;
+        private System.Windows.Forms.Button btnClearLvlList;
+        private System.Windows.Forms.Button btnAddLvlToList;
+        private System.Windows.Forms.ComboBox combSkybox;
+        private System.Windows.Forms.DataGridView dgvLevelFiles;
+        private System.Windows.Forms.MenuStrip menuStrip4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.Button btnSetIntroLevel;
+        private System.Windows.Forms.Label lblIntroLevel;
+        private System.Windows.Forms.ComboBox combLevelFilesRest;
+        private System.Windows.Forms.Button btnSetCheckpointLevel;
+        private System.Windows.Forms.Label lblCheckpointLevel;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ToolStripMenuItem discordToolStripMenuItem;
+        private System.Windows.Forms.Button btnClearRestLvlsList;
+        private System.Windows.Forms.ToolStripMenuItem loadRestLevelToolStripMenuItem;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.CheckBox chkEnabledInPlayPlus;
+        private System.Windows.Forms.CheckBox chkHasCheckpoint;
     }
 }
 

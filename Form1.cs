@@ -39,27 +39,37 @@ namespace ThumperLevelEditor {
             }
         }
 
+        private void toolStripMenuItem4_Click(object sender, EventArgs e){
+            masterEditor.Export(dgvLevelFiles);
+            lblLog.Text = "Finished exporting master sequence file!";
+        }
         private void exportToolStripMenuItem2_Click(object sender, EventArgs e) {
             lvlEditor.Export(dgvLeafFiles.RowCount, dgvLeafFiles, dgvSamplesList);
+            lblLog.Text = "Finished exporting lvl file!";
         }
         private void exportToolStripMenuItem1_Click(object sender, EventArgs e) {
             editor.Export();
+            lblLog.Text = "Finished exporting leaf file!";
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
             editor.MissingFeatureDialogue();
         }
 
+        private void discordToolStripMenuItem_Click(object sender, EventArgs e){
+            MessageBox.Show("Need additional help and support? Join us here!: https://discord.gg/qaqy3bG", "Discord Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         private void contactToolStripMenuItem_Click(object sender, EventArgs e) {
             MessageBox.Show("---Program Dev's info---\nTwitter: @Plasmawario\nDiscord: Plasmawario#7852\n---Thumper Dev's info---\nWebsite: https://thumpergame.com/ \n", "Contact Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void changelogToolStripMenuItem_Click(object sender, EventArgs e) {
-            MessageBox.Show("- completely reworked the ui\n- Now supports most of everything RainbowUnicorn's tools supports\n- i forgot the rest lmao", "Changelog betav0.2", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        private void chkHasCheckpoint_CheckedChanged(object sender, EventArgs e){
+
         }
 
-        private void formatToolStripMenuItem_Click(object sender, EventArgs e) {
-            MessageBox.Show("Thumps - accepts 0 or 1\nBars - accepts 0 or 1\nDouble bars - accepts 0 or 1\nTurn - accepts any numberic value. Any value greater than 15 (left) or less than -15 (right) will spawn a turn that requires input. Consecutive beats requiring input connect into long turns\nPitch - accepts any numeric value. Beats with no value default to flat track\nGamma - accepts any numeric value. 0 has no effect\nStalactites - accepts 0 or 1\nTentacles - accepts 0 or 1", "Object values format list", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        private void chkEnabledInPlayPlus_CheckedChanged(object sender, EventArgs e){
+
         }
 
         private void btnClearGrid_Click(object sender, EventArgs e) {
@@ -84,6 +94,31 @@ namespace ThumperLevelEditor {
                 combLeafFiles.Text = "";
             }
             lblLog.Text = "Cleared the leaf list";
+        }
+
+        private void btnClearLvlList_Click(object sender, EventArgs e){
+            while (combLevelFiles.Items.Count > 0){
+                combLevelFiles.Items.RemoveAt(0);
+                combLevelFiles.Text = "";
+            }
+            lblLog.Text = "Cleared the level list";
+        }
+
+        private void btnClearLvlGrid_Click(object sender, EventArgs e){
+            dgvLevelFiles.RowCount = 0;
+            while (masterEditor.levelFileList.Count > 0){
+                masterEditor.levelFileList.RemoveAt(0);
+            }
+            lblLog.Text = "Cleared the level Grid";
+        }
+
+        private void btnClearRestLvlsList_Click(object sender, EventArgs e){
+            while (combLevelFilesRest.Items.Count > 0){
+                combLevelFilesRest.Items.Remove(0);
+                combLevelFilesRest.Text = "";
+            }
+            combLevelFilesRest.Items.Add("Rest");
+            lblLog.Text = "Cleared the rest level list";
         }
 
         //playback shit
@@ -137,9 +172,12 @@ namespace ThumperLevelEditor {
             InitializeComboLane();
             UpdateComboType();
             InitializeLeafDGV();
+            InitializeLevelDGV();
             InitializeSampleDGV();
             InitializeComboTutorial();
             InitializeComboSampleTypes();
+            InitializeDropSkybox();
+            InitializeDropRestLvls();
             UpdateSamples();
         }
 
@@ -174,6 +212,10 @@ namespace ThumperLevelEditor {
             catch (Exception ex) {
                 Console.WriteLine("could not find an audio file to play. Are you checking your audio play requirements properly, or are you missing an audio file?");
             }
+
+            if (pbCounter >= editor.leafLength){
+                pbCounter = editor.leafLength - 1;
+            }
         }
 
         private void numBPM_ValueChanged(object sender, EventArgs e) {
@@ -181,6 +223,54 @@ namespace ThumperLevelEditor {
 
             masterEditor.bpm = float.Parse(num.Value.ToString());
             lblLog.Text = "level BPM set to: " + masterEditor.bpm;
+        }
+
+        private void loadRestLevelToolStripMenuItem_Click(object sender, EventArgs e){
+            OpenFileDialog loadFile = new OpenFileDialog();
+            loadFile.Filter = "Text File|*.txt";
+            loadFile.Title = "Load a Text file";
+            loadFile.ShowDialog();
+
+            //lvlEditor.ImportLeafFile(loadFile);
+
+            try{
+                StreamReader reader = new StreamReader(loadFile.OpenFile());
+            }catch (Exception ex){
+
+            }
+            bool checkdupe = false;
+            for (int i = 0; i < combLevelFilesRest.Items.Count; i++) {
+                if (combLevelFilesRest.Items[i].Equals(loadFile.SafeFileName)) {
+                    checkdupe = true;
+                }
+            }
+            if (!checkdupe) {
+                combLevelFilesRest.Items.Add(loadFile.SafeFileName);
+            }
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e){
+            OpenFileDialog loadFile = new OpenFileDialog();
+            loadFile.Filter = "Text File|*.txt";
+            loadFile.Title = "Load a Text file";
+            loadFile.ShowDialog();
+
+            //lvlEditor.ImportLeafFile(loadFile);
+
+            try{
+                StreamReader reader = new StreamReader(loadFile.OpenFile());
+            }catch (Exception ex){
+
+            }
+            bool checkdupe = false;
+            for (int i = 0; i < combLevelFiles.Items.Count; i++) {
+                if (combLevelFiles.Items[i].Equals(loadFile.SafeFileName)) {
+                    checkdupe = true;
+                }
+            }
+            if (!checkdupe) {
+                combLevelFiles.Items.Add(loadFile.SafeFileName);
+            }
         }
 
         private void importToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -191,9 +281,11 @@ namespace ThumperLevelEditor {
 
             //lvlEditor.ImportLeafFile(loadFile);
 
-            StreamReader reader = new StreamReader(loadFile.OpenFile());
-            string linetoRead = null;
+            try{
+                StreamReader reader = new StreamReader(loadFile.OpenFile());
+            }catch (Exception ex){
 
+            }
             bool checkdupe = false;
             for (int i = 0; i < combLeafFiles.Items.Count; i++) {
                 if (combLeafFiles.Items[i].Equals(loadFile.SafeFileName)) {
@@ -208,6 +300,12 @@ namespace ThumperLevelEditor {
 
         private void combBpmSamples_SelectedIndexChanged(object sender, EventArgs e) {
             UpdateSamples();
+        }
+
+        private void btnAddLvlToList_Click(object sender, EventArgs e){
+            masterEditor.levelFileList.Add(new LevelFile(combLevelFiles.Text, combLevelFilesRest.Text, chkEnabledInPlayPlus.Checked, chkHasCheckpoint.Checked));
+            dgvLevelFiles.RowCount++;
+            lblLog.Text = "Added level file to list";
         }
 
         private void btnAddLeafToList_Click(object sender, EventArgs e) {
@@ -252,6 +350,23 @@ namespace ThumperLevelEditor {
             }
         }
 
+        private void dgvLevelFiles_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e){
+            switch (e.ColumnIndex){
+                case 0:
+                    e.Value = masterEditor.levelFileList[e.RowIndex].name;
+                    break;
+                case 1:
+                    e.Value = masterEditor.levelFileList[e.RowIndex].restName;
+                    break;
+                case 2:
+                    e.Value = masterEditor.levelFileList[e.RowIndex].hasCheckpoint;
+                    break;
+                case 3:
+                    e.Value = masterEditor.levelFileList[e.RowIndex].playPlus;
+                    break;
+            }
+        }
+
         private void dgvSamplesList_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e) {
             switch (e.ColumnIndex){
                 case 0:
@@ -271,6 +386,14 @@ namespace ThumperLevelEditor {
             lblLog.Text = "Removed a leaf file from list at index: " + e.RowIndex;
         }
 
+        private void dgvLevelFiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e){
+            DataGridView grid = (DataGridView)sender;
+            grid.Rows.RemoveAt(e.RowIndex);
+            masterEditor.levelFileList.RemoveAt(e.RowIndex);
+
+            lblLog.Text = "Removed a level file from list at index: " + e.RowIndex;
+        }
+
         private void dgvSamplesList_CellDoubleClick(object sender, DataGridViewCellEventArgs e){
             DataGridView grid = (DataGridView)sender;
             grid.Rows.RemoveAt(e.RowIndex);
@@ -280,6 +403,16 @@ namespace ThumperLevelEditor {
 
         private void numTimeSigLeft_ValueChanged(object sender, EventArgs e){
             UpdateTimingSignatures(dgvObstacles);
+        }
+
+        private void btnSetIntroLevel_Click(object sender, EventArgs e){
+            lblIntroLevel.Text = combLevelFiles.Text;
+            masterEditor.introLevelName = lblIntroLevel.Text;
+        }
+
+        private void btnSetCheckpointLevel_Click(object sender, EventArgs e){
+            lblCheckpointLevel.Text = combLevelFiles.Text;
+            masterEditor.checkpointLevelName = lblCheckpointLevel.Text;
         }
 
         private void numDefaultValue_ValueChanged(object sender, EventArgs e) {
@@ -646,8 +779,13 @@ namespace ThumperLevelEditor {
             } catch (Exception ex) {
                 lblLog.Text = "Invalid input";
             }
-            //resets the color to default when the value is changed, then change color again if the cell should be illuminated
-            cell.CurrentCell.Style.BackColor = Color.FromArgb(40, 40, 40);
+            //resets the color to default when the value is changed depending on the time signature, then change color again if the cell should be illuminated
+            /*if (e.ColumnIndex % numTimeSigLeft.Value == 0){
+                cell.DefaultCellStyle.BackColor = Color.FromArgb(40, 40, 40);
+            }else{
+                cell.CurrentCell.Style.BackColor = Color.FromArgb(50, 50, 50);
+            }*/
+            UpdateTimingSignatures(dgvObstacles);
             switch (e.RowIndex) {
                 case 0: //---PITCH
                     editor.pitchTL[e.ColumnIndex].id = num;
@@ -959,8 +1097,13 @@ namespace ThumperLevelEditor {
             combLane.Items.Add("Far Right Lane");
         }
 
+        public void InitializeDropRestLvls(){
+            combLevelFilesRest.Items.Add("None");
+        }
+
         public void UpdateComboType() {
             combType.Items.Clear();
+            combType.Text = "Select a Type";
             combType.Enabled = true;
             combLane.Enabled = true;
             switch (dgvObstacles.CurrentCellAddress.Y) {
@@ -1016,7 +1159,7 @@ namespace ThumperLevelEditor {
                     combType.Items.Add("level_9_multi");
                     break;
                 default:
-                    combType.Items.Add("No Type Available");
+                    combType.Text = "No Type Available";
                     combType.Enabled = false;
                     combLane.Enabled = false;
                     break;
@@ -1093,15 +1236,15 @@ namespace ThumperLevelEditor {
         }
 
         public void InitializeComboSampleTypes() {
-            combBpmSamples.Items.Add("Select level 1 samples (320bpm");
-            combBpmSamples.Items.Add("Select level 2 samples (340bpm");
-            combBpmSamples.Items.Add("Select level 3 samples (360bpm");
-            combBpmSamples.Items.Add("Select level 4 samples (380bpm");
-            combBpmSamples.Items.Add("Select level 5 samples (400bpm");
-            combBpmSamples.Items.Add("Select level 6 samples (420bpm");
-            combBpmSamples.Items.Add("Select level 7 samples (440bpm");
-            combBpmSamples.Items.Add("Select level 8 samples (460bpm");
-            combBpmSamples.Items.Add("Select level 9 samples (480bpm");
+            combBpmSamples.Items.Add("Select level 1 samples (320bpm)");
+            combBpmSamples.Items.Add("Select level 2 samples (340bpm)");
+            combBpmSamples.Items.Add("Select level 3 samples (360bpm)");
+            combBpmSamples.Items.Add("Select level 4 samples (380bpm)");
+            combBpmSamples.Items.Add("Select level 5 samples (400bpm)");
+            combBpmSamples.Items.Add("Select level 6 samples (420bpm)");
+            combBpmSamples.Items.Add("Select level 7 samples (440bpm)");
+            combBpmSamples.Items.Add("Select level 8 samples (460bpm)");
+            combBpmSamples.Items.Add("Select level 9 samples (480bpm)");
         }
 
         public void InitializeSampleDGV() {
@@ -1137,7 +1280,7 @@ namespace ThumperLevelEditor {
             GenerateInfo(grid);
             grid.DefaultCellStyle.Font = new Font(new FontFamily("Arial"), 8, FontStyle.Bold);
             grid.RowTemplate.Height = 15;
-            GenerateColumnStyle_lvl(grid);
+            GenerateColumnStyle_lvl(grid, 2);
         }
 
         public void InitializeLeafDGV() {
@@ -1173,7 +1316,55 @@ namespace ThumperLevelEditor {
             GenerateInfo(grid);
             grid.DefaultCellStyle.Font = new Font(new FontFamily("Arial"), 8, FontStyle.Bold);
             grid.RowTemplate.Height = 15;
-            GenerateColumnStyle_lvl(grid);
+            GenerateColumnStyle_lvl(grid, 2);
+        }
+
+        public void InitializeLevelDGV(){
+            DataGridView grid = dgvLevelFiles;
+
+            //double buffering for DGV, found here: https://10tec.com/articles/why-datagridview-slow.aspx
+            //used to significantly improve rendering performance
+            if (!SystemInformation.TerminalServerSession){
+                Type dgvType = grid.GetType();
+                PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+                pi.SetValue(grid, true, null);
+            }
+
+            for (int i = 0; i < 4; i++){
+                DataGridViewTextBoxColumn dgvColumn = new DataGridViewTextBoxColumn();
+                switch (i){
+                    case 0:
+                        dgvColumn.HeaderText = "Level name";
+                        dgvColumn.ReadOnly = true;
+                        dgvColumn.ValueType = typeof(string);
+                        dgvColumn.CellTemplate.Value = "";
+                        break;
+                    case 1:
+                        dgvColumn.HeaderText = "Rest lvl name";
+                        dgvColumn.ReadOnly = true;
+                        dgvColumn.ValueType = typeof(string);
+                        dgvColumn.CellTemplate.Value = "";
+                        break;
+                    case 2:
+                        dgvColumn.HeaderText = "Has Checkpoint";
+                        dgvColumn.ReadOnly = true;
+                        dgvColumn.ValueType = typeof(bool);
+                        dgvColumn.CellTemplate.Value = true;
+                        break;
+                    case 3:
+                        dgvColumn.HeaderText = "Play Plus Enabled";
+                        dgvColumn.ReadOnly = true;
+                        dgvColumn.ValueType = typeof(bool);
+                        dgvColumn.CellTemplate.Value = true;
+                        break;
+                }
+                grid.Columns.Add(dgvColumn);
+            }
+
+            GenerateInfo(grid);
+            grid.DefaultCellStyle.Font = new Font(new FontFamily("Arial"), 8, FontStyle.Bold);
+            grid.RowTemplate.Height = 15;
+            GenerateColumnStyle_mast(grid, 4);
         }
 
         public void InitializeObstacleDGV() {
@@ -1207,6 +1398,11 @@ namespace ThumperLevelEditor {
             }
             GenerateColumnStyle(grid);
             GenerateRowHeaderText(grid);
+        }
+
+        public void InitializeDropSkybox(){
+            combSkybox.Items.Add("skybox_cube");
+            combSkybox.Items.Add("overlay_skybox");
         }
 
         public void GenerateInfo(DataGridView grid) {
@@ -1260,8 +1456,8 @@ namespace ThumperLevelEditor {
             }
         }
 
-        public void GenerateColumnStyle_lvl(DataGridView grid){
-            for (int i = 0; i < 2; i++) { 
+        public void GenerateColumnStyle_lvl(DataGridView grid, int iterate){
+            for (int i = 0; i < iterate; i++) { 
                 grid.Columns[0].Name = grid.Columns[0].ToString();
                 grid.Columns[0].Resizable = DataGridViewTriState.False;
                 grid.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -1276,6 +1472,35 @@ namespace ThumperLevelEditor {
                     case 1:
                         grid.Columns[i].Width = 60;
                         grid.Columns[i].MinimumWidth = 60;
+                        break;
+                }
+            }
+        }
+
+        public void GenerateColumnStyle_mast(DataGridView grid, int iterate){
+            for (int i = 0; i < iterate; i++){
+                grid.Columns[0].Name = grid.Columns[0].ToString();
+                grid.Columns[0].Resizable = DataGridViewTriState.False;
+                grid.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grid.Columns[0].DividerWidth = 1;
+                grid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                grid.Columns[0].Frozen = false;
+                switch (i){
+                    case 0:
+                        grid.Columns[i].Width = 120;
+                        grid.Columns[i].MinimumWidth = 120;
+                        break;
+                    case 1:
+                        grid.Columns[i].Width = 120;
+                        grid.Columns[i].MinimumWidth = 120;
+                        break;
+                    case 2:
+                        grid.Columns[i].Width = 120;
+                        grid.Columns[i].MinimumWidth = 120;
+                        break;
+                    case 3:
+                        grid.Columns[i].Width = 120;
+                        grid.Columns[i].MinimumWidth = 120;
                         break;
                 }
             }

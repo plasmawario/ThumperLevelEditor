@@ -345,9 +345,87 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnlLeafEditor.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <data name="numTimeSigRight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 89</value>
+  </data>
+  <data name="numTimeSigRight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="numTimeSigRight.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;numTimeSigRight.Name" xml:space="preserve">
+    <value>numTimeSigRight</value>
+  </data>
+  <data name="&gt;&gt;numTimeSigRight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numTimeSigRight.Parent" xml:space="preserve">
+    <value>pnlLeafEditor</value>
+  </data>
+  <data name="&gt;&gt;numTimeSigRight.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="numTimeSigLeft.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 89</value>
+  </data>
+  <data name="numTimeSigLeft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="numTimeSigLeft.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;numTimeSigLeft.Name" xml:space="preserve">
+    <value>numTimeSigLeft</value>
+  </data>
+  <data name="&gt;&gt;numTimeSigLeft.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numTimeSigLeft.Parent" xml:space="preserve">
+    <value>pnlLeafEditor</value>
+  </data>
+  <data name="&gt;&gt;numTimeSigLeft.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8pt, style=Bold</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 72</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 14</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Time Signature</value>
+  </data>
+  <data name="label11.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>pnlLeafEditor</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="btnPause.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -844,7 +922,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
@@ -852,26 +930,8 @@
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>File</value>
   </data>
-  <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
-  </data>
-  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="loadToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
-  </data>
-  <data name="loadToolStripMenuItem.Text" xml:space="preserve">
-    <value>Load</value>
-  </data>
-  <data name="exportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
-  </data>
-  <data name="exportToolStripMenuItem.Text" xml:space="preserve">
-    <value>Export</value>
-  </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
+    <value>93, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
@@ -883,22 +943,16 @@
     <value>Help</value>
   </data>
   <data name="contactToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 22</value>
+    <value>116, 22</value>
   </data>
   <data name="contactToolStripMenuItem.Text" xml:space="preserve">
     <value>Contact</value>
   </data>
-  <data name="changelogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 22</value>
+  <data name="discordToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 22</value>
   </data>
-  <data name="changelogToolStripMenuItem.Text" xml:space="preserve">
-    <value>Changelog</value>
-  </data>
-  <data name="formatToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 22</value>
-  </data>
-  <data name="formatToolStripMenuItem.Text" xml:space="preserve">
-    <value>Format</value>
+  <data name="discordToolStripMenuItem.Text" xml:space="preserve">
+    <value>Discord</value>
   </data>
   <data name="numBPM.Location" type="System.Drawing.Point, System.Drawing">
     <value>72, 21</value>
@@ -928,7 +982,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 719</value>
+    <value>2, 396</value>
   </data>
   <data name="lblLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>553, 24</value>
@@ -1000,7 +1054,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 664</value>
+    <value>11, 366</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 19</value>
@@ -1009,7 +1063,7 @@
     <value>8</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Beta v0.3</value>
+    <value>Beta v0.4</value>
   </data>
   <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -1027,10 +1081,10 @@
     <value>3</value>
   </data>
   <data name="pnl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 29</value>
+    <value>15, 352</value>
   </data>
   <data name="pnl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>561, 750</value>
+    <value>557, 429</value>
   </data>
   <data name="pnl.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -1045,11 +1099,23 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="menuStrip3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>247, 17</value>
   </metadata>
+  <data name="&gt;&gt;label18.Name" xml:space="preserve">
+    <value>label18</value>
+  </data>
+  <data name="&gt;&gt;label18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label18.Parent" xml:space="preserve">
+    <value>pnlLevelEditor</value>
+  </data>
+  <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;numBeatCount.Name" xml:space="preserve">
     <value>numBeatCount</value>
   </data>
@@ -1060,7 +1126,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;numBeatCount.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;label12.Name" xml:space="preserve">
     <value>label12</value>
@@ -1072,7 +1138,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;btnClearSampleGrid.Name" xml:space="preserve">
     <value>btnClearSampleGrid</value>
@@ -1084,7 +1150,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;btnClearSampleGrid.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;btnAddSampleToList.Name" xml:space="preserve">
     <value>btnAddSampleToList</value>
@@ -1096,7 +1162,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;btnAddSampleToList.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;combSampleName.Name" xml:space="preserve">
     <value>combSampleName</value>
@@ -1108,7 +1174,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;combSampleName.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;numLoop.Name" xml:space="preserve">
     <value>numLoop</value>
@@ -1120,7 +1186,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;numLoop.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;label10.Name" xml:space="preserve">
     <value>label10</value>
@@ -1132,7 +1198,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;combBpmSamples.Name" xml:space="preserve">
     <value>combBpmSamples</value>
@@ -1144,7 +1210,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;combBpmSamples.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;dgvSamplesList.Name" xml:space="preserve">
     <value>dgvSamplesList</value>
@@ -1156,7 +1222,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;dgvSamplesList.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;chkAllowInput.Name" xml:space="preserve">
     <value>chkAllowInput</value>
@@ -1168,7 +1234,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;chkAllowInput.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;combTutorial.Name" xml:space="preserve">
     <value>combTutorial</value>
@@ -1180,7 +1246,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;combTutorial.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;label9.Name" xml:space="preserve">
     <value>label9</value>
@@ -1192,7 +1258,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;numVolume.Name" xml:space="preserve">
     <value>numVolume</value>
@@ -1204,7 +1270,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;numVolume.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -1216,7 +1282,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="&gt;&gt;btnClearGrid.Name" xml:space="preserve">
     <value>btnClearGrid</value>
@@ -1228,7 +1294,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;btnClearGrid.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="&gt;&gt;btnClearList.Name" xml:space="preserve">
     <value>btnClearList</value>
@@ -1240,7 +1306,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;btnClearList.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="&gt;&gt;btnAddLeafToList.Name" xml:space="preserve">
     <value>btnAddLeafToList</value>
@@ -1252,7 +1318,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;btnAddLeafToList.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="&gt;&gt;combLeafFiles.Name" xml:space="preserve">
     <value>combLeafFiles</value>
@@ -1264,7 +1330,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;combLeafFiles.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="&gt;&gt;dgvLeafFiles.Name" xml:space="preserve">
     <value>dgvLeafFiles</value>
@@ -1276,7 +1342,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;dgvLeafFiles.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="&gt;&gt;numLeafDelay.Name" xml:space="preserve">
     <value>numLeafDelay</value>
@@ -1288,7 +1354,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;numLeafDelay.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
@@ -1300,7 +1366,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="&gt;&gt;menuStrip3.Name" xml:space="preserve">
     <value>menuStrip3</value>
@@ -1312,7 +1378,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;menuStrip3.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="pnlLevelEditor.Location" type="System.Drawing.Point, System.Drawing">
     <value>582, 462</value>
@@ -1333,7 +1399,319 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnlLevelEditor.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label18.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label18.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8pt, style=Bold</value>
+  </data>
+  <data name="label18.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 137</value>
+  </data>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 14</value>
+  </data>
+  <data name="label18.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Leaf name</value>
+  </data>
+  <data name="label18.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label18.Name" xml:space="preserve">
+    <value>label18</value>
+  </data>
+  <data name="&gt;&gt;label18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label18.Parent" xml:space="preserve">
+    <value>pnlLevelEditor</value>
+  </data>
+  <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="numBeatCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 39</value>
+  </data>
+  <data name="numBeatCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 20</value>
+  </data>
+  <data name="numBeatCount.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="&gt;&gt;numBeatCount.Name" xml:space="preserve">
+    <value>numBeatCount</value>
+  </data>
+  <data name="&gt;&gt;numBeatCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numBeatCount.Parent" xml:space="preserve">
+    <value>pnlLevelEditor</value>
+  </data>
+  <data name="&gt;&gt;numBeatCount.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8pt, style=Bold</value>
+  </data>
+  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 39</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="label12.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Leaf Beat Count</value>
+  </data>
+  <data name="label12.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
+  </data>
+  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
+    <value>pnlLevelEditor</value>
+  </data>
+  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnClearSampleGrid.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnClearSampleGrid.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnClearSampleGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>443, 92</value>
+  </data>
+  <data name="btnClearSampleGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 25</value>
+  </data>
+  <data name="btnClearSampleGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="btnClearSampleGrid.Text" xml:space="preserve">
+    <value>Clear list</value>
+  </data>
+  <data name="&gt;&gt;btnClearSampleGrid.Name" xml:space="preserve">
+    <value>btnClearSampleGrid</value>
+  </data>
+  <data name="&gt;&gt;btnClearSampleGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnClearSampleGrid.Parent" xml:space="preserve">
+    <value>pnlLevelEditor</value>
+  </data>
+  <data name="&gt;&gt;btnClearSampleGrid.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnAddSampleToList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnAddSampleToList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAddSampleToList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>443, 124</value>
+  </data>
+  <data name="btnAddSampleToList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 25</value>
+  </data>
+  <data name="btnAddSampleToList.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="btnAddSampleToList.Text" xml:space="preserve">
+    <value>Add to grid</value>
+  </data>
+  <data name="&gt;&gt;btnAddSampleToList.Name" xml:space="preserve">
+    <value>btnAddSampleToList</value>
+  </data>
+  <data name="&gt;&gt;btnAddSampleToList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAddSampleToList.Parent" xml:space="preserve">
+    <value>pnlLevelEditor</value>
+  </data>
+  <data name="&gt;&gt;btnAddSampleToList.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="combSampleName.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="combSampleName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8pt, style=Bold</value>
+  </data>
+  <data name="combSampleName.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="combSampleName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>443, 154</value>
+  </data>
+  <data name="combSampleName.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="combSampleName.MaxLength" type="System.Int32, mscorlib">
+    <value>420</value>
+  </data>
+  <data name="combSampleName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 22</value>
+  </data>
+  <data name="combSampleName.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="&gt;&gt;combSampleName.Name" xml:space="preserve">
+    <value>combSampleName</value>
+  </data>
+  <data name="&gt;&gt;combSampleName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;combSampleName.Parent" xml:space="preserve">
+    <value>pnlLevelEditor</value>
+  </data>
+  <data name="&gt;&gt;combSampleName.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="numLoop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>545, 39</value>
+  </data>
+  <data name="numLoop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 20</value>
+  </data>
+  <data name="numLoop.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;numLoop.Name" xml:space="preserve">
+    <value>numLoop</value>
+  </data>
+  <data name="&gt;&gt;numLoop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numLoop.Parent" xml:space="preserve">
+    <value>pnlLevelEditor</value>
+  </data>
+  <data name="&gt;&gt;numLoop.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8pt, style=Bold</value>
+  </data>
+  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>444, 39</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 14</value>
+  </data>
+  <data name="label10.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Beats per loop</value>
+  </data>
+  <data name="label10.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label10.Name" xml:space="preserve">
+    <value>label10</value>
+  </data>
+  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+    <value>pnlLevelEditor</value>
+  </data>
+  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="combBpmSamples.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="combBpmSamples.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8pt, style=Bold</value>
+  </data>
+  <data name="combBpmSamples.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="combBpmSamples.Location" type="System.Drawing.Point, System.Drawing">
+    <value>443, 64</value>
+  </data>
+  <data name="combBpmSamples.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="combBpmSamples.MaxLength" type="System.Int32, mscorlib">
+    <value>420</value>
+  </data>
+  <data name="combBpmSamples.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 22</value>
+  </data>
+  <data name="combBpmSamples.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;combBpmSamples.Name" xml:space="preserve">
+    <value>combBpmSamples</value>
+  </data>
+  <data name="&gt;&gt;combBpmSamples.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;combBpmSamples.Parent" xml:space="preserve">
+    <value>pnlLevelEditor</value>
+  </data>
+  <data name="&gt;&gt;combBpmSamples.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="dgvSamplesList.ColumnHeadersHeight" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="dgvSamplesList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>609, 26</value>
+  </data>
+  <data name="dgvSamplesList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="dgvSamplesList.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>138</value>
+  </data>
+  <data name="dgvSamplesList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>223, 290</value>
+  </data>
+  <data name="dgvSamplesList.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;dgvSamplesList.Name" xml:space="preserve">
+    <value>dgvSamplesList</value>
+  </data>
+  <data name="&gt;&gt;dgvSamplesList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvSamplesList.Parent" xml:space="preserve">
+    <value>pnlLevelEditor</value>
+  </data>
+  <data name="&gt;&gt;dgvSamplesList.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="chkAllowInput.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1366,7 +1744,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;chkAllowInput.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="combTutorial.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1405,7 +1783,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;combTutorial.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1441,7 +1819,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="numVolume.Location" type="System.Drawing.Point, System.Drawing">
     <value>113, 286</value>
@@ -1462,7 +1840,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;numVolume.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1498,7 +1876,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="btnClearGrid.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1528,7 +1906,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;btnClearGrid.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="btnClearList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1558,7 +1936,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;btnClearList.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="btnAddLeafToList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1588,7 +1966,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;btnAddLeafToList.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="combLeafFiles.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1597,7 +1975,7 @@
     <value>False</value>
   </data>
   <data name="combLeafFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 129</value>
+    <value>15, 154</value>
   </data>
   <data name="combLeafFiles.MaxDropDownItems" type="System.Int32, mscorlib">
     <value>100</value>
@@ -1621,7 +1999,37 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;combLeafFiles.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
+  </data>
+  <data name="dgvLeafFiles.ColumnHeadersHeight" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="dgvLeafFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>217, 25</value>
+  </data>
+  <data name="dgvLeafFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="dgvLeafFiles.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>138</value>
+  </data>
+  <data name="dgvLeafFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>223, 290</value>
+  </data>
+  <data name="dgvLeafFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;dgvLeafFiles.Name" xml:space="preserve">
+    <value>dgvLeafFiles</value>
+  </data>
+  <data name="&gt;&gt;dgvLeafFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvLeafFiles.Parent" xml:space="preserve">
+    <value>pnlLevelEditor</value>
+  </data>
+  <data name="&gt;&gt;dgvLeafFiles.ZOrder" xml:space="preserve">
+    <value>19</value>
   </data>
   <data name="numLeafDelay.Location" type="System.Drawing.Point, System.Drawing">
     <value>113, 255</value>
@@ -1642,7 +2050,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;numLeafDelay.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1678,7 +2086,7 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <metadata name="menuStrip3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>247, 17</value>
@@ -1708,16 +2116,16 @@
     <value>pnlLevelEditor</value>
   </data>
   <data name="&gt;&gt;menuStrip3.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="toolStripMenuItem1.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 20</value>
+    <value>88, 20</value>
   </data>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
-    <value>Level File Editor</value>
+    <value>lvl File Editor</value>
   </data>
   <data name="fileToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 20</value>
@@ -1726,13 +2134,13 @@
     <value>File</value>
   </data>
   <data name="exportToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>128, 22</value>
   </data>
   <data name="exportToolStripMenuItem2.Text" xml:space="preserve">
     <value>Export</value>
   </data>
   <data name="importToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>128, 22</value>
   </data>
   <data name="importToolStripMenuItem.Text" xml:space="preserve">
     <value>Load Leaf</value>
@@ -1740,389 +2148,953 @@
   <metadata name="tmrPlayback.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>362, 17</value>
   </metadata>
-  <data name="dgvSamplesList.ColumnHeadersHeight" type="System.Int32, mscorlib">
-    <value>20</value>
+  <metadata name="menuStrip4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>480, 17</value>
+  </metadata>
+  <data name="&gt;&gt;chkHasCheckpoint.Name" xml:space="preserve">
+    <value>chkHasCheckpoint</value>
   </data>
-  <data name="dgvSamplesList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>609, 26</value>
+  <data name="&gt;&gt;chkHasCheckpoint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="dgvSamplesList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+  <data name="&gt;&gt;chkHasCheckpoint.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="dgvSamplesList.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>138</value>
+  <data name="&gt;&gt;chkHasCheckpoint.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="dgvSamplesList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 290</value>
+  <data name="&gt;&gt;chkEnabledInPlayPlus.Name" xml:space="preserve">
+    <value>chkEnabledInPlayPlus</value>
   </data>
-  <data name="dgvSamplesList.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
+  <data name="&gt;&gt;chkEnabledInPlayPlus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvSamplesList.Name" xml:space="preserve">
-    <value>dgvSamplesList</value>
+  <data name="&gt;&gt;chkEnabledInPlayPlus.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;dgvSamplesList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;chkEnabledInPlayPlus.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;dgvSamplesList.Parent" xml:space="preserve">
-    <value>pnlLevelEditor</value>
+  <data name="&gt;&gt;label17.Name" xml:space="preserve">
+    <value>label17</value>
   </data>
-  <data name="&gt;&gt;dgvSamplesList.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="combBpmSamples.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="combBpmSamples.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 8pt, style=Bold</value>
-  </data>
-  <data name="combBpmSamples.IntegralHeight" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="combBpmSamples.Location" type="System.Drawing.Point, System.Drawing">
-    <value>443, 64</value>
-  </data>
-  <data name="combBpmSamples.MaxDropDownItems" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="combBpmSamples.MaxLength" type="System.Int32, mscorlib">
-    <value>420</value>
-  </data>
-  <data name="combBpmSamples.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
-  </data>
-  <data name="combBpmSamples.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
-  </data>
-  <data name="&gt;&gt;combBpmSamples.Name" xml:space="preserve">
-    <value>combBpmSamples</value>
-  </data>
-  <data name="&gt;&gt;combBpmSamples.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;combBpmSamples.Parent" xml:space="preserve">
-    <value>pnlLevelEditor</value>
-  </data>
-  <data name="&gt;&gt;combBpmSamples.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="numLoop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>545, 39</value>
-  </data>
-  <data name="numLoop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 20</value>
-  </data>
-  <data name="numLoop.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="&gt;&gt;numLoop.Name" xml:space="preserve">
-    <value>numLoop</value>
-  </data>
-  <data name="&gt;&gt;numLoop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numLoop.Parent" xml:space="preserve">
-    <value>pnlLevelEditor</value>
-  </data>
-  <data name="&gt;&gt;numLoop.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 8pt, style=Bold</value>
-  </data>
-  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>444, 39</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 14</value>
-  </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Beats per loop</value>
-  </data>
-  <data name="label10.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+  <data name="&gt;&gt;label17.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>pnlLevelEditor</value>
+  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="combSampleName.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="&gt;&gt;label14.Name" xml:space="preserve">
+    <value>label14</value>
   </data>
-  <data name="combSampleName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 8pt, style=Bold</value>
+  <data name="&gt;&gt;label14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="combSampleName.IntegralHeight" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="combSampleName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>443, 154</value>
-  </data>
-  <data name="combSampleName.MaxDropDownItems" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="combSampleName.MaxLength" type="System.Int32, mscorlib">
-    <value>420</value>
-  </data>
-  <data name="combSampleName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
-  </data>
-  <data name="combSampleName.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
-  </data>
-  <data name="&gt;&gt;combSampleName.Name" xml:space="preserve">
-    <value>combSampleName</value>
-  </data>
-  <data name="&gt;&gt;combSampleName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;combSampleName.Parent" xml:space="preserve">
-    <value>pnlLevelEditor</value>
-  </data>
-  <data name="&gt;&gt;combSampleName.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btnAddSampleToList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnAddSampleToList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnAddSampleToList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>443, 124</value>
-  </data>
-  <data name="btnAddSampleToList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 25</value>
-  </data>
-  <data name="btnAddSampleToList.TabIndex" type="System.Int32, mscorlib">
-    <value>43</value>
-  </data>
-  <data name="btnAddSampleToList.Text" xml:space="preserve">
-    <value>Add to grid</value>
-  </data>
-  <data name="&gt;&gt;btnAddSampleToList.Name" xml:space="preserve">
-    <value>btnAddSampleToList</value>
-  </data>
-  <data name="&gt;&gt;btnAddSampleToList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAddSampleToList.Parent" xml:space="preserve">
-    <value>pnlLevelEditor</value>
-  </data>
-  <data name="&gt;&gt;btnAddSampleToList.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="btnClearSampleGrid.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="&gt;&gt;btnClearRestLvlsList.Name" xml:space="preserve">
+    <value>btnClearRestLvlsList</value>
   </data>
-  <data name="btnClearSampleGrid.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnClearSampleGrid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>443, 92</value>
-  </data>
-  <data name="btnClearSampleGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 25</value>
-  </data>
-  <data name="btnClearSampleGrid.TabIndex" type="System.Int32, mscorlib">
-    <value>44</value>
-  </data>
-  <data name="btnClearSampleGrid.Text" xml:space="preserve">
-    <value>Clear list</value>
-  </data>
-  <data name="&gt;&gt;btnClearSampleGrid.Name" xml:space="preserve">
-    <value>btnClearSampleGrid</value>
-  </data>
-  <data name="&gt;&gt;btnClearSampleGrid.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnClearRestLvlsList.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnClearSampleGrid.Parent" xml:space="preserve">
-    <value>pnlLevelEditor</value>
+  <data name="&gt;&gt;btnClearRestLvlsList.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;btnClearSampleGrid.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;btnClearRestLvlsList.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="numTimeSigLeft.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 89</value>
+  <data name="&gt;&gt;btnSetCheckpointLevel.Name" xml:space="preserve">
+    <value>btnSetCheckpointLevel</value>
   </data>
-  <data name="numTimeSigLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
+  <data name="&gt;&gt;btnSetCheckpointLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="numTimeSigLeft.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+  <data name="&gt;&gt;btnSetCheckpointLevel.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;numTimeSigLeft.Name" xml:space="preserve">
-    <value>numTimeSigLeft</value>
+  <data name="&gt;&gt;btnSetCheckpointLevel.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;numTimeSigLeft.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblCheckpointLevel.Name" xml:space="preserve">
+    <value>lblCheckpointLevel</value>
   </data>
-  <data name="&gt;&gt;numTimeSigLeft.Parent" xml:space="preserve">
-    <value>pnlLeafEditor</value>
-  </data>
-  <data name="&gt;&gt;numTimeSigLeft.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 8pt, style=Bold</value>
-  </data>
-  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 72</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 14</value>
-  </data>
-  <data name="label11.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Time Signature</value>
-  </data>
-  <data name="label11.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblCheckpointLevel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>pnlLeafEditor</value>
+  <data name="&gt;&gt;lblCheckpointLevel.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;lblCheckpointLevel.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
-  <data name="numTimeSigRight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 89</value>
+  <data name="&gt;&gt;label16.Name" xml:space="preserve">
+    <value>label16</value>
   </data>
-  <data name="numTimeSigRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
+  <data name="&gt;&gt;label16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="numTimeSigRight.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;numTimeSigRight.Name" xml:space="preserve">
-    <value>numTimeSigRight</value>
+  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
-  <data name="&gt;&gt;numTimeSigRight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;combLevelFilesRest.Name" xml:space="preserve">
+    <value>combLevelFilesRest</value>
   </data>
-  <data name="&gt;&gt;numTimeSigRight.Parent" xml:space="preserve">
-    <value>pnlLeafEditor</value>
+  <data name="&gt;&gt;combLevelFilesRest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;numTimeSigRight.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;combLevelFilesRest.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="dgvLeafFiles.ColumnHeadersHeight" type="System.Int32, mscorlib">
-    <value>20</value>
+  <data name="&gt;&gt;combLevelFilesRest.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
-  <data name="dgvLeafFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 25</value>
+  <data name="&gt;&gt;lblIntroLevel.Name" xml:space="preserve">
+    <value>lblIntroLevel</value>
   </data>
-  <data name="dgvLeafFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+  <data name="&gt;&gt;lblIntroLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="dgvLeafFiles.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>138</value>
+  <data name="&gt;&gt;lblIntroLevel.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="dgvLeafFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 290</value>
+  <data name="&gt;&gt;lblIntroLevel.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
-  <data name="dgvLeafFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+  <data name="&gt;&gt;btnSetIntroLevel.Name" xml:space="preserve">
+    <value>btnSetIntroLevel</value>
   </data>
-  <data name="&gt;&gt;dgvLeafFiles.Name" xml:space="preserve">
-    <value>dgvLeafFiles</value>
+  <data name="&gt;&gt;btnSetIntroLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvLeafFiles.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnSetIntroLevel.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnSetIntroLevel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;combLevelFiles.Name" xml:space="preserve">
+    <value>combLevelFiles</value>
+  </data>
+  <data name="&gt;&gt;combLevelFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;combLevelFiles.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;combLevelFiles.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;label13.Name" xml:space="preserve">
+    <value>label13</value>
+  </data>
+  <data name="&gt;&gt;label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;label15.Name" xml:space="preserve">
+    <value>label15</value>
+  </data>
+  <data name="&gt;&gt;label15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;btnClearLvlGrid.Name" xml:space="preserve">
+    <value>btnClearLvlGrid</value>
+  </data>
+  <data name="&gt;&gt;btnClearLvlGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnClearLvlGrid.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnClearLvlGrid.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;btnClearLvlList.Name" xml:space="preserve">
+    <value>btnClearLvlList</value>
+  </data>
+  <data name="&gt;&gt;btnClearLvlList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnClearLvlList.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnClearLvlList.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;btnAddLvlToList.Name" xml:space="preserve">
+    <value>btnAddLvlToList</value>
+  </data>
+  <data name="&gt;&gt;btnAddLvlToList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAddLvlToList.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnAddLvlToList.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;combSkybox.Name" xml:space="preserve">
+    <value>combSkybox</value>
+  </data>
+  <data name="&gt;&gt;combSkybox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;combSkybox.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;combSkybox.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;dgvLevelFiles.Name" xml:space="preserve">
+    <value>dgvLevelFiles</value>
+  </data>
+  <data name="&gt;&gt;dgvLevelFiles.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvLeafFiles.Parent" xml:space="preserve">
-    <value>pnlLevelEditor</value>
+  <data name="&gt;&gt;dgvLevelFiles.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;dgvLeafFiles.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;dgvLevelFiles.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
-  <data name="numBeatCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 39</value>
+  <data name="&gt;&gt;menuStrip4.Name" xml:space="preserve">
+    <value>menuStrip4</value>
   </data>
-  <data name="numBeatCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 20</value>
+  <data name="&gt;&gt;menuStrip4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="numBeatCount.TabIndex" type="System.Int32, mscorlib">
-    <value>45</value>
+  <data name="&gt;&gt;menuStrip4.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;numBeatCount.Name" xml:space="preserve">
-    <value>numBeatCount</value>
+  <data name="&gt;&gt;menuStrip4.ZOrder" xml:space="preserve">
+    <value>19</value>
   </data>
-  <data name="&gt;&gt;numBeatCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 30</value>
   </data>
-  <data name="&gt;&gt;numBeatCount.Parent" xml:space="preserve">
-    <value>pnlLevelEditor</value>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>557, 316</value>
   </data>
-  <data name="&gt;&gt;numBeatCount.ZOrder" xml:space="preserve">
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
+  <data name="chkHasCheckpoint.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="chkHasCheckpoint.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 8pt, style=Bold</value>
   </data>
-  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="chkHasCheckpoint.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 39</value>
+  <data name="chkHasCheckpoint.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 188</value>
   </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 14</value>
+  <data name="chkHasCheckpoint.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
   </data>
-  <data name="label12.TabIndex" type="System.Int32, mscorlib">
-    <value>46</value>
+  <data name="chkHasCheckpoint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 18</value>
   </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Leaf Beat Count</value>
+  <data name="chkHasCheckpoint.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
   </data>
-  <data name="label12.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="chkHasCheckpoint.Text" xml:space="preserve">
+    <value>                                                                    Has Checkpoint</value>
+  </data>
+  <data name="&gt;&gt;chkHasCheckpoint.Name" xml:space="preserve">
+    <value>chkHasCheckpoint</value>
+  </data>
+  <data name="&gt;&gt;chkHasCheckpoint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkHasCheckpoint.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;chkHasCheckpoint.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkEnabledInPlayPlus.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkEnabledInPlayPlus.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8pt, style=Bold</value>
+  </data>
+  <data name="chkEnabledInPlayPlus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkEnabledInPlayPlus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 212</value>
+  </data>
+  <data name="chkEnabledInPlayPlus.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
+  </data>
+  <data name="chkEnabledInPlayPlus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 18</value>
+  </data>
+  <data name="chkEnabledInPlayPlus.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="chkEnabledInPlayPlus.Text" xml:space="preserve">
+    <value>                                                            Present in Play Plus</value>
+  </data>
+  <data name="&gt;&gt;chkEnabledInPlayPlus.Name" xml:space="preserve">
+    <value>chkEnabledInPlayPlus</value>
+  </data>
+  <data name="&gt;&gt;chkEnabledInPlayPlus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkEnabledInPlayPlus.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;chkEnabledInPlayPlus.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label17.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label17.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8pt, style=Bold</value>
+  </data>
+  <data name="label17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>179, 136</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 14</value>
+  </data>
+  <data name="label17.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Level Rest Name</value>
+  </data>
+  <data name="label17.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
+  <data name="&gt;&gt;label17.Name" xml:space="preserve">
+    <value>label17</value>
   </data>
-  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+  <data name="&gt;&gt;label17.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
-    <value>pnlLevelEditor</value>
+  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label14.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8pt, style=Bold</value>
+  </data>
+  <data name="label14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 136</value>
+  </data>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 14</value>
+  </data>
+  <data name="label14.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Level Name</value>
+  </data>
+  <data name="label14.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label14.Name" xml:space="preserve">
+    <value>label14</value>
+  </data>
+  <data name="&gt;&gt;label14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnClearRestLvlsList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnClearRestLvlsList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnClearRestLvlsList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 98</value>
+  </data>
+  <data name="btnClearRestLvlsList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 25</value>
+  </data>
+  <data name="btnClearRestLvlsList.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="btnClearRestLvlsList.Text" xml:space="preserve">
+    <value>Clear rest lvls</value>
+  </data>
+  <data name="&gt;&gt;btnClearRestLvlsList.Name" xml:space="preserve">
+    <value>btnClearRestLvlsList</value>
+  </data>
+  <data name="&gt;&gt;btnClearRestLvlsList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnClearRestLvlsList.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnClearRestLvlsList.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnSetCheckpointLevel.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnSetCheckpointLevel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSetCheckpointLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>221, 98</value>
+  </data>
+  <data name="btnSetCheckpointLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 25</value>
+  </data>
+  <data name="btnSetCheckpointLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="btnSetCheckpointLevel.Text" xml:space="preserve">
+    <value>Set chk lvl</value>
+  </data>
+  <data name="&gt;&gt;btnSetCheckpointLevel.Name" xml:space="preserve">
+    <value>btnSetCheckpointLevel</value>
+  </data>
+  <data name="&gt;&gt;btnSetCheckpointLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSetCheckpointLevel.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnSetCheckpointLevel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblCheckpointLevel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 10pt, style=Bold</value>
+  </data>
+  <data name="lblCheckpointLevel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCheckpointLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>123, 242</value>
+  </data>
+  <data name="lblCheckpointLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 24</value>
+  </data>
+  <data name="lblCheckpointLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="lblCheckpointLevel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;lblCheckpointLevel.Name" xml:space="preserve">
+    <value>lblCheckpointLevel</value>
+  </data>
+  <data name="&gt;&gt;lblCheckpointLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCheckpointLevel.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;lblCheckpointLevel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label16.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8pt, style=Bold</value>
+  </data>
+  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 247</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 14</value>
+  </data>
+  <data name="label16.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Checkpoint level</value>
+  </data>
+  <data name="label16.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label16.Name" xml:space="preserve">
+    <value>label16</value>
+  </data>
+  <data name="&gt;&gt;label16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="combLevelFilesRest.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="combLevelFilesRest.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="combLevelFilesRest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>182, 153</value>
+  </data>
+  <data name="combLevelFilesRest.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="combLevelFilesRest.MaxLength" type="System.Int32, mscorlib">
+    <value>420</value>
+  </data>
+  <data name="combLevelFilesRest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 22</value>
+  </data>
+  <data name="combLevelFilesRest.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="&gt;&gt;combLevelFilesRest.Name" xml:space="preserve">
+    <value>combLevelFilesRest</value>
+  </data>
+  <data name="&gt;&gt;combLevelFilesRest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;combLevelFilesRest.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;combLevelFilesRest.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblIntroLevel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 10pt, style=Bold</value>
+  </data>
+  <data name="lblIntroLevel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblIntroLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>123, 272</value>
+  </data>
+  <data name="lblIntroLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 24</value>
+  </data>
+  <data name="lblIntroLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="lblIntroLevel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;lblIntroLevel.Name" xml:space="preserve">
+    <value>lblIntroLevel</value>
+  </data>
+  <data name="&gt;&gt;lblIntroLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblIntroLevel.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;lblIntroLevel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="btnSetIntroLevel.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnSetIntroLevel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSetIntroLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>221, 66</value>
+  </data>
+  <data name="btnSetIntroLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 25</value>
+  </data>
+  <data name="btnSetIntroLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="btnSetIntroLevel.Text" xml:space="preserve">
+    <value>Set Intro lvl</value>
+  </data>
+  <data name="&gt;&gt;btnSetIntroLevel.Name" xml:space="preserve">
+    <value>btnSetIntroLevel</value>
+  </data>
+  <data name="&gt;&gt;btnSetIntroLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSetIntroLevel.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnSetIntroLevel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="combLevelFiles.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="combLevelFiles.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="combLevelFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 153</value>
+  </data>
+  <data name="combLevelFiles.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="combLevelFiles.MaxLength" type="System.Int32, mscorlib">
+    <value>420</value>
+  </data>
+  <data name="combLevelFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 22</value>
+  </data>
+  <data name="combLevelFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="&gt;&gt;combLevelFiles.Name" xml:space="preserve">
+    <value>combLevelFiles</value>
+  </data>
+  <data name="&gt;&gt;combLevelFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;combLevelFiles.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;combLevelFiles.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label13.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8pt, style=Bold</value>
+  </data>
+  <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 39</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 14</value>
+  </data>
+  <data name="label13.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Skybox</value>
+  </data>
+  <data name="label13.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label13.Name" xml:space="preserve">
+    <value>label13</value>
+  </data>
+  <data name="&gt;&gt;label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="label15.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label15.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8pt, style=Bold</value>
+  </data>
+  <data name="label15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 277</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 14</value>
+  </data>
+  <data name="label15.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Into level</value>
+  </data>
+  <data name="label15.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label15.Name" xml:space="preserve">
+    <value>label15</value>
+  </data>
+  <data name="&gt;&gt;label15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="btnClearLvlGrid.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnClearLvlGrid.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnClearLvlGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 67</value>
+  </data>
+  <data name="btnClearLvlGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 25</value>
+  </data>
+  <data name="btnClearLvlGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="btnClearLvlGrid.Text" xml:space="preserve">
+    <value>Clear list</value>
+  </data>
+  <data name="&gt;&gt;btnClearLvlGrid.Name" xml:space="preserve">
+    <value>btnClearLvlGrid</value>
+  </data>
+  <data name="&gt;&gt;btnClearLvlGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnClearLvlGrid.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnClearLvlGrid.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="btnClearLvlList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnClearLvlList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnClearLvlList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 67</value>
+  </data>
+  <data name="btnClearLvlList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 25</value>
+  </data>
+  <data name="btnClearLvlList.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="btnClearLvlList.Text" xml:space="preserve">
+    <value>Clear levels</value>
+  </data>
+  <data name="&gt;&gt;btnClearLvlList.Name" xml:space="preserve">
+    <value>btnClearLvlList</value>
+  </data>
+  <data name="&gt;&gt;btnClearLvlList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnClearLvlList.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnClearLvlList.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="btnAddLvlToList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnAddLvlToList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAddLvlToList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 98</value>
+  </data>
+  <data name="btnAddLvlToList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 25</value>
+  </data>
+  <data name="btnAddLvlToList.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="btnAddLvlToList.Text" xml:space="preserve">
+    <value>Add to grid</value>
+  </data>
+  <data name="&gt;&gt;btnAddLvlToList.Name" xml:space="preserve">
+    <value>btnAddLvlToList</value>
+  </data>
+  <data name="&gt;&gt;btnAddLvlToList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAddLvlToList.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnAddLvlToList.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="combSkybox.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="combSkybox.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="combSkybox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>123, 36</value>
+  </data>
+  <data name="combSkybox.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="combSkybox.MaxLength" type="System.Int32, mscorlib">
+    <value>420</value>
+  </data>
+  <data name="combSkybox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
+  <data name="combSkybox.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;combSkybox.Name" xml:space="preserve">
+    <value>combSkybox</value>
+  </data>
+  <data name="&gt;&gt;combSkybox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;combSkybox.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;combSkybox.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="dgvLevelFiles.ColumnHeadersHeight" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="dgvLevelFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>333, 24</value>
+  </data>
+  <data name="dgvLevelFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="dgvLevelFiles.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>138</value>
+  </data>
+  <data name="dgvLevelFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>223, 290</value>
+  </data>
+  <data name="dgvLevelFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;dgvLevelFiles.Name" xml:space="preserve">
+    <value>dgvLevelFiles</value>
+  </data>
+  <data name="&gt;&gt;dgvLevelFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvLevelFiles.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;dgvLevelFiles.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <metadata name="menuStrip4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>480, 17</value>
+  </metadata>
+  <data name="menuStrip4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8pt, style=Bold</value>
+  </data>
+  <data name="menuStrip4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>555, 24</value>
+  </data>
+  <data name="menuStrip4.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="menuStrip4.Text" xml:space="preserve">
+    <value>mnuLeafEditor</value>
+  </data>
+  <data name="&gt;&gt;menuStrip4.Name" xml:space="preserve">
+    <value>menuStrip4</value>
+  </data>
+  <data name="&gt;&gt;menuStrip4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip4.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip4.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="toolStripMenuItem2.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 20</value>
+  </data>
+  <data name="toolStripMenuItem2.Text" xml:space="preserve">
+    <value>Master Sequence Editor</value>
+  </data>
+  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 20</value>
+  </data>
+  <data name="toolStripMenuItem3.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="toolStripMenuItem4.Text" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="toolStripMenuItem5.Text" xml:space="preserve">
+    <value>Load Level</value>
+  </data>
+  <data name="loadRestLevelToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="loadRestLevelToolStripMenuItem.Text" xml:space="preserve">
+    <value>Load Rest Level</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2181,24 +3153,6 @@
   <data name="&gt;&gt;fileToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;saveToolStripMenuItem.Name" xml:space="preserve">
-    <value>saveToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;saveToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;loadToolStripMenuItem.Name" xml:space="preserve">
-    <value>loadToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;loadToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;exportToolStripMenuItem.Name" xml:space="preserve">
-    <value>exportToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;exportToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">
     <value>exitToolStripMenuItem</value>
   </data>
@@ -2217,16 +3171,10 @@
   <data name="&gt;&gt;contactToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;changelogToolStripMenuItem.Name" xml:space="preserve">
-    <value>changelogToolStripMenuItem</value>
+  <data name="&gt;&gt;discordToolStripMenuItem.Name" xml:space="preserve">
+    <value>discordToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;changelogToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;formatToolStripMenuItem.Name" xml:space="preserve">
-    <value>formatToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;formatToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;discordToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
@@ -2258,6 +3206,36 @@
   </data>
   <data name="&gt;&gt;tmrPlayback.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem2.Name" xml:space="preserve">
+    <value>toolStripMenuItem2</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem3.Name" xml:space="preserve">
+    <value>toolStripMenuItem3</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem4.Name" xml:space="preserve">
+    <value>toolStripMenuItem4</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem5.Name" xml:space="preserve">
+    <value>toolStripMenuItem5</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;loadRestLevelToolStripMenuItem.Name" xml:space="preserve">
+    <value>loadRestLevelToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;loadRestLevelToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ThumperLevelEditor</value>
