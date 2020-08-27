@@ -39,6 +39,13 @@ namespace ThumperLevelEditor {
             }
         }
 
+        private void Generic_KeyPress(object sender, KeyPressEventArgs e){
+            e.Handled = true;
+        }
+        private void Generic_KeyDown(object sender, KeyEventArgs e){
+            e.SuppressKeyPress = true;
+        }
+
         private void toolStripMenuItem4_Click(object sender, EventArgs e){
             masterEditor.Export(dgvLevelFiles);
             lblLog.Text = "Finished exporting master sequence file!";
@@ -122,19 +129,25 @@ namespace ThumperLevelEditor {
         }
 
         //playback shit
-        private void btnPlay_Click(object sender, EventArgs e) {
-            tmrPlayback.Interval = (int)(((60f / masterEditor.bpm) * 1000f));
+        private void btnPlay_Click(object sender, EventArgs e){
+            btnStop_Click(sender, e);   //executes the btnstop function to remove the green line
+            if (masterEditor.bpm != 0) {
+                tmrPlayback.Interval = (int)(((60f / masterEditor.bpm) * 1000f));
 
-            pbCounter = -1; //for some reason there's an offset of 1 when i start this from 0, so i'm just gonna set it to -1 and call it good :^)
-            tmrPlayback.Enabled = true;
-            tmrPlayback.Start();
-            lblLog.Text = "Playback started";
+                pbCounter = -1; //for some reason there's an offset of 1 when i start this from 0, so i'm just gonna set it to -1 and call it good :^)
+                tmrPlayback.Enabled = true;
+                tmrPlayback.Start();
+                lblLog.Text = "Playback started";
+            }else{
+                MessageBox.Show("BPM Cannot be set to 0 when using playback!", "Negative bpm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         private void btnStop_Click(object sender, EventArgs e) {
             tmrPlayback.Stop();
-            dgvObstacles.Columns[pbCounter].DefaultCellStyle.BackColor = Color.FromArgb(40, 40, 40);
-            tmrPlayback.Enabled = false;
-
+            if (pbCounter > 0) {
+                dgvObstacles.Columns[pbCounter].DefaultCellStyle.BackColor = Color.FromArgb(40, 40, 40);
+                tmrPlayback.Enabled = false;
+            }
 
             pbCounter = 0;
             lblLog.Text = "Playback stopped";
@@ -780,12 +793,12 @@ namespace ThumperLevelEditor {
                 lblLog.Text = "Invalid input";
             }
             //resets the color to default when the value is changed depending on the time signature, then change color again if the cell should be illuminated
-            /*if (e.ColumnIndex % numTimeSigLeft.Value == 0){
-                cell.DefaultCellStyle.BackColor = Color.FromArgb(40, 40, 40);
+            if (cell.CurrentCell.ColumnIndex % (numTimeSigLeft.Value * 2) >= 0 && cell.CurrentCell.ColumnIndex % (numTimeSigLeft.Value * 2) <= 3){
+                cell.CurrentCell.Style.BackColor = Color.FromArgb(40, 40, 40);
             }else{
                 cell.CurrentCell.Style.BackColor = Color.FromArgb(50, 50, 50);
-            }*/
-            UpdateTimingSignatures(dgvObstacles);
+            }
+            //UpdateTimingSignatures(dgvObstacles);
             switch (e.RowIndex) {
                 case 0: //---PITCH
                     editor.pitchTL[e.ColumnIndex].id = num;
@@ -1098,7 +1111,7 @@ namespace ThumperLevelEditor {
         }
 
         public void InitializeDropRestLvls(){
-            combLevelFilesRest.Items.Add("None");
+            //combLevelFilesRest.Items.Add("None");
         }
 
         public void UpdateComboType() {
@@ -1533,5 +1546,6 @@ namespace ThumperLevelEditor {
             grid.Rows[23].HeaderCell.Value = "offset Y";
             grid.Rows[24].HeaderCell.Value = "offset Z";
         }
+
     }
 }
