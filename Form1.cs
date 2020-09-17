@@ -17,6 +17,7 @@ namespace ThumperLevelEditor {
         Playback playback = new Playback();
         LevelFileEditor lvlEditor = new LevelFileEditor();
         MasterSequenceEditor masterEditor = new MasterSequenceEditor();
+        ConfigEditor confEditor = new ConfigEditor();
         VirtualMode virtualmode = new VirtualMode();
         SamplesLists samples = new SamplesLists();
 
@@ -30,13 +31,6 @@ namespace ThumperLevelEditor {
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e) {
             Application.Exit();
-        }
-
-        private void exitToolStripMenuItem_Click_1(object sender, EventArgs e) {
-            DialogResult result = MessageBox.Show("Are you sure you wish to exit?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes) {
-                Application.Exit();
-            }
         }
 
         private void Generic_KeyPress(object sender, KeyPressEventArgs e){
@@ -72,12 +66,76 @@ namespace ThumperLevelEditor {
             MessageBox.Show("---Program Dev's info---\nTwitter: @Plasmawario\nDiscord: Plasmawario#7852\n---Thumper Dev's info---\nWebsite: https://thumpergame.com/ \n", "Contact Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void toolStripMenuItem8_Click(object sender, EventArgs e){
+            confEditor.Export();
+        }
+
+        private void toolStripMenuItem9_Click(object sender, EventArgs e){
+            bool hasFoundFile = false;
+            hasFoundFile = confEditor.loadMasterSequenFile();
+            if (hasFoundFile){
+                lblSequinStatus.Text = "Master Sequen File loaded";
+            }
+        }
+
         private void chkHasCheckpoint_CheckedChanged(object sender, EventArgs e){
 
         }
 
         private void chkEnabledInPlayPlus_CheckedChanged(object sender, EventArgs e){
 
+        }
+
+        private void combCustomLevel_SelectedIndexChanged(object sender, EventArgs e){
+            confEditor.customlevel = combCustomLevel.Text;
+            Console.WriteLine(confEditor.customlevel);
+            switch (combCustomLevel.SelectedIndex){
+                case 0:
+                    confEditor.customLevelObj = "level1";
+                    confEditor.cache = "23490781.pc";
+                    confEditor.configCache = "f296f3ab.pc";
+                    break;
+                case 1:
+                    confEditor.customLevelObj = "level2";
+                    confEditor.cache = "8b497b8b.pc";
+                    confEditor.configCache = "c2b80908.pc";
+                    break;
+                case 2:
+                    confEditor.customLevelObj = "level3";
+                    confEditor.cache = "feac0d77.pc";
+                    confEditor.configCache = "a9045489.pc";
+                    break;
+                case 3:
+                    confEditor.customLevelObj = "level4";
+                    confEditor.cache = "abe9847b.pc";
+                    confEditor.configCache = "7d5398a1.pc";
+                    break;
+                case 4:
+                    confEditor.customLevelObj = "level5";
+                    confEditor.cache = "ca760d3f.pc";
+                    confEditor.configCache = "4f9698fc.pc";
+                    break;
+                case 5:
+                    confEditor.customLevelObj = "level6";
+                    confEditor.cache = "10700608.pc";
+                    confEditor.configCache = "14f2baa5.pc";
+                    break;
+                case 6:
+                    confEditor.customLevelObj = "level7";
+                    confEditor.cache = "4c3c80cf.pc";
+                    confEditor.configCache = "7b0b72e8.pc";
+                    break;
+                case 7:
+                    confEditor.customLevelObj = "level8";
+                    confEditor.cache = "7394d1b7.pc";
+                    confEditor.configCache = "f9ac5eb5.pc";
+                    break;
+                case 8:
+                    confEditor.customLevelObj = "level9";
+                    confEditor.cache = "25d1009d.pc";
+                    confEditor.configCache = "c19c877c.pc";
+                    break;
+            }
         }
 
         private void btnClearGrid_Click(object sender, EventArgs e) {
@@ -132,8 +190,8 @@ namespace ThumperLevelEditor {
         //playback shit
         private void btnPlay_Click(object sender, EventArgs e){
             btnStop_Click(sender, e);   //executes the btnstop function to remove the green line
-            if (masterEditor.bpm != 0) {
-                tmrPlayback.Interval = (int)(((60f / masterEditor.bpm) * 1000f));
+            if (confEditor.bpm != 0) {
+                tmrPlayback.Interval = (int)(((60f / confEditor.bpm) * 1000f));
 
                 pbCounter = -1; //for some reason there's an offset of 1 when i start this from 0, so i'm just gonna set it to -1 and call it good :^)
                 tmrPlayback.Enabled = true;
@@ -173,7 +231,20 @@ namespace ThumperLevelEditor {
             editor.Save();
         }
         private void loadToolStripMenuItem1_Click(object sender, EventArgs e) {
-            editor.MissingFeatureDialogue();
+            int leaflengthBuffer;
+            leaflengthBuffer = editor.load();
+
+            if (leaflengthBuffer > 0) { //if the returned value is -1, do not attempt to reset leaf length or color cells
+                numLeafLength.Value = leaflengthBuffer;
+                for (int i = 0; i < dgvObstacles.RowCount; i++) {
+                    for (int j = 0; j < numLeafLength.Value; j++) {
+                        dgvObstacles.CurrentCell = dgvObstacles.Rows[i].Cells[j];
+                        SetDGVCellColorsForLeafFiles(dgvObstacles, i);
+                    }
+                }
+                dgvObstacles.CurrentCell = dgvObstacles.Rows[0].Cells[0];   //reset current cell to the very first one
+                lblLog.Text = "leaf file successfully loaded";
+            }
         }
 
         private void ThumperLevelEditor_Load(object sender, EventArgs e) {
@@ -193,6 +264,7 @@ namespace ThumperLevelEditor {
             InitializeDropSkybox();
             InitializeDropRestLvls();
             UpdateSamples();
+            GenerateCustomLevelEntires();
         }
 
         private void tmrPlayback_Tick(object sender, EventArgs e) {
@@ -235,8 +307,8 @@ namespace ThumperLevelEditor {
         private void numBPM_ValueChanged(object sender, EventArgs e) {
             NumericUpDown num = (NumericUpDown)sender;
 
-            masterEditor.bpm = float.Parse(num.Value.ToString());
-            lblLog.Text = "level BPM set to: " + masterEditor.bpm;
+            confEditor.bpm = float.Parse(num.Value.ToString());
+            lblLog.Text = "level BPM set to: " + confEditor.bpm;
         }
 
         private void loadRestLevelToolStripMenuItem_Click(object sender, EventArgs e){
@@ -804,175 +876,175 @@ namespace ThumperLevelEditor {
                 case 0: //---PITCH
                     editor.pitchTL[e.ColumnIndex].id = num;
                     if (cell.CurrentCell.Value != null) {
-                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 0) cell.CurrentCell.Style.BackColor = Color.FromArgb(231, 43, 33);
+                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 0) SetDGVCellColorsForLeafFiles(cell, 0);
                         lblLog.Text = "List pitchTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 1: //---ROLL
                     editor.rollTL[e.ColumnIndex].id = num;
                     if (cell.CurrentCell.Value != null) {
-                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 0) cell.CurrentCell.Style.BackColor = Color.FromArgb(231, 72, 33);
+                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 0) SetDGVCellColorsForLeafFiles(cell, 1);
                         lblLog.Text = "List rollTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 2: //---TURN
                     editor.turnTL[e.ColumnIndex].id = num;
                     if (cell.CurrentCell.Value != null) {
-                        if (float.Parse(cell.CurrentCell.Value.ToString()) >= 15 || float.Parse(cell.CurrentCell.Value.ToString()) <= -15) cell.CurrentCell.Style.BackColor = Color.FromArgb(231, 95, 33);
+                        if (float.Parse(cell.CurrentCell.Value.ToString()) >= 15 || float.Parse(cell.CurrentCell.Value.ToString()) <= -15) SetDGVCellColorsForLeafFiles(cell, 2);
                         lblLog.Text = "List turnTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 3: //---TURN AUTO
                     editor.turnAutoTL[e.ColumnIndex].id = num;
                     if (cell.CurrentCell.Value != null) {
-                        if (float.Parse(cell.CurrentCell.Value.ToString()) >= 15 || float.Parse(cell.CurrentCell.Value.ToString()) <= -15) cell.CurrentCell.Style.BackColor = Color.FromArgb(231, 119, 33);
+                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 0) SetDGVCellColorsForLeafFiles(cell, 3);
                         lblLog.Text = "List turnAutoTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 4: //---GAME SPEED
                     editor.gameSpeedTL[e.ColumnIndex].id = num;
                     if (cell.CurrentCell.Value != null) {
-                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(200, 200, 200);
+                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 1) SetDGVCellColorsForLeafFiles(cell, 4);
                         lblLog.Text = "List gameSpeedTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 5: //---THUMPS
                     editor.thumpsTL[e.ColumnIndex].id = (int)num;
                     if (cell.CurrentCell.Value != null) {
-                        if ((int)cell.CurrentCell.Value >= 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(32, 47, 233);
+                        if ((int)cell.CurrentCell.Value >= 1) SetDGVCellColorsForLeafFiles(cell, 5);
                         lblLog.Text = "List thumpsTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 6: //---BARS
                     editor.barsTL[e.ColumnIndex].id = (int)num;
                     if (cell.CurrentCell.Value != null) {
-                        if ((int)cell.CurrentCell.Value >= 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(238, 176, 116);
+                        if ((int)cell.CurrentCell.Value >= 1) SetDGVCellColorsForLeafFiles(cell, 6);
                         lblLog.Text = "List barsTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 7: //---MULTI BARS
                     editor.multiBarsTL[e.ColumnIndex].id = (int)num;
                     if (cell.CurrentCell.Value != null) {
-                        if ((int)cell.CurrentCell.Value >= 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(234, 208, 103);
+                        if ((int)cell.CurrentCell.Value >= 1) SetDGVCellColorsForLeafFiles(cell, 7);
                         lblLog.Text = "List multiBarsTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 8: //---FLYING BARS
                     editor.duckerTL[e.ColumnIndex].id = (int)num;
                     if (cell.CurrentCell.Value != null) {
-                        if (int.Parse(cell.CurrentCell.Value.ToString()) == 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(36, 220, 227);
-                        lblLog.Text = "List duckerTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
+                        if (int.Parse(cell.CurrentCell.Value.ToString()) == 1) SetDGVCellColorsForLeafFiles(cell, 8);
+                        lblLog.Text = "List duckersTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 9: //---FUNGI JUMPS
                     editor.jumpFungiTL[e.ColumnIndex].id = (int)num;
                     if (cell.CurrentCell.Value != null) {
-                        if ((int)cell.CurrentCell.Value >= 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(243, 34, 34);
+                        if ((int)cell.CurrentCell.Value >= 1) SetDGVCellColorsForLeafFiles(cell, 9);
                         lblLog.Text = "List jumpFungiTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 10: //---SPIKE JUMPS
                     editor.jumpSpikesTL[e.ColumnIndex].id = (int)num;
                     if (cell.CurrentCell.Value != null) {
-                        if ((int)cell.CurrentCell.Value >= 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(243, 34, 142);
+                        if ((int)cell.CurrentCell.Value >= 1) SetDGVCellColorsForLeafFiles(cell, 10);
                         lblLog.Text = "List jumpSpikesTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 11: //---SNAKE HALF
                     editor.snakesHalfTL[e.ColumnIndex].id = (int)num;
                     if (cell.CurrentCell.Value != null) {
-                        if ((int)cell.CurrentCell.Value >= 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(160, 160, 160);
+                        if ((int)cell.CurrentCell.Value >= 1) SetDGVCellColorsForLeafFiles(cell, 11);
                         lblLog.Text = "List snakesHalfTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 12: //---SNAKE QUARTER
                     editor.snakesQuarterTL[e.ColumnIndex].id = (int)num;
                     if (cell.CurrentCell.Value != null) {
-                        if ((int)cell.CurrentCell.Value >= 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(200, 200, 200);
+                        if ((int)cell.CurrentCell.Value >= 1) SetDGVCellColorsForLeafFiles(cell, 12);
                         lblLog.Text = "List snakesQuarterTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 13: //---SENTRY
                     editor.sentryTL[e.ColumnIndex].id = (int)num;
                     if (cell.CurrentCell.Value != null) {
-                        if ((int)cell.CurrentCell.Value >= 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(74, 32, 227);
+                        if ((int)cell.CurrentCell.Value >= 1) SetDGVCellColorsForLeafFiles(cell, 13);
                         lblLog.Text = "List sentryTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 14: //---FAR LEFT LANE
                     editor.lfLaneTL[e.ColumnIndex].id = num;
                     if (cell.CurrentCell.Value != null) {
-                        if (int.Parse(cell.CurrentCell.Value.ToString()) == 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(227, 32, 94);
+                        if (int.Parse(cell.CurrentCell.Value.ToString()) == 1) SetDGVCellColorsForLeafFiles(cell, 14);
                         lblLog.Text = "List lfLaneTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 15: //---NEAR LEFT LANE
                     editor.lnLaneTL[e.ColumnIndex].id = num;
                     if (cell.CurrentCell.Value != null) {
-                        if (int.Parse(cell.CurrentCell.Value.ToString()) == 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(227, 32, 112);
+                        if (int.Parse(cell.CurrentCell.Value.ToString()) == 1) SetDGVCellColorsForLeafFiles(cell, 15);
                         lblLog.Text = "List lnLaneTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 16: //---CENTER LANE
                     editor.cenLaneTL[e.ColumnIndex].id = num;
                     if (cell.CurrentCell.Value != null) {
-                        if (int.Parse(cell.CurrentCell.Value.ToString()) == 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(227, 32, 150);
+                        if (int.Parse(cell.CurrentCell.Value.ToString()) == 1) SetDGVCellColorsForLeafFiles(cell, 16);
                         lblLog.Text = "List cenLaneTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 17: //---NEAR RIGHT LANE
                     editor.rnLaneTL[e.ColumnIndex].id = num;
                     if (cell.CurrentCell.Value != null) {
-                        if (int.Parse(cell.CurrentCell.Value.ToString()) == 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(227, 32, 190);
+                        if (int.Parse(cell.CurrentCell.Value.ToString()) == 1) SetDGVCellColorsForLeafFiles(cell, 17);
                         lblLog.Text = "List rnLaneTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 18: //---FAR RIGHT LANE
                     editor.rfLaneTL[e.ColumnIndex].id = num;
                     if (cell.CurrentCell.Value != null) {
-                        if (int.Parse(cell.CurrentCell.Value.ToString()) == 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(227, 32, 227);
+                        if (int.Parse(cell.CurrentCell.Value.ToString()) == 1) SetDGVCellColorsForLeafFiles(cell, 18);
                         lblLog.Text = "List rfLaneTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 19: //---SCALE X
                     editor.scaleXTL[e.ColumnIndex].id = num;
                     if (cell.CurrentCell.Value != null) {
-                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(32, 227, 113);
+                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 1) SetDGVCellColorsForLeafFiles(cell, 19);
                         lblLog.Text = "List scaleXTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 20: //---SCALE Y
                     editor.scaleYTL[e.ColumnIndex].id = num;
                     if (cell.CurrentCell.Value != null) {
-                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(32, 227, 79);
+                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 1) SetDGVCellColorsForLeafFiles(cell, 20);
                         lblLog.Text = "List scaleYTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 21: //---SCALE Z
                     editor.scaleZTL[e.ColumnIndex].id = num;
                     if (cell.CurrentCell.Value != null) {
-                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 1) cell.CurrentCell.Style.BackColor = Color.FromArgb(32, 227, 39);
+                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 1) SetDGVCellColorsForLeafFiles(cell, 21);
                         lblLog.Text = "List scaleZTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 22: //---OFFSET X
                     editor.offsetXTL[e.ColumnIndex].id = num;
                     if (cell.CurrentCell.Value != null) {
-                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 0) cell.CurrentCell.Style.BackColor = Color.FromArgb(64, 227, 32);
+                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 0) SetDGVCellColorsForLeafFiles(cell, 22);
                         lblLog.Text = "List offsetXTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 23: //---OFFSET Y
                     editor.offsetYTL[e.ColumnIndex].id = num;
                     if (cell.CurrentCell.Value != null) {
-                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 0) cell.CurrentCell.Style.BackColor = Color.FromArgb(92, 227, 32);
+                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 0) SetDGVCellColorsForLeafFiles(cell, 23);
                         lblLog.Text = "List offsetYTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
                 case 24: //---OFFSET Z
                     editor.offsetZTL[e.ColumnIndex].id = num;
                     if (cell.CurrentCell.Value != null) {
-                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 0) cell.CurrentCell.Style.BackColor = Color.FromArgb(120, 227, 32);
+                        if (float.Parse(cell.CurrentCell.Value.ToString()) != 0) SetDGVCellColorsForLeafFiles(cell, 24);
                         lblLog.Text = "List offsetZTL" + " at index " + e.ColumnIndex + " now has value of " + e.Value.ToString();
                     }
                     break;
@@ -1092,6 +1164,23 @@ namespace ThumperLevelEditor {
             grid.CurrentCell.Value = val;
         }
 
+        private void numMenuRailColor_ValueChanged(object sender, EventArgs e){
+            lblMenuColorOutput.BackColor = Color.FromArgb((int)numMenuRailColorA.Value, (int)numMenuRailColorR.Value, (int)numMenuRailColorG.Value, (int)numMenuRailColorB.Value);
+            confEditor.rgbaRails = Color.FromArgb((int)numMenuRailColorA.Value, (int)numMenuRailColorR.Value, (int)numMenuRailColorG.Value, (int)numMenuRailColorB.Value);
+        }
+        private void numMenuGlowRailColor_ValueChanged(object sender, EventArgs e){
+            lblMenuGlowColorOutput.BackColor = Color.FromArgb((int)numMenuGlowRailColorA.Value, (int)numMenuRailColorR.Value, (int)numMenuRailColorG.Value, (int)numMenuRailColorB.Value);
+            confEditor.rgbaGlowRails = Color.FromArgb((int)numMenuGlowRailColorA.Value, (int)numMenuGlowRailColorR.Value, (int)numMenuGlowRailColorG.Value, (int)numMenuGlowRailColorB.Value);
+        }
+        private void numPathRailColor_ValueChanged(object sender, EventArgs e){
+            lblPathColorOutput.BackColor = Color.FromArgb((int)numPathColorA.Value, (int)numPathColorR.Value, (int)numPathColorG.Value, (int)numPathColorB.Value);
+            confEditor.rgbaPath = Color.FromArgb((int)numPathColorA.Value, (int)numPathColorR.Value, (int)numPathColorG.Value, (int)numPathColorB.Value);
+        }
+        private void numJoyRailColor_ValueChanged(object sender, EventArgs e){
+            lblJoyColorOutput.BackColor = Color.FromArgb((int)numJoyColorA.Value, (int)numJoyColorR.Value, (int)numJoyColorG.Value, (int)numJoyColorB.Value);
+            confEditor.rgbaJoy = Color.FromArgb((int)numJoyColorA.Value, (int)numJoyColorR.Value, (int)numJoyColorG.Value, (int)numJoyColorB.Value);
+        }
+
         private void exportToolStripMenuItem_Click(object sender, EventArgs e) {
             //editor.Export();
         }
@@ -1102,6 +1191,89 @@ namespace ThumperLevelEditor {
         //--------------------------------------------------//
         //--------------------Non-events--------------------//
         //--------------------------------------------------//
+
+        public void SetDGVCellColorsForLeafFiles(DataGridView grid, int index){
+            if (grid.CurrentCell.Value == null || grid.CurrentCell.Value.ToString() == ""){
+                index = -1; //checks if the cell value is empty. If so, skip color checking algorithm
+            }
+            switch (index){
+                case 0:
+                    if (float.Parse(grid.CurrentCell.Value.ToString()) != 0) grid.CurrentCell.Style.BackColor = Color.FromArgb(231, 43, 33);
+                    break;
+                case 1:
+                    if (float.Parse(grid.CurrentCell.Value.ToString()) != 0) grid.CurrentCell.Style.BackColor = Color.FromArgb(231, 72, 33);
+                    break;
+                case 2:
+                    if (float.Parse(grid.CurrentCell.Value.ToString()) >= 15 || float.Parse(grid.CurrentCell.Value.ToString()) <= -15) grid.CurrentCell.Style.BackColor = Color.FromArgb(231, 95, 33);
+                    break;
+                case 3:
+                    if (float.Parse(grid.CurrentCell.Value.ToString()) != 0) grid.CurrentCell.Style.BackColor = Color.FromArgb(231, 119, 33);
+                    break;
+                case 4:
+                    if (float.Parse(grid.CurrentCell.Value.ToString()) != 1) grid.CurrentCell.Style.BackColor = Color.FromArgb(200, 200, 200);
+                    break;
+                case 5:
+                    if ((int)grid.CurrentCell.Value >= 1) grid.CurrentCell.Style.BackColor = Color.FromArgb(32, 47, 233);
+                    break;
+                case 6:
+                    if ((int)grid.CurrentCell.Value >= 1) grid.CurrentCell.Style.BackColor = Color.FromArgb(238, 176, 116);
+                    break;
+                case 7:
+                    if ((int)grid.CurrentCell.Value >= 1) grid.CurrentCell.Style.BackColor = Color.FromArgb(234, 208, 103);
+                    break;
+                case 8:
+                    if (int.Parse(grid.CurrentCell.Value.ToString()) == 1) grid.CurrentCell.Style.BackColor = Color.FromArgb(36, 220, 227);
+                    break;
+                case 9:
+                    if ((int)grid.CurrentCell.Value >= 1) grid.CurrentCell.Style.BackColor = Color.FromArgb(243, 34, 34);
+                    break;
+                case 10:
+                    if ((int)grid.CurrentCell.Value >= 1) grid.CurrentCell.Style.BackColor = Color.FromArgb(243, 34, 142);
+                    break;
+                case 11:
+                    if ((int)grid.CurrentCell.Value >= 1) grid.CurrentCell.Style.BackColor = Color.FromArgb(160, 160, 160);
+                    break;
+                case 12:
+                    if ((int)grid.CurrentCell.Value >= 1) grid.CurrentCell.Style.BackColor = Color.FromArgb(200, 200, 200);
+                    break;
+                case 13:
+                    if ((int)grid.CurrentCell.Value >= 1) grid.CurrentCell.Style.BackColor = Color.FromArgb(74, 32, 227);
+                    break;
+                case 14:
+                    if (int.Parse(grid.CurrentCell.Value.ToString()) == 1) grid.CurrentCell.Style.BackColor = Color.FromArgb(227, 32, 94);
+                    break;
+                case 15:
+                    if (int.Parse(grid.CurrentCell.Value.ToString()) == 1) grid.CurrentCell.Style.BackColor = Color.FromArgb(227, 32, 112);
+                    break;
+                case 16:
+                    if (int.Parse(grid.CurrentCell.Value.ToString()) == 1) grid.CurrentCell.Style.BackColor = Color.FromArgb(227, 32, 150);
+                    break;
+                case 17:
+                    if (int.Parse(grid.CurrentCell.Value.ToString()) == 1) grid.CurrentCell.Style.BackColor = Color.FromArgb(227, 32, 190);
+                    break;
+                case 18:
+                    if (int.Parse(grid.CurrentCell.Value.ToString()) == 1) grid.CurrentCell.Style.BackColor = Color.FromArgb(227, 32, 227);
+                    break;
+                case 19:
+                    if (float.Parse(grid.CurrentCell.Value.ToString()) != 1) grid.CurrentCell.Style.BackColor = Color.FromArgb(32, 227, 113);
+                    break;
+                case 20:
+                    if (float.Parse(grid.CurrentCell.Value.ToString()) != 1) grid.CurrentCell.Style.BackColor = Color.FromArgb(32, 227, 79);
+                    break;
+                case 21:
+                    if (float.Parse(grid.CurrentCell.Value.ToString()) != 1) grid.CurrentCell.Style.BackColor = Color.FromArgb(32, 227, 39);
+                    break;
+                case 22:
+                    if (float.Parse(grid.CurrentCell.Value.ToString()) != 0) grid.CurrentCell.Style.BackColor = Color.FromArgb(64, 227, 32);
+                    break;
+                case 23:
+                    if (float.Parse(grid.CurrentCell.Value.ToString()) != 0) grid.CurrentCell.Style.BackColor = Color.FromArgb(92, 227, 32);
+                    break;
+                case 24:
+                    if (float.Parse(grid.CurrentCell.Value.ToString()) != 0) grid.CurrentCell.Style.BackColor = Color.FromArgb(120, 227, 32);
+                    break;
+            }
+        }
 
         public void InitializeComboLane() {
             combLane.Items.Add("Far Left Lane");
@@ -1546,6 +1718,27 @@ namespace ThumperLevelEditor {
             grid.Rows[22].HeaderCell.Value = "offset X";
             grid.Rows[23].HeaderCell.Value = "offset Y";
             grid.Rows[24].HeaderCell.Value = "offset Z";
+        }
+
+        public void GenerateCustomLevelEntires(){
+            combCustomLevel.Items.Add("customlevel1");
+            combCustomLevel.Items.Add("customlevel2");
+            combCustomLevel.Items.Add("customlevel3");
+            combCustomLevel.Items.Add("customlevel4");
+            combCustomLevel.Items.Add("customlevel5");
+            combCustomLevel.Items.Add("customlevel6");
+            combCustomLevel.Items.Add("customlevel7");
+            combCustomLevel.Items.Add("customlevel8");
+            combCustomLevel.Items.Add("customlevel9");
+        }
+
+        private void ThumperLevelEditor_FormClosing(object sender, FormClosingEventArgs e){
+            DialogResult result = MessageBox.Show("Are you sure you wish to exit?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes){
+                e.Cancel = false;
+            }else {
+                e.Cancel = true;
+            }
         }
 
     }

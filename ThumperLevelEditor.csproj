@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigEditor.cs" />
     <Compile Include="InitializeLeafObjects.cs" />
     <Compile Include="LevelFileEditor.cs" />
     <Compile Include="MasterSequenceEditor.cs" />

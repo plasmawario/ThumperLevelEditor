@@ -165,8 +165,8 @@ namespace ThumperLevelEditor {
         public void Save(){
             //file save information
             SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.Filter = "Thumper Level Editor File|*.tle";
-            saveFile.Title = "Save a Thumper Level Editor file";
+            saveFile.Filter = "Thumper Level Editor Leaf File|*.tleLeaf";
+            saveFile.Title = "Save a Thumper Level Editor Leaf file";
             saveFile.ShowDialog();
 
             if (saveFile.FileName != ""){
@@ -216,23 +216,25 @@ namespace ThumperLevelEditor {
             using (fs = File.Open(fs.Name, FileMode.Append)){
                 //print the next pieces of data
 
-                byte[] info = new UTF8Encoding(true).GetBytes(list[0].name);     //character to define new object when reading and writing
+                byte[] info = new UTF8Encoding(true).GetBytes("editortype:" + 0 + "\n");
                 byte[] seperator = new UTF8Encoding(true).GetBytes(",");
                 byte[] newline = new UTF8Encoding(true).GetBytes(" \n");
                 fs.Write(info, 0, info.Length);
                 //fs.Write(newline, 0, info.Length);
+                info = new UTF8Encoding(true).GetBytes(list[0].name);   //character to define new object when reading and writing
+                fs.Write(info, 0, info.Length);
                 info = new UTF8Encoding(true).GetBytes("\ndefault_value:" + list[0].step_val + "\n");
                 fs.Write(info, 0, info.Length);
                 //fs.Write(newline, 0, info.Length);
                 info = new UTF8Encoding(true).GetBytes("\ndata_points:\n");
-                for (int i = 0; i < list.Capacity; i++){
+                for (int i = 0; i < leafLength; i++){
                     info = new UTF8Encoding(true).GetBytes(list[i].id.ToString());
                     fs.Write(info, 0, info.Length);
-                    if (i < list.Capacity - 1){
+                    if (i < leafLength - 1){
                         fs.Write(seperator, 0, seperator.Length);   //will write a comma after each datapoint except the last one
                     }else{
-                        seperator = new UTF8Encoding(true).GetBytes("|");
-                        fs.Write(seperator, 0, seperator.Length);
+                        //seperator = new UTF8Encoding(true).GetBytes("|");
+                        //fs.Write(seperator, 0, seperator.Length);
                         fs.Write(newline, 0, newline.Length);
                     }
                 }
@@ -242,81 +244,152 @@ namespace ThumperLevelEditor {
             using (fs = File.Open(fs.Name, FileMode.Append)){
                 //print the next pieces of data
 
-                byte[] info = new UTF8Encoding(true).GetBytes(list[0].name);     //character to define new object when reading and writing
+                byte[] info = new UTF8Encoding(true).GetBytes("editortype:" + 1 + "\n");
                 byte[] seperator = new UTF8Encoding(true).GetBytes(",");
                 byte[] newline = new UTF8Encoding(true).GetBytes(" \n");
                 fs.Write(info, 0, info.Length);
                 //fs.Write(newline, 0, info.Length);
+                info = new UTF8Encoding(true).GetBytes(list[0].name);    //character to define new object when reading and writing
+                fs.Write(info, 0, info.Length);
                 info = new UTF8Encoding(true).GetBytes("\ndefault_value:" + list[0].step_val + "\n");
                 fs.Write(info, 0, info.Length);
                 //fs.Write(newline, 0, info.Length);
                 info = new UTF8Encoding(true).GetBytes("\ndata_points:\n");
-                for (int i = 0; i < list.Capacity; i++){
+                for (int i = 0; i < leafLength; i++){
                     info = new UTF8Encoding(true).GetBytes("{" + list[i].id.ToString());
                     fs.Write(info, 0, info.Length);
                     fs.Write(seperator, 0, seperator.Length);
-                    info = new UTF8Encoding(true).GetBytes(list[i].param_objType);
+                    /*info = new UTF8Encoding(true).GetBytes(list[i].param_objType);
                     fs.Write(info, 0, info.Length);
-                    fs.Write(seperator, 0, seperator.Length);
-                    info = new UTF8Encoding(true).GetBytes(list[i].param_objLane + "}");
+                    fs.Write(seperator, 0, seperator.Length);*/
+                    info = new UTF8Encoding(true).GetBytes(list[i].laneID + "}");
                     fs.Write(info, 0, info.Length);
-                    if (i < list.Capacity - 1){
+                    if (i < leafLength - 1){
                         fs.Write(seperator, 0, seperator.Length);   //will write a comma after each datapoint except the last one
                     }else{
-                        seperator = new UTF8Encoding(true).GetBytes("|");
-                        fs.Write(seperator, 0, seperator.Length);
+                        //seperator = new UTF8Encoding(true).GetBytes("|");
+                        //fs.Write(seperator, 0, seperator.Length);
                         fs.Write(newline, 0, newline.Length);
                     }
                 }
             }
         }
 
-        public void load(){
+        public int load(){
             OpenFileDialog loadFile = new OpenFileDialog();
-            loadFile.Filter = "Thumper Level Editor File|*.tle";
-            loadFile.Title = "Load a Thumper Level Editor file";
+            loadFile.Filter = "Thumper Level Editor Leaf File|*.tleLeaf";
+            loadFile.Title = "Load a Thumper Level Editor Leaf file";
             loadFile.ShowDialog();
 
-            StreamReader reader = new StreamReader(loadFile.OpenFile());
-            //StringBuilder sb;
-            string linetoWrite = null;
-            List<ObjectProperties> list = new List<ObjectProperties>();
-            char[] datapoints;
-            int counter = 0;
-            decimal datapoint_value;
+            if (loadFile.FileName != ""){ 
+                StreamReader reader = new StreamReader(loadFile.OpenFile());
+                //StringBuilder sb;
+                string linetoRead = null;
+                List<List<ObjectSimpleProperties>> simpleObjList = new List<List<ObjectSimpleProperties>>();
+                List<List<ObjectProperties>> objList = new List<List<ObjectProperties>>();
+                char[] datapoints;
+                int counter = 0, jSimple = -1, jComplex = -1, beatCount = 0;
+                bool objectTypeIsSimple = true;
+                decimal datapoint_value;
 
-            //read each character until 
-            while ((linetoWrite = reader.ReadLine()) != null) {
-                switch (counter){
-                    case 0:
-                        //list = linetoWrite; //reads list name
-                        break;
-                    case 1:
-                        linetoWrite = linetoWrite.Substring(13);    //reads default value
-                        break;
-                    case 2:
-                        datapoints = linetoWrite.ToCharArray();
-                        //sb = new StringBuilder(linetoWrite);
-                        linetoWrite = "";
-                        for (int i = 0; i < linetoWrite.Length; i++){
-                            if (datapoints[i].Equals(",")){
-                                datapoint_value = decimal.Parse(linetoWrite);
-                                //list[i].id =
-                                
-                                //linetoWrite = "";
-                            }
-                            else{
-                                linetoWrite += datapoints[i].ToString();
-                            }
+                try{
+                    simpleObjList.Add(pitchTL);
+                    simpleObjList.Add(rollTL);
+                    simpleObjList.Add(turnTL);
+                    simpleObjList.Add(turnAutoTL);
+                    simpleObjList.Add(gameSpeedTL);
+                    objList.Add(thumpsTL);
+                    objList.Add(barsTL);
+                    objList.Add(multiBarsTL);
+                    objList.Add(duckerTL);
+                    objList.Add(jumpFungiTL);
+                    objList.Add(jumpSpikesTL);
+                    objList.Add(snakesHalfTL);
+                    objList.Add(snakesQuarterTL);
+                    objList.Add(sentryTL);
+                    simpleObjList.Add(lfLaneTL);
+                    simpleObjList.Add(lnLaneTL);
+                    simpleObjList.Add(cenLaneTL);
+                    simpleObjList.Add(rnLaneTL);
+                    simpleObjList.Add(rfLaneTL);
+                    simpleObjList.Add(scaleXTL);
+                    simpleObjList.Add(scaleYTL);
+                    simpleObjList.Add(scaleZTL);
+                    simpleObjList.Add(offsetXTL);
+                    simpleObjList.Add(offsetYTL);
+                    simpleObjList.Add(offsetZTL);
+
+                    //read each character until 
+                    while ((linetoRead = reader.ReadLine()) != null) {
+                        switch (counter){
+                            case 0:
+                                linetoRead = linetoRead.Substring(11);
+                                if (int.Parse(linetoRead) == 0){    //Gets what type of object it's reading and flags appropriately
+                                    jSimple++;
+                                    objectTypeIsSimple = true;
+                                }else{
+                                    jComplex++;
+                                    objectTypeIsSimple = false;
+                                }
+                                break;
+                            case 2:
+                                linetoRead = linetoRead.Substring(14);    //reads default value
+                                if (objectTypeIsSimple){
+                                    simpleObjList[jSimple][0].step_val = int.Parse(linetoRead);
+                                }else{
+                                    objList[jComplex][0].step_val = int.Parse(linetoRead);
+                                }
+                                break;
+                            case 3:
+                                List<int> datapoints_raw = new List<int>();
+                                if (objectTypeIsSimple){
+                                    datapoints = linetoRead.ToCharArray();
+                                    for (int i = 0; i < datapoints.Length; i++){
+                                        if (decimal.TryParse(datapoints[i].ToString(), out datapoint_value)){
+                                            datapoints_raw.Add(int.Parse(datapoint_value.ToString()));
+                                        }
+                                    }
+                                    for (int i = 0; i < datapoints_raw.Capacity; i++){
+                                        simpleObjList[jSimple][i].id = datapoints_raw[i];
+                                    }
+                                }
+                                else{
+                                    List<int> datapoints_raw2 = new List<int>();
+                                    bool isCheckingID = true;
+                                    datapoints = linetoRead.ToCharArray();
+                                    for (int i = 0; i < datapoints.Length; i++){
+                                        if (decimal.TryParse(datapoints[i].ToString(), out datapoint_value)){
+                                            if (isCheckingID){
+                                                datapoints_raw.Add(int.Parse(datapoint_value.ToString()));
+                                                isCheckingID = false;
+                                            }else{
+                                                datapoints_raw2.Add(int.Parse(datapoint_value.ToString()));
+                                                isCheckingID = true;
+                                            }
+                                    
+                                        }
+                                    }
+                                    for (int i = 0; i < datapoints_raw.Capacity; i++){
+                                        objList[jComplex][i].id = datapoints_raw[i];
+                                        objList[jComplex][i].laneID = datapoints_raw2[i];
+                                    }
+                                }
+                                beatCount = datapoints_raw.Capacity;
+                                break;
                         }
-                        break;
-                }
 
-                counter++;
-                if (counter % 2 == 0){
-                    counter = 0;
+                        counter++;
+                        if (counter % 4 == 0){
+                            counter = 0;
+                        }
+                    }
+                    Console.WriteLine("File loaded!");
+                    return beatCount;
+                }catch (Exception ex){
+                    MessageBox.Show("An unexpected problem has occured when trying to load the file. This could be due to an unsupported file type or corrupted/broken file. If the problem persists, contact the developer or submit a bug report\n\n" + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            return -1;
         }
 
         public void Export(){
