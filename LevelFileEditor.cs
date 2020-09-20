@@ -24,6 +24,16 @@ namespace ThumperLevelEditor {
             exportFile.ShowDialog();
 
             if (exportFile.FileName != ""){
+
+                //stores the directory and file name itself to make it possible to manipulate the file name itself
+                string storePath = Path.GetDirectoryName(exportFile.FileName);
+                string tempFileName = Path.GetFileName(exportFile.FileName);
+
+                //if the file doesn't have the lvl_ prefix in its name, add it
+                if (!tempFileName.ToString().Substring(0, 4).Equals("lvl_")){
+                    exportFile.FileName = storePath + "\\lvl_" + tempFileName;
+                }
+
                 FileStream fs = (FileStream)exportFile.OpenFile();
 
                 //remove file if it exists
@@ -34,10 +44,13 @@ namespace ThumperLevelEditor {
                 fs.Dispose();
                 exportFile.Dispose();
 
+                //string to hold the file name without the "lvl_" prefix
+                string levelname = Path.GetFileNameWithoutExtension(fs.Name);
+
                 destinationFile = new StreamWriter(fs.Name, true);
 
-                //string to hold the file name without the "leaf_" prefix
-                string levelname = Path.GetFileNameWithoutExtension(fs.Name);
+                //remove the lvl_ prefix from leafName for writing inside the lvl file
+                levelname = levelname.ToString().Substring(4);
 
                 ObjectsToWrite = rowNum;
 

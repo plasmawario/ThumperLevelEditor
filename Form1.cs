@@ -131,7 +131,7 @@ namespace ThumperLevelEditor {
                     confEditor.configCache = "f9ac5eb5.pc";
                     break;
                 case 8:
-                    confEditor.customLevelObj = "level9";
+                    confEditor.customLevelObj = "test";
                     confEditor.cache = "25d1009d.pc";
                     confEditor.configCache = "c19c877c.pc";
                     break;
@@ -466,25 +466,31 @@ namespace ThumperLevelEditor {
 
         private void dgvLeafFiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e){
             DataGridView grid = (DataGridView)sender;
-            grid.Rows.RemoveAt(e.RowIndex);
-            lvlEditor.leafFileList.RemoveAt(e.RowIndex);
+            if (e.RowIndex > -1) {
+                grid.Rows.RemoveAt(e.RowIndex);
+                lvlEditor.leafFileList.RemoveAt(e.RowIndex);
 
-            lblLog.Text = "Removed a leaf file from list at index: " + e.RowIndex;
+                lblLog.Text = "Removed a leaf file from list at index: " + e.RowIndex;
+            }
         }
 
         private void dgvLevelFiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e){
             DataGridView grid = (DataGridView)sender;
-            grid.Rows.RemoveAt(e.RowIndex);
-            masterEditor.levelFileList.RemoveAt(e.RowIndex);
+            if (e.RowIndex > -1){
+                grid.Rows.RemoveAt(e.RowIndex);
+                masterEditor.levelFileList.RemoveAt(e.RowIndex);
 
-            lblLog.Text = "Removed a level file from list at index: " + e.RowIndex;
+                lblLog.Text = "Removed a level file from list at index: " + e.RowIndex;
+            }
         }
 
         private void dgvSamplesList_CellDoubleClick(object sender, DataGridViewCellEventArgs e){
             DataGridView grid = (DataGridView)sender;
-            grid.Rows.RemoveAt(e.RowIndex);
-            lvlEditor.sampleList.RemoveAt(e.RowIndex);
-            lblLog.Text = "Removed a sample from lvl file at index: " + e.RowIndex;
+            if (e.RowIndex > -1){
+                grid.Rows.RemoveAt(e.RowIndex);
+                lvlEditor.sampleList.RemoveAt(e.RowIndex);
+                lblLog.Text = "Removed a sample from lvl file at index: " + e.RowIndex;
+            }
         }
 
         private void numTimeSigLeft_ValueChanged(object sender, EventArgs e){
@@ -1729,7 +1735,7 @@ namespace ThumperLevelEditor {
             combCustomLevel.Items.Add("customlevel6");
             combCustomLevel.Items.Add("customlevel7");
             combCustomLevel.Items.Add("customlevel8");
-            combCustomLevel.Items.Add("customlevel9");
+            combCustomLevel.Items.Add("testlevel");
         }
 
         private void ThumperLevelEditor_FormClosing(object sender, FormClosingEventArgs e){

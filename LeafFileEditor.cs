@@ -399,6 +399,18 @@ namespace ThumperLevelEditor {
             exportFile.ShowDialog();
 
             if (exportFile.FileName != ""){
+
+                //stores the directory and file name itself to make it possible to manipulate the file name itself
+                string storePath = Path.GetDirectoryName(exportFile.FileName);
+                string tempFileName = Path.GetFileName(exportFile.FileName);
+                
+                //if the file doesn't have the leaf_ prefix in its name, add it
+                if (!tempFileName.ToString().Substring(0, 5).Equals("leaf_")){
+                    exportFile.FileName = storePath + "\\leaf_" + tempFileName;
+                }
+
+                Console.WriteLine(exportFile.FileName);
+
                 FileStream fs = (FileStream)exportFile.OpenFile();
 
                 //remove file if it exists
@@ -409,10 +421,13 @@ namespace ThumperLevelEditor {
                 fs.Dispose();
                 exportFile.Dispose();
 
-                destinationFile = new StreamWriter(fs.Name, true);
-
                 //string to hold the file name without the "leaf_" prefix
                 string leafName = Path.GetFileNameWithoutExtension(fs.Name);
+
+                destinationFile = new StreamWriter(fs.Name, true);
+
+                //remove the leaf_ prefix from leafName for writing inside the leaf file
+                leafName = leafName.ToString().Substring(5);
 
                 //save all lists into a file with all the data
                 try{

@@ -28,18 +28,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThumperLevelEditor));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlLeafEditor = new System.Windows.Forms.Panel();
             this.numTimeSigRight = new System.Windows.Forms.NumericUpDown();
             this.numTimeSigLeft = new System.Windows.Forms.NumericUpDown();
@@ -64,6 +64,22 @@
             this.exportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lblLeafLength = new System.Windows.Forms.Label();
             this.pnl = new System.Windows.Forms.Panel();
+            this.lblJoyColorOutput = new System.Windows.Forms.Label();
+            this.lblPathColorOutput = new System.Windows.Forms.Label();
+            this.lblMenuGlowColorOutput = new System.Windows.Forms.Label();
+            this.lblMenuColorOutput = new System.Windows.Forms.Label();
+            this.numJoyColorA = new System.Windows.Forms.NumericUpDown();
+            this.numPathColorA = new System.Windows.Forms.NumericUpDown();
+            this.numMenuGlowRailColorA = new System.Windows.Forms.NumericUpDown();
+            this.numMenuRailColorA = new System.Windows.Forms.NumericUpDown();
+            this.numJoyColorB = new System.Windows.Forms.NumericUpDown();
+            this.numJoyColorG = new System.Windows.Forms.NumericUpDown();
+            this.label22 = new System.Windows.Forms.Label();
+            this.numJoyColorR = new System.Windows.Forms.NumericUpDown();
+            this.numPathColorB = new System.Windows.Forms.NumericUpDown();
+            this.numPathColorG = new System.Windows.Forms.NumericUpDown();
+            this.label23 = new System.Windows.Forms.Label();
+            this.numPathColorR = new System.Windows.Forms.NumericUpDown();
             this.lblSequinStatus = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.combCustomLevel = new System.Windows.Forms.ComboBox();
@@ -139,22 +155,6 @@
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.loadRestLevelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.numJoyColorB = new System.Windows.Forms.NumericUpDown();
-            this.numJoyColorG = new System.Windows.Forms.NumericUpDown();
-            this.label22 = new System.Windows.Forms.Label();
-            this.numJoyColorR = new System.Windows.Forms.NumericUpDown();
-            this.numPathColorB = new System.Windows.Forms.NumericUpDown();
-            this.numPathColorG = new System.Windows.Forms.NumericUpDown();
-            this.label23 = new System.Windows.Forms.Label();
-            this.numPathColorR = new System.Windows.Forms.NumericUpDown();
-            this.numJoyColorA = new System.Windows.Forms.NumericUpDown();
-            this.numPathColorA = new System.Windows.Forms.NumericUpDown();
-            this.numMenuGlowRailColorA = new System.Windows.Forms.NumericUpDown();
-            this.numMenuRailColorA = new System.Windows.Forms.NumericUpDown();
-            this.lblMenuColorOutput = new System.Windows.Forms.Label();
-            this.lblMenuGlowColorOutput = new System.Windows.Forms.Label();
-            this.lblJoyColorOutput = new System.Windows.Forms.Label();
-            this.lblPathColorOutput = new System.Windows.Forms.Label();
             this.pnlLeafEditor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numTimeSigRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTimeSigLeft)).BeginInit();
@@ -163,6 +163,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.numLeafLength)).BeginInit();
             this.menuStrip2.SuspendLayout();
             this.pnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numJoyColorA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPathColorA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMenuGlowRailColorA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMenuRailColorA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numJoyColorB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numJoyColorG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numJoyColorR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPathColorB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPathColorG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPathColorR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMenuGlowRailColorB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMenuGlowRailColorG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMenuGlowRailColorR)).BeginInit();
@@ -182,16 +192,6 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLevelFiles)).BeginInit();
             this.menuStrip4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numJoyColorB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numJoyColorG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numJoyColorR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPathColorB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPathColorG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPathColorR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numJoyColorA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPathColorA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMenuGlowRailColorA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMenuRailColorA)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLeafEditor
@@ -234,7 +234,6 @@
             0,
             0});
             this.numTimeSigRight.Name = "numTimeSigRight";
-            this.numTimeSigRight.ReadOnly = true;
             this.numTimeSigRight.Value = new decimal(new int[] {
             4,
             0,
@@ -309,6 +308,7 @@
             // combType
             // 
             this.combType.BackColor = System.Drawing.Color.DimGray;
+            this.combType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combType.DropDownWidth = 184;
             resources.ApplyResources(this.combType, "combType");
             this.combType.FormattingEnabled = true;
@@ -325,6 +325,7 @@
             // combLane
             // 
             this.combLane.BackColor = System.Drawing.Color.DimGray;
+            this.combLane.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.combLane, "combLane");
             this.combLane.FormattingEnabled = true;
             this.combLane.Name = "combLane";
@@ -369,42 +370,42 @@
             this.dgvObstacles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvObstacles.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgvObstacles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle73.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle73.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle73.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle73.Format = "N0";
-            dataGridViewCellStyle73.NullValue = null;
-            dataGridViewCellStyle73.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle73.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle73.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvObstacles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle73;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvObstacles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             resources.ApplyResources(this.dgvObstacles, "dgvObstacles");
             this.dgvObstacles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle74.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle74.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle74.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle74.Format = "N1";
-            dataGridViewCellStyle74.NullValue = null;
-            dataGridViewCellStyle74.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle74.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle74.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvObstacles.DefaultCellStyle = dataGridViewCellStyle74;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.Format = "N1";
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvObstacles.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvObstacles.EnableHeadersVisualStyles = false;
             this.dgvObstacles.GridColor = System.Drawing.Color.Black;
             this.dgvObstacles.MultiSelect = false;
             this.dgvObstacles.Name = "dgvObstacles";
             this.dgvObstacles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle75.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            dataGridViewCellStyle75.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle75.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle75.NullValue = null;
-            dataGridViewCellStyle75.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle75.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle75.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvObstacles.RowHeadersDefaultCellStyle = dataGridViewCellStyle75;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvObstacles.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvObstacles.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvObstacles.RowTemplate.Height = 200;
             this.dgvObstacles.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -528,6 +529,226 @@
             resources.ApplyResources(this.pnl, "pnl");
             this.pnl.Name = "pnl";
             // 
+            // lblJoyColorOutput
+            // 
+            this.lblJoyColorOutput.BackColor = System.Drawing.Color.White;
+            this.lblJoyColorOutput.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.lblJoyColorOutput, "lblJoyColorOutput");
+            this.lblJoyColorOutput.Name = "lblJoyColorOutput";
+            // 
+            // lblPathColorOutput
+            // 
+            this.lblPathColorOutput.BackColor = System.Drawing.Color.White;
+            this.lblPathColorOutput.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.lblPathColorOutput, "lblPathColorOutput");
+            this.lblPathColorOutput.Name = "lblPathColorOutput";
+            // 
+            // lblMenuGlowColorOutput
+            // 
+            this.lblMenuGlowColorOutput.BackColor = System.Drawing.Color.White;
+            this.lblMenuGlowColorOutput.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.lblMenuGlowColorOutput, "lblMenuGlowColorOutput");
+            this.lblMenuGlowColorOutput.Name = "lblMenuGlowColorOutput";
+            // 
+            // lblMenuColorOutput
+            // 
+            this.lblMenuColorOutput.BackColor = System.Drawing.Color.White;
+            this.lblMenuColorOutput.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.lblMenuColorOutput, "lblMenuColorOutput");
+            this.lblMenuColorOutput.Name = "lblMenuColorOutput";
+            // 
+            // numJoyColorA
+            // 
+            this.numJoyColorA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.numJoyColorA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.numJoyColorA, "numJoyColorA");
+            this.numJoyColorA.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numJoyColorA.Name = "numJoyColorA";
+            this.numJoyColorA.Value = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numJoyColorA.ValueChanged += new System.EventHandler(this.numJoyRailColor_ValueChanged);
+            // 
+            // numPathColorA
+            // 
+            this.numPathColorA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.numPathColorA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.numPathColorA, "numPathColorA");
+            this.numPathColorA.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numPathColorA.Name = "numPathColorA";
+            this.numPathColorA.Value = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numPathColorA.ValueChanged += new System.EventHandler(this.numPathRailColor_ValueChanged);
+            // 
+            // numMenuGlowRailColorA
+            // 
+            this.numMenuGlowRailColorA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.numMenuGlowRailColorA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.numMenuGlowRailColorA, "numMenuGlowRailColorA");
+            this.numMenuGlowRailColorA.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numMenuGlowRailColorA.Name = "numMenuGlowRailColorA";
+            this.numMenuGlowRailColorA.Value = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numMenuGlowRailColorA.ValueChanged += new System.EventHandler(this.numMenuGlowRailColor_ValueChanged);
+            // 
+            // numMenuRailColorA
+            // 
+            this.numMenuRailColorA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.numMenuRailColorA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.numMenuRailColorA, "numMenuRailColorA");
+            this.numMenuRailColorA.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numMenuRailColorA.Name = "numMenuRailColorA";
+            this.numMenuRailColorA.Value = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numMenuRailColorA.ValueChanged += new System.EventHandler(this.numMenuRailColor_ValueChanged);
+            // 
+            // numJoyColorB
+            // 
+            this.numJoyColorB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(150)))));
+            this.numJoyColorB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.numJoyColorB, "numJoyColorB");
+            this.numJoyColorB.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numJoyColorB.Name = "numJoyColorB";
+            this.numJoyColorB.Value = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numJoyColorB.ValueChanged += new System.EventHandler(this.numJoyRailColor_ValueChanged);
+            // 
+            // numJoyColorG
+            // 
+            this.numJoyColorG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.numJoyColorG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.numJoyColorG, "numJoyColorG");
+            this.numJoyColorG.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numJoyColorG.Name = "numJoyColorG";
+            this.numJoyColorG.Value = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numJoyColorG.ValueChanged += new System.EventHandler(this.numJoyRailColor_ValueChanged);
+            // 
+            // label22
+            // 
+            resources.ApplyResources(this.label22, "label22");
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Name = "label22";
+            // 
+            // numJoyColorR
+            // 
+            this.numJoyColorR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.numJoyColorR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.numJoyColorR, "numJoyColorR");
+            this.numJoyColorR.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numJoyColorR.Name = "numJoyColorR";
+            this.numJoyColorR.Value = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numJoyColorR.ValueChanged += new System.EventHandler(this.numJoyRailColor_ValueChanged);
+            // 
+            // numPathColorB
+            // 
+            this.numPathColorB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(150)))));
+            this.numPathColorB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.numPathColorB, "numPathColorB");
+            this.numPathColorB.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numPathColorB.Name = "numPathColorB";
+            this.numPathColorB.Value = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numPathColorB.ValueChanged += new System.EventHandler(this.numPathRailColor_ValueChanged);
+            // 
+            // numPathColorG
+            // 
+            this.numPathColorG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.numPathColorG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.numPathColorG, "numPathColorG");
+            this.numPathColorG.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numPathColorG.Name = "numPathColorG";
+            this.numPathColorG.Value = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numPathColorG.ValueChanged += new System.EventHandler(this.numPathRailColor_ValueChanged);
+            // 
+            // label23
+            // 
+            resources.ApplyResources(this.label23, "label23");
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.Name = "label23";
+            // 
+            // numPathColorR
+            // 
+            this.numPathColorR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.numPathColorR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.numPathColorR, "numPathColorR");
+            this.numPathColorR.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numPathColorR.Name = "numPathColorR";
+            this.numPathColorR.Value = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numPathColorR.ValueChanged += new System.EventHandler(this.numPathRailColor_ValueChanged);
+            // 
             // lblSequinStatus
             // 
             this.lblSequinStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
@@ -544,6 +765,7 @@
             // combCustomLevel
             // 
             this.combCustomLevel.BackColor = System.Drawing.Color.DimGray;
+            this.combCustomLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.combCustomLevel, "combCustomLevel");
             this.combCustomLevel.FormattingEnabled = true;
             this.combCustomLevel.Name = "combCustomLevel";
@@ -827,6 +1049,7 @@
             // combSampleName
             // 
             this.combSampleName.BackColor = System.Drawing.Color.DimGray;
+            this.combSampleName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combSampleName.DropDownWidth = 194;
             resources.ApplyResources(this.combSampleName, "combSampleName");
             this.combSampleName.FormattingEnabled = true;
@@ -860,6 +1083,7 @@
             // combBpmSamples
             // 
             this.combBpmSamples.BackColor = System.Drawing.Color.DimGray;
+            this.combBpmSamples.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combBpmSamples.DropDownWidth = 194;
             resources.ApplyResources(this.combBpmSamples, "combBpmSamples");
             this.combBpmSamples.FormattingEnabled = true;
@@ -877,43 +1101,43 @@
             this.dgvSamplesList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvSamplesList.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgvSamplesList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle76.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle76.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle76.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle76.Format = "N0";
-            dataGridViewCellStyle76.NullValue = null;
-            dataGridViewCellStyle76.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle76.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle76.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSamplesList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle76;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSamplesList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             resources.ApplyResources(this.dgvSamplesList, "dgvSamplesList");
             this.dgvSamplesList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle77.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle77.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle77.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle77.Format = "N1";
-            dataGridViewCellStyle77.NullValue = null;
-            dataGridViewCellStyle77.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle77.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle77.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSamplesList.DefaultCellStyle = dataGridViewCellStyle77;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle5.Format = "N1";
+            dataGridViewCellStyle5.NullValue = null;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSamplesList.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvSamplesList.EnableHeadersVisualStyles = false;
             this.dgvSamplesList.GridColor = System.Drawing.Color.Black;
             this.dgvSamplesList.MultiSelect = false;
             this.dgvSamplesList.Name = "dgvSamplesList";
             this.dgvSamplesList.ReadOnly = true;
             this.dgvSamplesList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle78.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            dataGridViewCellStyle78.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle78.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle78.NullValue = null;
-            dataGridViewCellStyle78.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle78.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle78.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSamplesList.RowHeadersDefaultCellStyle = dataGridViewCellStyle78;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.NullValue = null;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSamplesList.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvSamplesList.RowHeadersVisible = false;
             this.dgvSamplesList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvSamplesList.RowTemplate.Height = 200;
@@ -934,6 +1158,7 @@
             // combTutorial
             // 
             this.combTutorial.BackColor = System.Drawing.Color.DimGray;
+            this.combTutorial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combTutorial.DropDownWidth = 184;
             resources.ApplyResources(this.combTutorial, "combTutorial");
             this.combTutorial.FormattingEnabled = true;
@@ -1005,6 +1230,7 @@
             // combLeafFiles
             // 
             this.combLeafFiles.BackColor = System.Drawing.Color.DimGray;
+            this.combLeafFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.combLeafFiles, "combLeafFiles");
             this.combLeafFiles.FormattingEnabled = true;
             this.combLeafFiles.Name = "combLeafFiles";
@@ -1020,43 +1246,43 @@
             this.dgvLeafFiles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLeafFiles.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgvLeafFiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle79.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle79.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle79.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle79.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle79.Format = "N0";
-            dataGridViewCellStyle79.NullValue = null;
-            dataGridViewCellStyle79.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle79.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle79.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLeafFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle79;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle7.Format = "N0";
+            dataGridViewCellStyle7.NullValue = null;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLeafFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             resources.ApplyResources(this.dgvLeafFiles, "dgvLeafFiles");
             this.dgvLeafFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle80.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle80.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle80.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle80.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle80.Format = "N1";
-            dataGridViewCellStyle80.NullValue = null;
-            dataGridViewCellStyle80.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle80.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle80.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLeafFiles.DefaultCellStyle = dataGridViewCellStyle80;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle8.Format = "N1";
+            dataGridViewCellStyle8.NullValue = null;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLeafFiles.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvLeafFiles.EnableHeadersVisualStyles = false;
             this.dgvLeafFiles.GridColor = System.Drawing.Color.Black;
             this.dgvLeafFiles.MultiSelect = false;
             this.dgvLeafFiles.Name = "dgvLeafFiles";
             this.dgvLeafFiles.ReadOnly = true;
             this.dgvLeafFiles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle81.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle81.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            dataGridViewCellStyle81.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle81.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle81.NullValue = null;
-            dataGridViewCellStyle81.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle81.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle81.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLeafFiles.RowHeadersDefaultCellStyle = dataGridViewCellStyle81;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.NullValue = null;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLeafFiles.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvLeafFiles.RowHeadersVisible = false;
             this.dgvLeafFiles.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvLeafFiles.RowTemplate.Height = 200;
@@ -1218,6 +1444,7 @@
             // combLevelFilesRest
             // 
             this.combLevelFilesRest.BackColor = System.Drawing.Color.DimGray;
+            this.combLevelFilesRest.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.combLevelFilesRest, "combLevelFilesRest");
             this.combLevelFilesRest.FormattingEnabled = true;
             this.combLevelFilesRest.Name = "combLevelFilesRest";
@@ -1241,6 +1468,7 @@
             // combLevelFiles
             // 
             this.combLevelFiles.BackColor = System.Drawing.Color.DimGray;
+            this.combLevelFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.combLevelFiles, "combLevelFiles");
             this.combLevelFiles.FormattingEnabled = true;
             this.combLevelFiles.Name = "combLevelFiles";
@@ -1285,6 +1513,7 @@
             // combSkybox
             // 
             this.combSkybox.BackColor = System.Drawing.Color.DimGray;
+            this.combSkybox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.combSkybox, "combSkybox");
             this.combSkybox.FormattingEnabled = true;
             this.combSkybox.Name = "combSkybox";
@@ -1300,43 +1529,43 @@
             this.dgvLevelFiles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLevelFiles.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgvLevelFiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle82.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle82.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle82.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle82.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle82.Format = "N0";
-            dataGridViewCellStyle82.NullValue = null;
-            dataGridViewCellStyle82.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle82.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle82.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLevelFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle82;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle10.Format = "N0";
+            dataGridViewCellStyle10.NullValue = null;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLevelFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             resources.ApplyResources(this.dgvLevelFiles, "dgvLevelFiles");
             this.dgvLevelFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle83.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle83.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle83.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle83.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle83.Format = "N1";
-            dataGridViewCellStyle83.NullValue = null;
-            dataGridViewCellStyle83.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle83.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle83.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLevelFiles.DefaultCellStyle = dataGridViewCellStyle83;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle11.Format = "N1";
+            dataGridViewCellStyle11.NullValue = null;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLevelFiles.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvLevelFiles.EnableHeadersVisualStyles = false;
             this.dgvLevelFiles.GridColor = System.Drawing.Color.Black;
             this.dgvLevelFiles.MultiSelect = false;
             this.dgvLevelFiles.Name = "dgvLevelFiles";
             this.dgvLevelFiles.ReadOnly = true;
             this.dgvLevelFiles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle84.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle84.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            dataGridViewCellStyle84.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle84.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle84.NullValue = null;
-            dataGridViewCellStyle84.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle84.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle84.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLevelFiles.RowHeadersDefaultCellStyle = dataGridViewCellStyle84;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.NullValue = null;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLevelFiles.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvLevelFiles.RowHeadersVisible = false;
             this.dgvLevelFiles.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvLevelFiles.RowTemplate.Height = 200;
@@ -1390,226 +1619,6 @@
             resources.ApplyResources(this.loadRestLevelToolStripMenuItem, "loadRestLevelToolStripMenuItem");
             this.loadRestLevelToolStripMenuItem.Click += new System.EventHandler(this.loadRestLevelToolStripMenuItem_Click);
             // 
-            // numJoyColorB
-            // 
-            this.numJoyColorB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(150)))));
-            this.numJoyColorB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.numJoyColorB, "numJoyColorB");
-            this.numJoyColorB.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numJoyColorB.Name = "numJoyColorB";
-            this.numJoyColorB.Value = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numJoyColorB.ValueChanged += new System.EventHandler(this.numJoyRailColor_ValueChanged);
-            // 
-            // numJoyColorG
-            // 
-            this.numJoyColorG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.numJoyColorG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.numJoyColorG, "numJoyColorG");
-            this.numJoyColorG.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numJoyColorG.Name = "numJoyColorG";
-            this.numJoyColorG.Value = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numJoyColorG.ValueChanged += new System.EventHandler(this.numJoyRailColor_ValueChanged);
-            // 
-            // label22
-            // 
-            resources.ApplyResources(this.label22, "label22");
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Name = "label22";
-            // 
-            // numJoyColorR
-            // 
-            this.numJoyColorR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.numJoyColorR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.numJoyColorR, "numJoyColorR");
-            this.numJoyColorR.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numJoyColorR.Name = "numJoyColorR";
-            this.numJoyColorR.Value = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numJoyColorR.ValueChanged += new System.EventHandler(this.numJoyRailColor_ValueChanged);
-            // 
-            // numPathColorB
-            // 
-            this.numPathColorB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(150)))));
-            this.numPathColorB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.numPathColorB, "numPathColorB");
-            this.numPathColorB.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numPathColorB.Name = "numPathColorB";
-            this.numPathColorB.Value = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numPathColorB.ValueChanged += new System.EventHandler(this.numPathRailColor_ValueChanged);
-            // 
-            // numPathColorG
-            // 
-            this.numPathColorG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.numPathColorG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.numPathColorG, "numPathColorG");
-            this.numPathColorG.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numPathColorG.Name = "numPathColorG";
-            this.numPathColorG.Value = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numPathColorG.ValueChanged += new System.EventHandler(this.numPathRailColor_ValueChanged);
-            // 
-            // label23
-            // 
-            resources.ApplyResources(this.label23, "label23");
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Name = "label23";
-            // 
-            // numPathColorR
-            // 
-            this.numPathColorR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.numPathColorR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.numPathColorR, "numPathColorR");
-            this.numPathColorR.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numPathColorR.Name = "numPathColorR";
-            this.numPathColorR.Value = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numPathColorR.ValueChanged += new System.EventHandler(this.numPathRailColor_ValueChanged);
-            // 
-            // numJoyColorA
-            // 
-            this.numJoyColorA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.numJoyColorA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.numJoyColorA, "numJoyColorA");
-            this.numJoyColorA.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numJoyColorA.Name = "numJoyColorA";
-            this.numJoyColorA.Value = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numJoyColorA.ValueChanged += new System.EventHandler(this.numJoyRailColor_ValueChanged);
-            // 
-            // numPathColorA
-            // 
-            this.numPathColorA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.numPathColorA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.numPathColorA, "numPathColorA");
-            this.numPathColorA.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numPathColorA.Name = "numPathColorA";
-            this.numPathColorA.Value = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numPathColorA.ValueChanged += new System.EventHandler(this.numPathRailColor_ValueChanged);
-            // 
-            // numMenuGlowRailColorA
-            // 
-            this.numMenuGlowRailColorA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.numMenuGlowRailColorA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.numMenuGlowRailColorA, "numMenuGlowRailColorA");
-            this.numMenuGlowRailColorA.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numMenuGlowRailColorA.Name = "numMenuGlowRailColorA";
-            this.numMenuGlowRailColorA.Value = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numMenuGlowRailColorA.ValueChanged += new System.EventHandler(this.numMenuGlowRailColor_ValueChanged);
-            // 
-            // numMenuRailColorA
-            // 
-            this.numMenuRailColorA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.numMenuRailColorA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.numMenuRailColorA, "numMenuRailColorA");
-            this.numMenuRailColorA.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numMenuRailColorA.Name = "numMenuRailColorA";
-            this.numMenuRailColorA.Value = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numMenuRailColorA.ValueChanged += new System.EventHandler(this.numMenuRailColor_ValueChanged);
-            // 
-            // lblMenuColorOutput
-            // 
-            this.lblMenuColorOutput.BackColor = System.Drawing.Color.White;
-            this.lblMenuColorOutput.Cursor = System.Windows.Forms.Cursors.Default;
-            resources.ApplyResources(this.lblMenuColorOutput, "lblMenuColorOutput");
-            this.lblMenuColorOutput.Name = "lblMenuColorOutput";
-            // 
-            // lblMenuGlowColorOutput
-            // 
-            this.lblMenuGlowColorOutput.BackColor = System.Drawing.Color.White;
-            this.lblMenuGlowColorOutput.Cursor = System.Windows.Forms.Cursors.Default;
-            resources.ApplyResources(this.lblMenuGlowColorOutput, "lblMenuGlowColorOutput");
-            this.lblMenuGlowColorOutput.Name = "lblMenuGlowColorOutput";
-            // 
-            // lblJoyColorOutput
-            // 
-            this.lblJoyColorOutput.BackColor = System.Drawing.Color.White;
-            this.lblJoyColorOutput.Cursor = System.Windows.Forms.Cursors.Default;
-            resources.ApplyResources(this.lblJoyColorOutput, "lblJoyColorOutput");
-            this.lblJoyColorOutput.Name = "lblJoyColorOutput";
-            // 
-            // lblPathColorOutput
-            // 
-            this.lblPathColorOutput.BackColor = System.Drawing.Color.White;
-            this.lblPathColorOutput.Cursor = System.Windows.Forms.Cursors.Default;
-            resources.ApplyResources(this.lblPathColorOutput, "lblPathColorOutput");
-            this.lblPathColorOutput.Name = "lblPathColorOutput";
-            // 
             // ThumperLevelEditor
             // 
             resources.ApplyResources(this, "$this");
@@ -1634,6 +1643,16 @@
             this.menuStrip2.PerformLayout();
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numJoyColorA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPathColorA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMenuGlowRailColorA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMenuRailColorA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numJoyColorB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numJoyColorG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numJoyColorR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPathColorB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPathColorG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPathColorR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMenuGlowRailColorB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMenuGlowRailColorG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMenuGlowRailColorR)).EndInit();
@@ -1658,16 +1677,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLevelFiles)).EndInit();
             this.menuStrip4.ResumeLayout(false);
             this.menuStrip4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numJoyColorB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numJoyColorG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numJoyColorR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPathColorB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPathColorG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPathColorR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numJoyColorA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPathColorA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMenuGlowRailColorA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMenuRailColorA)).EndInit();
             this.ResumeLayout(false);
 
         }

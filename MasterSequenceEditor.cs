@@ -50,7 +50,7 @@ namespace ThumperLevelEditor {
                         string linetoWrite = null;
 
                         //Write leaf file data
-                        linetoWrite = "[\n" + "{\n" + "'obj_type': 'SequinMaster'," + "\n" + "'obj_name': 'sequin.master'," + "\n" + "'skybox_name': '" + skyboxName + "',\n" + "'intro_lvl_name': '" + introLevelName.ToString() + ".lvl',\n" + "'groupings': [";
+                        linetoWrite = "[\n" + "{\n" + "'obj_type': 'SequinMaster'," + "\n" + "'obj_name': 'sequin.master'," + "\n" + "'skybox_name': '" + skyboxName + "',\n" + "'intro_lvl_name': '" + introLevelName.ToString().Substring(introLevelName.ToString().Length - 3) + ".lvl',\n" + "'groupings': [";
                         destinationFile.WriteLine(linetoWrite);
 
                         //writing lvl files here
@@ -58,7 +58,7 @@ namespace ThumperLevelEditor {
 
                         linetoWrite = "    ],";
                         destinationFile.WriteLine(linetoWrite);
-                        linetoWrite = "'checkpoint_lvl_name': '" + checkpointLevelName.ToString() + ".lvl'";
+                        linetoWrite = "'checkpoint_lvl_name': '" + checkpointLevelName.ToString().Substring(checkpointLevelName.ToString().Length - 3) + ".lvl'";
                         destinationFile.WriteLine(linetoWrite);
                         linetoWrite = "}\n]";
                         destinationFile.WriteLine(linetoWrite);
@@ -84,8 +84,8 @@ namespace ThumperLevelEditor {
                 string linetoWrite = null;
 
                 for (int i = 0; i < grid.RowCount; i++){
-                    //linetoWrite = "    {\n    'lvl_name': " + grid.Rows[i].Cells[0].Value.ToString().Substring(0, grid.Rows[i].Cells[0].Value.ToString().Length - 3) + "lvl',";
-                    linetoWrite = "    {\n'lvl_name': '" + levelFileList[i].name + ".lvl',";
+                    linetoWrite = "    {\n    'lvl_name': " + grid.Rows[i].Cells[0].Value.ToString().Substring(0, grid.Rows[i].Cells[0].Value.ToString().Length - 3) + "lvl',";
+                    //linetoWrite = "    {\n'lvl_name': '" + levelFileList[i].name + ".lvl',";
                     destinationFile.WriteLine(linetoWrite);
                     linetoWrite = "    'gate_name': '',";
                     destinationFile.WriteLine(linetoWrite);
