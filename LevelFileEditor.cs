@@ -125,7 +125,9 @@ namespace ThumperLevelEditor {
                 for (int i = 0; i < grid.RowCount; i++){
                     linetoWrite = "    {\n    " + "'beat_cnt': " + grid.Rows[i].Cells[1].Value + ",";
                     destinationFile.WriteLine(linetoWrite);
-                    linetoWrite = "    " + "'leaf_name': '" + grid.Rows[i].Cells[0].Value.ToString().Substring(0, grid.Rows[i].Cells[0].Value.ToString().Length - 3) + "leaf',";
+                    //remove the lvl_ prefix from leafName for writing inside the lvl file
+                    string leafName = grid.Rows[i].Cells[0].Value.ToString().Substring(5);
+                    linetoWrite = "    " + "'leaf_name': '" + leafName.ToString().Substring(0, leafName.ToString().Length - 3) + "leaf',";
                     destinationFile.WriteLine(linetoWrite);
                     linetoWrite = "    " + "'main_path': '" + "default.path" + "',";
                     destinationFile.WriteLine(linetoWrite);
@@ -150,6 +152,114 @@ namespace ThumperLevelEditor {
                         destinationFile.WriteLine(linetoWrite);
                     }
                 }
+            }
+        }
+
+        public void Save(ComboBox combLeafs, DataGridView dgvLeaf, DataGridView dgvSample){
+            //file save information
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "Thumper Level Editor Level File|*.tleLvl";
+            saveFile.Title = "Save a Thumper Level Editor Level file";
+            saveFile.ShowDialog();
+
+            if (saveFile.FileName != ""){
+
+                FileStream fs = (FileStream)saveFile.OpenFile();
+
+                //remove file if it exists
+                if (saveFile.CheckFileExists){
+                    File.Delete(fs.Name);
+                }
+                fs.Close();
+
+                try{
+                    using (fs = File.Open(fs.Name, FileMode.Append)) {
+
+                        byte[] info = new UTF8Encoding(true).GetBytes("Leafs{\n");
+                        fs.Write(info, 0, info.Length);
+                        for (int i = 0; i < combLeafs.Items.Count; i++){
+                            info = new UTF8Encoding(true).GetBytes(combLeafs.Items[i] + "\n");
+                            fs.Write(info, 0, info.Length);
+                        }
+                        info = new UTF8Encoding(true).GetBytes("}\n");
+                        fs.Write(info, 0, info.Length);
+                        info = new UTF8Encoding(true).GetBytes("Leafs in list{\n");
+                        fs.Write(info, 0, info.Length);
+                        for (int i = 0; i < dgvLeaf.RowCount; i++){
+                            info = new UTF8Encoding(true).GetBytes("beat count:" + leafFileList[i].beatCount + "\n");
+                            fs.Write(info, 0, info.Length);
+                            info = new UTF8Encoding(true).GetBytes("leaf name:" + leafFileList[i].name + "\n");
+                            fs.Write(info, 0, info.Length);
+                        }
+                        info = new UTF8Encoding(true).GetBytes("}\n");
+                        fs.Write(info, 0, info.Length);
+                        info = new UTF8Encoding(true).GetBytes("Tutorial Type:" + tutorial + "\n");
+                        fs.Write(info, 0, info.Length);
+                        info = new UTF8Encoding(true).GetBytes("Allow Input:" + allowInput + "\n");
+                        fs.Write(info, 0, info.Length);
+                        info = new UTF8Encoding(true).GetBytes("Beat Delay:" + delay + "\n");
+                        fs.Write(info, 0, info.Length);
+                        info = new UTF8Encoding(true).GetBytes("Volume:" + volume + "\n");
+                        fs.Write(info, 0, info.Length);
+                        info = new UTF8Encoding(true).GetBytes("Samples in list{\n");
+                        fs.Write(info, 0, info.Length);
+                        for (int i = 0; i < dgvSample.RowCount; i++){
+                            info = new UTF8Encoding(true).GetBytes("sample loop:" + sampleList[i].loop + "\n");
+                            fs.Write(info, 0, info.Length);
+                            info = new UTF8Encoding(true).GetBytes("sample name:" + sampleList[i].name + "\n");
+                            fs.Write(info, 0, info.Length);
+                        }
+                        info = new UTF8Encoding(true).GetBytes("}\n");
+                        fs.Write(info, 0, info.Length);
+                    }
+                        Console.WriteLine("File saved!");
+                }
+                catch (Exception ex){
+                    MessageBox.Show("An unexpected problem has occured when trying to save the file. Please try again. If the problem persists, contact the developer or submit a bug report\n\n" + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        public void load(ComboBox combLeafs, DataGridView dgvLeafs, ComboBox combTutorial, CheckBox chkInput, NumericUpDown numDelay, NumericUpDown numVolume, DataGridView dgvSamp){
+            OpenFileDialog loadFile = new OpenFileDialog();
+            loadFile.Filter = "Thumper Level Editor Level File|*.tleLvl";
+            loadFile.Title = "Load a Thumper Level Editor Level file";
+            loadFile.ShowDialog();
+
+            if (loadFile.FileName != ""){
+                StreamReader reader = new StreamReader(loadFile.OpenFile());
+                string linetoRead = null;
+
+                //while ((linetoRead = reader.ReadLine()) != null){
+                linetoRead = reader.ReadLine(); //reads the Leafs{ line
+                while (!(linetoRead = reader.ReadLine()).Equals("}")){    //load leafs into dropdown
+                    combLeafs.Items.Add(linetoRead);
+                }
+                linetoRead = reader.ReadLine(); //reads the Leafs in list{ line
+                while (!(linetoRead = reader.ReadLine()).Equals("}")){    //load leafs into datagridview
+                    dgvLeafs.RowCount++;
+                    int tempBeatNum = int.Parse(linetoRead.Substring(11));
+                    linetoRead = reader.ReadLine();
+                    string tempLeafName = linetoRead.Substring(10);
+                    leafFileList.Add(new LeafFile(tempLeafName, tempBeatNum));
+                }
+                linetoRead = reader.ReadLine(); //tutorial
+                combTutorial.Text = linetoRead.Substring(14);
+                linetoRead = reader.ReadLine(); //allow input
+                chkInput.Checked = bool.Parse(linetoRead.Substring(12));
+                linetoRead = reader.ReadLine(); //delay
+                numDelay.Value = int.Parse(linetoRead.Substring(11));
+                linetoRead = reader.ReadLine(); //volume
+                numVolume.Value = decimal.Parse(linetoRead.Substring(7));
+                linetoRead = reader.ReadLine(); //reads the Samples in list{ line
+                while (!(linetoRead = reader.ReadLine()).Equals("}")){    //load samples into datagridview
+                    dgvSamp.RowCount++;
+                    int tempSampLoop = int.Parse(linetoRead.Substring(12));
+                    linetoRead = reader.ReadLine();
+                    string tempSampName = linetoRead.Substring(12);
+                    sampleList.Add(new SampleFile(tempSampName, tempSampLoop));
+                }
+                //}
             }
         }
     }

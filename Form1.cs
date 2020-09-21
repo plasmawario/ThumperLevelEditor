@@ -1187,9 +1187,13 @@ namespace ThumperLevelEditor {
             confEditor.rgbaJoy = Color.FromArgb((int)numJoyColorA.Value, (int)numJoyColorR.Value, (int)numJoyColorG.Value, (int)numJoyColorB.Value);
         }
 
-        private void exportToolStripMenuItem_Click(object sender, EventArgs e) {
-            //editor.Export();
+        private void saveToolStripMenuItem_Click_1(object sender, EventArgs e){
+            lvlEditor.Save(combLeafFiles, dgvLeafFiles, dgvSamplesList);
         }
+        private void loadToolStripMenuItem_Click_1(object sender, EventArgs e){
+            lvlEditor.load(combLeafFiles, dgvLeafFiles, combTutorial, chkAllowInput, numLeafDelay, numVolume, dgvSamplesList);
+        }
+
         private void saveToolStripMenuItem_Click(object sender, EventArgs e) {
             //editor.Save();
         }
@@ -1746,6 +1750,5 @@ namespace ThumperLevelEditor {
                 e.Cancel = true;
             }
         }
-
     }
 }
