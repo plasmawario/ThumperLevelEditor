@@ -287,7 +287,7 @@ namespace ThumperLevelEditor {
                 string linetoRead = null;
                 List<List<ObjectSimpleProperties>> simpleObjList = new List<List<ObjectSimpleProperties>>();
                 List<List<ObjectProperties>> objList = new List<List<ObjectProperties>>();
-                char[] datapoints;
+                string[] datapoints;
                 int counter = 0, jSimple = -1, jComplex = -1, beatCount = 0;
                 bool objectTypeIsSimple = true;
                 decimal datapoint_value;
@@ -343,38 +343,38 @@ namespace ThumperLevelEditor {
                             case 3:
                                 List<int> datapoints_raw = new List<int>();
                                 if (objectTypeIsSimple){
-                                    datapoints = linetoRead.ToCharArray();
+                                    datapoints = linetoRead.Split(',');
                                     for (int i = 0; i < datapoints.Length; i++){
-                                        if (decimal.TryParse(datapoints[i].ToString(), out datapoint_value)){
-                                            datapoints_raw.Add(int.Parse(datapoint_value.ToString()));
-                                        }
+                                        simpleObjList[jSimple][i].id = float.Parse(datapoints[i]);
                                     }
-                                    for (int i = 0; i < datapoints_raw.Capacity; i++){
-                                        simpleObjList[jSimple][i].id = datapoints_raw[i];
-                                    }
-                                }
-                                else{
+                                }else{
                                     List<int> datapoints_raw2 = new List<int>();
                                     bool isCheckingID = true;
-                                    datapoints = linetoRead.ToCharArray();
+                                    datapoints = linetoRead.Split('|');
                                     for (int i = 0; i < datapoints.Length; i++){
-                                        if (decimal.TryParse(datapoints[i].ToString(), out datapoint_value)){
-                                            if (isCheckingID){
-                                                datapoints_raw.Add(int.Parse(datapoint_value.ToString()));
-                                                isCheckingID = false;
-                                            }else{
-                                                datapoints_raw2.Add(int.Parse(datapoint_value.ToString()));
-                                                isCheckingID = true;
-                                            }
-                                    
-                                        }
+                                        datapoints[i] = datapoints[i].Substring(1);//removes initial bracket
+                                        datapoints[i] = datapoints[i].Substring(0, datapoints[i].Length - 1);//removes ending bracket, leaving just #,#
                                     }
-                                    for (int i = 0; i < datapoints_raw.Capacity; i++){
+                                    datapoints[datapoints.Length - 1] = datapoints[datapoints.Length - 1].Substring(0, datapoints[datapoints.Length - 1].Length - 1);   //sorry there was a weird annoying space at the end, this line removes it
+                                    int indexOfDelimeter;
+                                    for (int i = 0; i < datapoints.Length; i++){
+                                        indexOfDelimeter = datapoints[i].IndexOf(',');
+                                        
+                                        if (isCheckingID){
+                                            datapoints_raw.Add(int.Parse(datapoints[i].Substring(0, indexOfDelimeter)));
+                                            isCheckingID = false;
+                                        }else{
+                                            datapoints_raw2.Add(int.Parse(datapoints[i].Substring(indexOfDelimeter + 1)));
+                                            isCheckingID = true;
+                                        }
+
+                                    }
+                                    for (int i = 0; i < datapoints_raw.Count; i++){
                                         objList[jComplex][i].id = datapoints_raw[i];
                                         objList[jComplex][i].laneID = datapoints_raw2[i];
                                     }
                                 }
-                                beatCount = datapoints_raw.Capacity;
+                                beatCount = objList.Capacity;
                                 break;
                         }
 

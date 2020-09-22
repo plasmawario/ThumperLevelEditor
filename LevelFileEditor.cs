@@ -230,36 +230,40 @@ namespace ThumperLevelEditor {
                 StreamReader reader = new StreamReader(loadFile.OpenFile());
                 string linetoRead = null;
 
-                //while ((linetoRead = reader.ReadLine()) != null){
-                linetoRead = reader.ReadLine(); //reads the Leafs{ line
-                while (!(linetoRead = reader.ReadLine()).Equals("}")){    //load leafs into dropdown
-                    combLeafs.Items.Add(linetoRead);
+                try { 
+                    linetoRead = reader.ReadLine(); //reads the Leafs{ line
+                    while (!(linetoRead = reader.ReadLine()).Equals("}")){    //load leafs into dropdown
+                        combLeafs.Items.Add(linetoRead);
+                    }
+                    linetoRead = reader.ReadLine(); //reads the Leafs in list{ line
+                    while (!(linetoRead = reader.ReadLine()).Equals("}")){    //load leafs into datagridview
+                        dgvLeafs.RowCount++;
+                        int tempBeatNum = int.Parse(linetoRead.Substring(11));
+                        linetoRead = reader.ReadLine();
+                        string tempLeafName = linetoRead.Substring(10);
+                        leafFileList.Add(new LeafFile(tempLeafName, tempBeatNum));
+                    }
+                    linetoRead = reader.ReadLine(); //tutorial
+                    combTutorial.Text = linetoRead.Substring(14);
+                    linetoRead = reader.ReadLine(); //allow input
+                    chkInput.Checked = bool.Parse(linetoRead.Substring(12));
+                    linetoRead = reader.ReadLine(); //delay
+                    numDelay.Value = int.Parse(linetoRead.Substring(11));
+                    linetoRead = reader.ReadLine(); //volume
+                    numVolume.Value = decimal.Parse(linetoRead.Substring(7));
+                    linetoRead = reader.ReadLine(); //reads the Samples in list{ line
+                    while (!(linetoRead = reader.ReadLine()).Equals("}")){    //load samples into datagridview
+                        dgvSamp.RowCount++;
+                        int tempSampLoop = int.Parse(linetoRead.Substring(12));
+                        linetoRead = reader.ReadLine();
+                        string tempSampName = linetoRead.Substring(12);
+                        sampleList.Add(new SampleFile(tempSampName, tempSampLoop));
+                    }
+
+                    Console.WriteLine("File loaded!");
+                }catch (Exception ex){
+                    MessageBox.Show("An unexpected problem has occured when trying to load the file. This could be due to an unsupported file type or corrupted/broken file. If the problem persists, contact the developer or submit a bug report\n\n" + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                linetoRead = reader.ReadLine(); //reads the Leafs in list{ line
-                while (!(linetoRead = reader.ReadLine()).Equals("}")){    //load leafs into datagridview
-                    dgvLeafs.RowCount++;
-                    int tempBeatNum = int.Parse(linetoRead.Substring(11));
-                    linetoRead = reader.ReadLine();
-                    string tempLeafName = linetoRead.Substring(10);
-                    leafFileList.Add(new LeafFile(tempLeafName, tempBeatNum));
-                }
-                linetoRead = reader.ReadLine(); //tutorial
-                combTutorial.Text = linetoRead.Substring(14);
-                linetoRead = reader.ReadLine(); //allow input
-                chkInput.Checked = bool.Parse(linetoRead.Substring(12));
-                linetoRead = reader.ReadLine(); //delay
-                numDelay.Value = int.Parse(linetoRead.Substring(11));
-                linetoRead = reader.ReadLine(); //volume
-                numVolume.Value = decimal.Parse(linetoRead.Substring(7));
-                linetoRead = reader.ReadLine(); //reads the Samples in list{ line
-                while (!(linetoRead = reader.ReadLine()).Equals("}")){    //load samples into datagridview
-                    dgvSamp.RowCount++;
-                    int tempSampLoop = int.Parse(linetoRead.Substring(12));
-                    linetoRead = reader.ReadLine();
-                    string tempSampName = linetoRead.Substring(12);
-                    sampleList.Add(new SampleFile(tempSampName, tempSampLoop));
-                }
-                //}
             }
         }
     }

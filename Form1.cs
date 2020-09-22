@@ -180,10 +180,9 @@ namespace ThumperLevelEditor {
 
         private void btnClearRestLvlsList_Click(object sender, EventArgs e){
             while (combLevelFilesRest.Items.Count > 0){
-                combLevelFilesRest.Items.Remove(0);
-                combLevelFilesRest.Text = "";
+                combLevelFilesRest.Items.RemoveAt(0);
             }
-            combLevelFilesRest.Items.Add("Rest");
+            combLevelFilesRest.Items.Add("");
             lblLog.Text = "Cleared the rest level list";
         }
 
@@ -1194,8 +1193,11 @@ namespace ThumperLevelEditor {
             lvlEditor.load(combLeafFiles, dgvLeafFiles, combTutorial, chkAllowInput, numLeafDelay, numVolume, dgvSamplesList);
         }
 
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e) {
-            //editor.Save();
+        private void saveToolStripMenuItem2_Click(object sender, EventArgs e){
+            masterEditor.Save(combLevelFiles, combLevelFilesRest, dgvLevelFiles);
+        }
+        private void loadToolStripMenuItem2_Click(object sender, EventArgs e){
+            masterEditor.load(combSkybox, combLevelFiles, combLevelFilesRest, dgvLevelFiles, lblCheckpointLevel, lblIntroLevel);
         }
 
         //--------------------------------------------------//

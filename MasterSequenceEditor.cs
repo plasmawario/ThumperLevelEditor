@@ -109,5 +109,114 @@ namespace ThumperLevelEditor {
             }
         }
 
+        public void Save(ComboBox combLvls, ComboBox combRest, DataGridView dgvLevels){
+            //file save information
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "Thumper Level Editor Master Sequen File|*.tleMas";
+            saveFile.Title = "Save a Thumper Level Editor Master Sequen file";
+            saveFile.ShowDialog();
+
+            if (saveFile.FileName != ""){
+                FileStream fs = (FileStream)saveFile.OpenFile();
+
+                //remove file if it exists
+                if (saveFile.CheckFileExists){
+                    File.Delete(fs.Name);
+                }
+                fs.Close();
+
+                try{
+                    using (fs = File.Open(fs.Name, FileMode.Append)) {
+                        byte[] info = new UTF8Encoding(true).GetBytes("Skybox:" + skyboxName + "\n");
+                        fs.Write(info, 0, info.Length);
+                        info = new UTF8Encoding(true).GetBytes("levels{\n");
+                        fs.Write(info, 0, info.Length);
+                        for (int i = 0; i < combLvls.Items.Count; i++) {
+                            info = new UTF8Encoding(true).GetBytes(combLvls.Items[i] + "\n");
+                            fs.Write(info, 0, info.Length);
+                        }
+                        info = new UTF8Encoding(true).GetBytes("}\n");
+                        fs.Write(info, 0, info.Length);
+                        info = new UTF8Encoding(true).GetBytes("rest levels{\n");
+                        fs.Write(info, 0, info.Length);
+                        for (int i = 0; i < combRest.Items.Count; i++) {
+                            info = new UTF8Encoding(true).GetBytes(combRest.Items[i] + "\n");
+                            fs.Write(info, 0, info.Length);
+                        }
+                        info = new UTF8Encoding(true).GetBytes("}\n");
+                        fs.Write(info, 0, info.Length);
+                        info = new UTF8Encoding(true).GetBytes("level info{\n");
+                        fs.Write(info, 0, info.Length);
+                        for (int i = 0; i < dgvLevels.RowCount; i++){
+                            info = new UTF8Encoding(true).GetBytes("has Checkpoint:" + levelFileList[i].hasCheckpoint + "\n");
+                            fs.Write(info, 0, info.Length);
+                            info = new UTF8Encoding(true).GetBytes("present in play plus:" + levelFileList[i].playPlus + "\n");
+                            fs.Write(info, 0, info.Length);
+                            info = new UTF8Encoding(true).GetBytes("lvl name:" + levelFileList[i].name + "\n");
+                            fs.Write(info, 0, info.Length);
+                            info = new UTF8Encoding(true).GetBytes("rest name:" + levelFileList[i].restName + "\n");
+                            fs.Write(info, 0, info.Length);
+                        }
+                        info = new UTF8Encoding(true).GetBytes("}\n");
+                        fs.Write(info, 0, info.Length);
+                        info = new UTF8Encoding(true).GetBytes("CheckpointLevel:" + checkpointLevelName + "\n");
+                        fs.Write(info, 0, info.Length);
+                        info = new UTF8Encoding(true).GetBytes("IntroLevel:" + introLevelName + "\n");
+                        fs.Write(info, 0, info.Length);
+
+                        Console.WriteLine("File saved!");
+                    }
+                }catch (Exception ex){
+                    MessageBox.Show("An unexpected problem has occured when trying to save the file. Please try again. If the problem persists, contact the developer or submit a bug report\n\n" + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
+
+        public void load(ComboBox combSkybox, ComboBox combLevels, ComboBox combRest, DataGridView dgvLvls, Label lblChk, Label lblIntro){
+            OpenFileDialog loadFile = new OpenFileDialog();
+            loadFile.Filter = "Thumper Level Editor Master Sequen File|*.tleMas";
+            loadFile.Title = "Load a Thumper Level Editor Master Sequen file";
+            loadFile.ShowDialog();
+
+            if (loadFile.FileName != "") {
+                StreamReader reader = new StreamReader(loadFile.OpenFile());
+                string linetoRead = null;
+
+                try {
+                    linetoRead = reader.ReadLine().Substring(7);
+                    combSkybox.Text = linetoRead;
+                    linetoRead = reader.ReadLine(); //reads levels{ line
+                    while (!(linetoRead = reader.ReadLine()).Equals("}")) {    //load levels into dropdown
+                        combLevels.Items.Add(linetoRead);
+                    }
+                    linetoRead = reader.ReadLine(); //reads restlevels{ line
+                    while (!(linetoRead = reader.ReadLine()).Equals("}")) {    //load levels into dropdown
+                        combRest.Items.Add(linetoRead);
+                    }
+                    linetoRead = reader.ReadLine(); //reads level info{ line
+                    while (!(linetoRead = reader.ReadLine()).Equals("}")) {    //load levels into datagridview
+                        dgvLvls.RowCount++;
+                        bool tempChk = bool.Parse(linetoRead.Substring(15));
+                        linetoRead = reader.ReadLine();
+                        bool tempPlus = bool.Parse(linetoRead.Substring(21));
+                        linetoRead = reader.ReadLine();
+                        string tempLvl = linetoRead.Substring(9);
+                        linetoRead = reader.ReadLine();
+                        string tempRest = linetoRead.Substring(10);
+                        levelFileList.Add(new LevelFile(tempLvl, tempRest, tempPlus, tempChk));
+                    }
+                    linetoRead = reader.ReadLine().Substring(16);
+                    lblChk.Text = linetoRead;
+                    linetoRead = reader.ReadLine().Substring(11);
+                    lblIntro.Text = linetoRead;
+
+                    Console.WriteLine("File loaded!");
+                }catch (Exception ex){
+                    MessageBox.Show("An unexpected problem has occured when trying to load the file. This could be due to an unsupported file type or corrupted/broken file. If the problem persists, contact the developer or submit a bug report\n\n" + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
     }
 }
