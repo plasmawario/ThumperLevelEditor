@@ -246,6 +246,7 @@ namespace ThumperLevelEditor {
 
                 byte[] info = new UTF8Encoding(true).GetBytes("editortype:" + 1 + "\n");
                 byte[] seperator = new UTF8Encoding(true).GetBytes(",");
+                byte[] seperator2 = new UTF8Encoding(true).GetBytes("|");
                 byte[] newline = new UTF8Encoding(true).GetBytes(" \n");
                 fs.Write(info, 0, info.Length);
                 //fs.Write(newline, 0, info.Length);
@@ -258,10 +259,7 @@ namespace ThumperLevelEditor {
                 for (int i = 0; i < leafLength; i++){
                     info = new UTF8Encoding(true).GetBytes("{" + list[i].id.ToString());
                     fs.Write(info, 0, info.Length);
-                    fs.Write(seperator, 0, seperator.Length);
-                    /*info = new UTF8Encoding(true).GetBytes(list[i].param_objType);
-                    fs.Write(info, 0, info.Length);
-                    fs.Write(seperator, 0, seperator.Length);*/
+                    fs.Write(seperator2, 0, seperator2.Length);
                     info = new UTF8Encoding(true).GetBytes(list[i].laneID + "}");
                     fs.Write(info, 0, info.Length);
                     if (i < leafLength - 1){
@@ -344,29 +342,33 @@ namespace ThumperLevelEditor {
                                 List<int> datapoints_raw = new List<int>();
                                 if (objectTypeIsSimple){
                                     datapoints = linetoRead.Split(',');
+                                    beatCount = datapoints.Length;
                                     for (int i = 0; i < datapoints.Length; i++){
                                         simpleObjList[jSimple][i].id = float.Parse(datapoints[i]);
                                     }
                                 }else{
                                     List<int> datapoints_raw2 = new List<int>();
                                     bool isCheckingID = true;
-                                    datapoints = linetoRead.Split('|');
+                                    datapoints = linetoRead.Split(',');
+
                                     for (int i = 0; i < datapoints.Length; i++){
                                         datapoints[i] = datapoints[i].Substring(1);//removes initial bracket
+                                        if (datapoints[i].Substring(datapoints[i].Length - 1, 1).Equals(" ")){
+                                            datapoints[i] = datapoints[i].Substring(0, datapoints[i].Length - 1);//if there is a white space at the end, remove it
+                                        }
                                         datapoints[i] = datapoints[i].Substring(0, datapoints[i].Length - 1);//removes ending bracket, leaving just #,#
                                     }
-                                    datapoints[datapoints.Length - 1] = datapoints[datapoints.Length - 1].Substring(0, datapoints[datapoints.Length - 1].Length - 1);   //sorry there was a weird annoying space at the end, this line removes it
                                     int indexOfDelimeter;
                                     for (int i = 0; i < datapoints.Length; i++){
-                                        indexOfDelimeter = datapoints[i].IndexOf(',');
+                                        indexOfDelimeter = datapoints[i].IndexOf('|');
                                         
-                                        if (isCheckingID){
+                                        //if (isCheckingID){
                                             datapoints_raw.Add(int.Parse(datapoints[i].Substring(0, indexOfDelimeter)));
                                             isCheckingID = false;
-                                        }else{
+                                        //}else{
                                             datapoints_raw2.Add(int.Parse(datapoints[i].Substring(indexOfDelimeter + 1)));
                                             isCheckingID = true;
-                                        }
+                                        //}
 
                                     }
                                     for (int i = 0; i < datapoints_raw.Count; i++){
@@ -374,7 +376,6 @@ namespace ThumperLevelEditor {
                                         objList[jComplex][i].laneID = datapoints_raw2[i];
                                     }
                                 }
-                                beatCount = objList.Capacity;
                                 break;
                         }
 

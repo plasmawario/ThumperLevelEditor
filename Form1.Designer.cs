@@ -200,6 +200,7 @@
             // 
             // pnlLeafEditor
             // 
+            resources.ApplyResources(this.pnlLeafEditor, "pnlLeafEditor");
             this.pnlLeafEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.pnlLeafEditor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlLeafEditor.Controls.Add(this.numTimeSigRight);
@@ -219,7 +220,6 @@
             this.pnlLeafEditor.Controls.Add(this.numLeafLength);
             this.pnlLeafEditor.Controls.Add(this.menuStrip2);
             this.pnlLeafEditor.Controls.Add(this.lblLeafLength);
-            resources.ApplyResources(this.pnlLeafEditor, "pnlLeafEditor");
             this.pnlLeafEditor.Name = "pnlLeafEditor";
             // 
             // numTimeSigRight
@@ -496,6 +496,7 @@
             // 
             // pnl
             // 
+            resources.ApplyResources(this.pnl, "pnl");
             this.pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl.Controls.Add(this.lblJoyColorOutput);
@@ -530,7 +531,6 @@
             this.pnl.Controls.Add(this.lblLog);
             this.pnl.Controls.Add(this.label1);
             this.pnl.Controls.Add(this.label2);
-            resources.ApplyResources(this.pnl, "pnl");
             this.pnl.Name = "pnl";
             // 
             // lblJoyColorOutput
@@ -976,6 +976,7 @@
             // 
             // pnlLevelEditor
             // 
+            resources.ApplyResources(this.pnlLevelEditor, "pnlLevelEditor");
             this.pnlLevelEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.pnlLevelEditor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlLevelEditor.Controls.Add(this.label18);
@@ -1001,7 +1002,6 @@
             this.pnlLevelEditor.Controls.Add(this.numLeafDelay);
             this.pnlLevelEditor.Controls.Add(this.label4);
             this.pnlLevelEditor.Controls.Add(this.menuStrip3);
-            resources.ApplyResources(this.pnlLevelEditor, "pnlLevelEditor");
             this.pnlLevelEditor.Name = "pnlLevelEditor";
             // 
             // label18
@@ -1381,6 +1381,7 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.chkHasCheckpoint);
@@ -1403,7 +1404,6 @@
             this.panel1.Controls.Add(this.combSkybox);
             this.panel1.Controls.Add(this.dgvLevelFiles);
             this.panel1.Controls.Add(this.menuStrip4);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // chkHasCheckpoint
@@ -1663,6 +1663,7 @@
             this.Controls.Add(this.pnl);
             this.Controls.Add(this.pnlLeafEditor);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "ThumperLevelEditor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ThumperLevelEditor_FormClosing);
             this.Load += new System.EventHandler(this.ThumperLevelEditor_Load);
@@ -1712,6 +1713,7 @@
             this.menuStrip4.ResumeLayout(false);
             this.menuStrip4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

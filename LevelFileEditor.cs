@@ -49,8 +49,8 @@ namespace ThumperLevelEditor {
 
                 destinationFile = new StreamWriter(fs.Name, true);
 
-                //remove the lvl_ prefix from leafName for writing inside the lvl file
-                levelname = levelname.ToString().Substring(4);
+                //remove the leaf_ prefix from leafName for writing inside the lvl file
+                levelname = levelname.ToString().Substring(5);
 
                 ObjectsToWrite = rowNum;
 
